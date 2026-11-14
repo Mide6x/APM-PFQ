@@ -7,6 +7,7 @@ import styles from "@/app/sign-in/auth.module.css";
 type TurnstileApi = {
   render: (element: HTMLElement, options: {
     sitekey: string;
+    action: "login";
     callback: (token: string) => void;
     "expired-callback": () => void;
     "error-callback": () => void;
@@ -27,6 +28,7 @@ export function Turnstile({ siteKey, onToken }: { siteKey: string; onToken: (tok
     try {
       id = api.render(container.current, {
         sitekey: siteKey,
+        action: "login",
         size: container.current.clientWidth < 300 ? "compact" : "flexible",
         callback: (token) => { onToken(token); setMessage("Security verification complete."); },
         "expired-callback": () => { onToken(""); setMessage("Security verification expired. Complete it again to continue."); },

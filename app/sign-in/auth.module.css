@@ -49,6 +49,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  min-width: 44px;
   min-height: 46px;
   padding: 10px 16px;
   border: 1px solid var(--green);

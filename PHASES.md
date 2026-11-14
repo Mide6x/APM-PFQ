@@ -116,6 +116,18 @@ Use this as the starting notice and keep it aligned with the actual implementati
 
 Measure a small set of events such as roadmap opens, lesson completions and quiz starts. Keep email, username, Supabase user IDs, answer text and individual scores out of engagement analytics. Use progress records to provide the learner’s requested features and avoid joining them to analytics. Document the actual provider, storage, purpose and retention in the notice. Verify with browser network checks that analytics does not load or send before opt-in, stops on withdrawal and stays off after reload when declined. [ICO guidance on cookies and analytics](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/?search=iss)
 
+# Turnstile integration checkpoint
+
+Continued on 2026-11-14 with the user's existing widget and production hostname `apmprep.netlify.app`. No new widget or secret was created, retrieved or stored in the app. Existing widget clearance settings were not changed.
+
+- Configured the supplied public site key in ignored `.env.local`, `.env.example` and `netlify.toml` so Netlify builds receive it. Added the `login` action to the existing widget. Tokens are passed once through the Next.js action to Supabase Auth; Supabase owns Siteverify and the secret. Adding another Siteverify redemption would consume the token twice.
+- Tightened token length to Cloudflare's 2048-character limit and added recoverable CAPTCHA rejection feedback while keeping account/delivery responses neutral. Added `tests/turnstile.test.mjs` for missing/oversize tokens, exactly-once forwarding, provider rejection, neutral delivery errors and resend cooldown.
+- Increased touch targets for branding, controls and inline links on touch devices. Kept native semantic interactions, scrolling/pinch zoom, responsive reading columns and reduced-motion support. No drawing tools or pressure/tilt logic were added.
+- Browser layout/target checks pass for roadmap, sign-in, module and privacy at 820×1180, 1180×820, 507×1024 and 375×900. All measured interactive targets are at least 44×44 CSS pixels and there is no horizontal overflow. This used Chromium viewport emulation; real iPadOS Safari and Apple Pencil hardware have not been tested.
+- Lint, typecheck, production build and all 13 Node tests pass. Hosted Supabase rejects a deliberately invalid token with HTTP 400 `captcha_failed`, establishing that CAPTCHA verification is active. This does not prove the matching secret or a successful challenge.
+- The real Cloudflare script loads locally, but the automated browser challenge fails; submit remains disabled. Fresh-token success and replay rejection remain pending on the production hostname. The old deployed sign-in page was confirmed to lack the public site key and show its setup state before this configuration was pushed.
+- Keep the existing widget's allowed production hostname set to `apmprep.netlify.app`. Confirm the matching secret in Supabase Auth and Site URL/callback allowlists per `supabase/PHASE3_SETUP.md`. No Cloudflare/Supabase administrative access or Netlify token is available to inspect/change those dashboard settings. The generic Spin flow's secret retrieval was not performed: its guarded destination/approved Wrangler requirements are unavailable, and the existing secret destination is Supabase.
+
 # Security review before GitHub push
 
 Reviewed on 2026-11-14 using lean-code. No phase advancement.
