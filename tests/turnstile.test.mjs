@@ -2,19 +2,21 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
+import { COOKIE_CHOICE_NAME, parseCookieChoice } from "../lib/cookie-preferences.ts";
 
 const source = readFileSync(new URL("../app/sign-in/actions.ts", import.meta.url), "utf8");
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;
 const originalSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-function handler(providerError = null, savedRetry) {
+function handler(providerError = null, savedRetry, cookieChoice = "v1-allow") {
   const calls = [];
   const stored = [];
   const dependencies = {
     "next/headers": {
       headers: async () => new Headers({ origin: "https://apmprep.netlify.app", host: "apmprep.netlify.app" }),
-      cookies: async () => ({ get: () => savedRetry ? { value: String(savedRetry) } : undefined, set: (...args) => stored.push(args) }),
+      cookies: async () => ({ get: (name) => name === COOKIE_CHOICE_NAME ? { value: cookieChoice } : savedRetry ? { value: String(savedRetry) } : undefined, set: (...args) => stored.push(args) }),
     },
+    "@/lib/cookie-preferences": { COOKIE_CHOICE_NAME, parseCookieChoice },
     "@/lib/auth/server": { createAuthClient: async () => ({ auth: { signInWithOtp: async (input) => { calls.push(input); return { error: providerError }; } } }) },
     "@/lib/auth/cookies": { RETRY_COOKIE_NAME: "apm-sign-in-retry-at", authCookieOptions: () => ({ httpOnly: true }) },
     "@/lib/auth/validation": { validEmail: () => true, safeReturnPath: () => "/modules/project-roles" },
@@ -54,5 +56,14 @@ test("Turnstile gates link requests and delegates each token once to Supabase", 
   } finally {
     if (originalSiteKey === undefined) delete process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
     else process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY = originalSiteKey;
+  }
+});
+
+test("sign-in requests without permission never reach Supabase or set cookies", async () => {
+  for (const choice of [undefined, "", "v1-block", "unknown"]) {
+    const h = handler(null, undefined, choice === undefined ? "" : choice);
+    assert.equal((await h.send("fixture-token")).status, "error");
+    assert.equal(h.calls.length, 0);
+    assert.equal(h.stored.length, 0);
   }
 });

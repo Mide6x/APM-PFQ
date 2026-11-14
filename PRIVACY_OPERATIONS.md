@@ -27,7 +27,7 @@ The public notice is `/privacy`. Footer links lead to the storage inventory and 
 ## Current storage and checks
 
 - Authentication cookies use the `apm-auth` name and numbered chunks, HttpOnly, SameSite=Lax, path `/`, Secure in production, with a seven-day browser lifetime renewed on refresh. PKCE verifier/flow cookies under the `apm-auth-…-code-verifier` pattern last at most ten minutes. The `apm-sign-in-retry-at` cookie contains a timestamp only and expires after 60 seconds. Device sign-out clears all of these app-owned cookies; it does not clear other applications' cookies or remove saved place.
-- The app uses no local/session storage. Topic search is page memory only. No analytics, advertising or tracking pixel code is installed. Turnstile is loaded only on configured sign-in pages for essential abuse prevention; keep pre-clearance disabled and document provider storage changes if that setting is changed. Do not add a consent banner that pretends to control nonexistent optional tracking.
+- The app uses no local/session storage. Topic search is page memory only. No analytics, advertising or tracking pixel code is installed. Turnstile is loaded only on configured sign-in pages for essential abuse prevention; keep pre-clearance disabled and document provider storage changes if that setting is changed. The first-visit notice and `/cookies` control essential sign-in cookies only. No analytics/marketing consent is requested for nonexistent tracking.
 - Email-change requests require a server-verified user and a recent email authentication method in the verified token, not a user-wide last-login timestamp. Set Supabase secure email change so both relevant addresses must confirm. Personalised pages/actions are private and no-store; public catalogue reads remain read-only and independent of identity.
 - Development Next.js uses the session cookie `__next_hmr_refresh_hash__` for reloads. It is listed separately in the notice. Next fonts are served locally; there is no browser Google Fonts request.
 - Optional analytics must remain absent/off until its later phase supplies consent controls, an exact storage inventory and withdrawal/network checks. Keep account IDs and personal data out of analytics, and do not join analytics to progress records.
@@ -45,3 +45,9 @@ The public notice is `/privacy`. Footer links lead to the storage inventory and 
 - [Supabase row-level security](https://supabase.com/docs/guides/database/postgres/row-level-security)
 - [Supabase passwordless email](https://supabase.com/docs/guides/auth/auth-email-passwordless)
 - [Supabase production security](https://supabase.com/docs/guides/security/production-checklist)
+
+## Cookie-choice behaviour
+
+`apm-cookie-choice` stores a versioned allow/block selection for 90 days, without an account ID. It is readable by the page, SameSite=Lax, path / and Secure in production. It is retained after rejection solely to respect the browser choice. New sign-in requests and callback exchanges require allow; declining locally signs out and clears app auth cookies, stops middleware refresh and prevents verified account access. Existing account data is kept. Choosing allow later enables sign-in, without automatically creating a session. Preferences apply per browser, not across devices. Browser-level cookie blocking can prevent remembering a choice or signing in.
+
+The user confirmed live magic-link sign-in works on 2026-11-14. Cookie controls were requested ahead of the analytics phase; no analytics provider/events were added. Real iPadOS/Pencil testing and full hosted two-account isolation remain separate manual checks.

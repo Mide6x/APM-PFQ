@@ -1,0 +1,28 @@
+.notice {
+  padding: 18px 24px;
+  border-bottom: 2px solid var(--green);
+  background: var(--paper);
+}
+.inner { width: min(1000px, 100%); margin: 0 auto; }
+.notice h2 { margin-bottom: 8px; font-size: 20px; }
+.notice p { max-width: 780px; margin-bottom: 8px; font-size: 13px; }
+.notice a { font-size: 13px; text-decoration: underline; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 8px; }
+.actions button {
+  min-width: 44px;
+  min-height: 46px;
+  padding: 10px 16px;
+  border: 1px solid var(--green);
+  background: var(--paper);
+  color: var(--green);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.actions button:hover:not(:disabled) { background: var(--green-pale); }
+.actions button:disabled { opacity: .6; cursor: wait; }
+.actions + p:empty { display: none; }
+@media (max-width: 600px) {
+  .actions { flex-direction: column; }
+  .actions button { width: 100%; }
+}

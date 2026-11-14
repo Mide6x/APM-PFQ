@@ -3,6 +3,7 @@
 import { headers, cookies } from "next/headers";
 import { createAuthClient } from "@/lib/auth/server";
 import { authCookieOptions, RETRY_COOKIE_NAME } from "@/lib/auth/cookies";
+import { COOKIE_CHOICE_NAME, parseCookieChoice } from "@/lib/cookie-preferences";
 import {
   safeReturnPath,
   validEmail,
@@ -13,6 +14,10 @@ export async function sendMagicLink(
   _previous: AuthFormState,
   form: FormData,
 ): Promise<AuthFormState> {
+  const store = await cookies();
+  if (parseCookieChoice(store.get(COOKIE_CHOICE_NAME)?.value) !== "allow") {
+    return { status: "error", message: "Allow sign-in cookies in Cookie settings before signing in." };
+  }
   const email = form.get("email");
   if (!validEmail(email))
     return { status: "error", message: "Enter a valid email address." };
@@ -51,7 +56,6 @@ export async function sendMagicLink(
       status: "error",
       message: "Sign-in is being set up. Please try again later.",
     };
-  const store = await cookies();
   const now = Date.now();
   const savedRetry = Number(store.get(RETRY_COOKIE_NAME)?.value);
   const retryAt =

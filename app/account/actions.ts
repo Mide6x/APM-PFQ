@@ -1,9 +1,7 @@
 "use server";
 
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { createAuthClient, getViewer } from "@/lib/auth/server";
-import { authCookieOptions, isOwnedAuthCookie } from "@/lib/auth/cookies";
+import { createAuthClient, getViewer, endDeviceSession } from "@/lib/auth/server";
 import { hasRecentSignIn, validEmail, type AuthFormState } from "@/lib/auth/validation";
 
 export async function changeEmail(_previous: AuthFormState, form: FormData): Promise<AuthFormState> {
@@ -25,13 +23,6 @@ export async function changeEmail(_previous: AuthFormState, form: FormData): Pro
 }
 
 export async function signOut() {
-  const client = await createAuthClient();
-  if (client) {
-    try { await client.auth.signOut({ scope: "local" }); } catch { /* Clear this device even if the provider cannot be reached. */ }
-  }
-  const store = await cookies();
-  store.getAll().forEach(({ name }) => {
-    if (isOwnedAuthCookie(name)) store.set(name, "", authCookieOptions(name, ""));
-  });
+  await endDeviceSession();
   redirect("/");
 }

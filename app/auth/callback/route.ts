@@ -3,8 +3,12 @@ import { cookies } from "next/headers";
 import { createAuthClient } from "@/lib/auth/server";
 import { RETRY_COOKIE_NAME } from "@/lib/auth/cookies";
 import { safeReturnPath } from "@/lib/auth/validation";
+import { COOKIE_CHOICE_NAME, parseCookieChoice } from "@/lib/cookie-preferences";
 
 export async function GET(request: NextRequest) {
+  if (parseCookieChoice((await cookies()).get(COOKIE_CHOICE_NAME)?.value) !== "allow") {
+    return new NextResponse(null, { status: 303, headers: { Location: "/cookies", "Cache-Control": "private, no-store" } });
+  }
   const code = request.nextUrl.searchParams.get("code");
   const next = safeReturnPath(request.nextUrl.searchParams.get("next"));
   const client = await createAuthClient();

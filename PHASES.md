@@ -11,7 +11,7 @@ This revised plan supersedes the earlier phase definitions. Updating this docume
 - Phase 1 local verification is recorded below. The user has now run the hosted Supabase scripts. The project URL and publishable key remain in ignored `.env.local`, and the live API returns all 15 published canonical topics in guide order. Hosted catalogue setup is no longer pending.
 - Revised Phase 2 is working against the hosted catalogue: roadmap-first layout, explicit stops 1–15, per-stop return anchors and previous/next navigation. The subsequent colour correction removes purple in favour of green, yellow and neutral tones.
 - Live public checks return no unpublished modules and reject the Auth admin-users endpoint with HTTP 401. These checks do not inspect every hosted policy or prove future learner ownership. No hosted schema/policy/Auth-setting changes have been made by the agent; the user reports enabling RLS. Current SQL/management access remains unavailable, but is not needed for normal catalogue reads.
-- Phase 3 is implemented locally with magic-link sign-in (latest user preference), verified private sessions, saved place and account email-change requests. Hosted end-to-end verification and production CAPTCHA/SMTP remain pending. Phases 4–7 have not started. Historical results below remain as records of earlier checks.
+- Phase 3 is implemented locally with magic-link sign-in (latest user preference), verified private sessions, saved place and account email-change requests. The user has confirmed production Turnstile and magic-link sign-in work. Hosted two-account isolation, two-device progress checks and production email-delivery limits remain to be verified. Phases 4–7 have not started. Historical results below remain as records of earlier checks.
 
 ## Build on the current repo
 
@@ -115,6 +115,29 @@ Use this as the starting notice and keep it aligned with the actual implementati
 > We use essential cookies to keep you signed in and remember your cookie choice. With your permission, we also use optional analytics to understand how people use the roadmap, lessons and quizzes so we can improve them. You can change your choice in Cookie settings.
 
 Measure a small set of events such as roadmap opens, lesson completions and quiz starts. Keep email, username, Supabase user IDs, answer text and individual scores out of engagement analytics. Use progress records to provide the learner’s requested features and avoid joining them to analytics. Document the actual provider, storage, purpose and retention in the notice. Verify with browser network checks that analytics does not load or send before opt-in, stops on withdrawal and stays off after reload when declined. [ICO guidance on cookies and analytics](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/?search=iss)
+
+# Cookie-controls checkpoint — brought forward at the user's request
+
+The user confirmed live sign-in works, then requested functional cookie choices before lessons. This implements essential-cookie choices only, not Phase 7 analytics. Phase 4 has not started.
+
+## Changed files and working flow
+
+- `app/cookies/{page.tsx,actions.ts}`, `components/cookie-choices.{tsx,module.css}`, `lib/cookie-preferences.ts`, `app/layout.tsx`, `components/site-footer.tsx`: first-visit notice with equally prominent Allow sign-in cookies / Browse without sign-in cookies, dedicated settings, footer entry and 90-day per-browser preference. The choice cookie contains no account identifier.
+- `lib/auth/server.ts`, `app/account/actions.ts`: shared device sign-out clears app auth/PKCE/retry cookies even if the provider cannot be reached. Cookie-choice and unrelated cookies stay. Account and progress records are not deleted.
+- `app/sign-in/{page.tsx,actions.ts}`, `app/auth/callback/route.ts`, `middleware.ts`: new requests/callbacks require an allow choice. Refusal removes the email form and Turnstile, blocks server auth clients/session refresh, and clears lingering auth cookies. Allowing later enables sign-in but never signs in automatically. The requested module is preserved through settings and sign-in. Previously authenticated sessions without a preference are not automatically destroyed; an explicit browse-without choice signs them out.
+- `app/privacy/page.tsx`, `PRIVACY_OPERATIONS.md`, `README.md`: actual preference cookie, retention, withdrawal effects and optional-tracking status. No analytics/marketing provider, identifier or event was added, and allowing essential cookies does not authorise future tracking.
+- `tests/cookie-{preferences,access}.test.mjs`, `tests/{magic-link,turnstile}.test.mjs`: preference validation/persistence, sign-out failure recovery, denied request/callback/access/refresh paths and retained unrelated cookies.
+
+## Checks
+
+- `npm run lint`, `npm run typecheck`, `npm run build`, all 22 Node tests and `git diff --check` pass.
+- Isolated browser fixture through actual Next.js + Supabase SDK: first-visit notice, decline/reload persistence, no form/CAPTCHA while declined, change to allow, PKCE return to the selected module, save place, decline after sign-in, removed auth cookies, denied account access and retained database progress all pass. No real email was sent.
+- Desktop 1280px/phone 390px notice and 320/507/820/1180px settings layouts pass without horizontal overflow and with >=44px choice controls. Tab moves from Allow to Browse without with a visible focus ring; Enter applies the choice. Screenshots reviewed. In the declined fixture browser, local/session storage is empty and resource timing shows no third-party requests.
+- Existing user edits to `app/globals.css` were left untouched and are outside this change.
+
+## Remaining/manual checks
+
+No new credential or migration is needed. After deployment, verify withdrawal/re-enabling in the real signed-in browser and refresh. Real iPadOS Safari/Pencil and hosted two-account isolation remain unverified. Choice is per browser/device and retained 90 days; it does not sync to an account. Optional analytics remains unimplemented and must require its own informed choice if added later.
 
 # Netlify scan correction
 

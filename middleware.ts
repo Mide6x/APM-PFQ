@@ -4,13 +4,22 @@ import {
   AUTH_COOKIE_NAME,
   authCookieOptions,
   isSessionCookie,
+  isOwnedAuthCookie,
 } from "@/lib/auth/cookies";
+import { COOKIE_CHOICE_NAME, parseCookieChoice } from "@/lib/cookie-preferences";
 
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const blocked = parseCookieChoice(request.cookies.get(COOKIE_CHOICE_NAME)?.value) === "block";
+  if (blocked) {
+    request.cookies.getAll().forEach(({ name }) => {
+      if (isOwnedAuthCookie(name)) response.cookies.set(name, "", authCookieOptions(name, ""));
+    });
+  }
   if (
+    !blocked &&
     url &&
     key &&
     request.cookies.getAll().some(({ name }) => isSessionCookie(name))
@@ -50,5 +59,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/modules/:path*", "/sign-in", "/auth/:path*", "/account/:path*"],
+  matcher: ["/", "/modules/:path*", "/sign-in", "/auth/:path*", "/account/:path*", "/cookies"],
 };

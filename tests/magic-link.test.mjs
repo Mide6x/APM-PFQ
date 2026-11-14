@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import { createRequire } from "node:module";
 import ts from "typescript";
+import { COOKIE_CHOICE_NAME, parseCookieChoice } from "../lib/cookie-preferences.ts";
 import { safeReturnPath } from "../lib/auth/validation.ts";
 
 const require = createRequire(import.meta.url);
@@ -10,11 +11,12 @@ const { NextRequest } = require("next/server");
 const source = readFileSync(new URL("../app/auth/callback/route.ts", import.meta.url), "utf8");
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;
 
-function callback(client) {
+function callback(client, cookieChoice = "v1-allow") {
   const deleted = [];
   const exports = {};
   const dependencies = {
-    "next/headers": { cookies: async () => ({ delete: (name) => deleted.push(name) }) },
+    "next/headers": { cookies: async () => ({ get: () => ({ value: cookieChoice }), delete: (name) => deleted.push(name) }) },
+    "@/lib/cookie-preferences": { COOKIE_CHOICE_NAME, parseCookieChoice },
     "@/lib/auth/server": { createAuthClient: async () => client },
     "@/lib/auth/cookies": { RETRY_COOKIE_NAME: "apm-sign-in-retry-at" },
     "@/lib/auth/validation": { safeReturnPath },
@@ -50,5 +52,14 @@ test("missing, expired, reused, wrong-browser and unverified links fail closed",
     const handler = callback({ auth });
     assert.equal((await handler.get("?code=fixture&next=%2Faccount")).headers.get("location"), failure);
     assert.deepEqual(handler.deleted, []);
+  }
+});
+
+test("cookie refusal and an unset choice block callback exchange", async () => {
+  for (const choice of ["v1-block", undefined, "invalid"]) {
+    let called = false;
+    const h = callback({ auth: { exchangeCodeForSession: async () => { called = true; } } }, choice === undefined ? "" : choice);
+    assert.equal((await h.get("?code=fixture")).headers.get("location"), "/cookies");
+    assert.equal(called, false);
   }
 });

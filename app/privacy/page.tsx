@@ -76,22 +76,24 @@ export default function PrivacyPage() {
 
         <section id="cookies">
           <h2>Cookies and storage settings</h2>
-          <p>Sign-in uses strictly necessary cookies to keep your session and limit repeated sign-in requests. No optional analytics or marketing is installed, and no cookie-choice record is stored. Public topics remain browsable without signing in, and all features work without optional tracking.</p>
+          <p>Sign-in uses strictly necessary cookies to keep your session and limit repeated sign-in requests. No optional analytics or marketing is installed. Use Cookie settings to allow essential sign-in cookies or browse without them. Declining signs out this device and blocks sign-in and progress sync until changed; public topics remain browsable. All features work without optional tracking.</p>
+          <p><Link href="/cookies" className="text-link">Open Cookie settings</Link></p>
           <table className={styles.storageTable}>
             <caption>Storage used by this release</caption>
             <thead><tr><th scope="col">Category</th><th scope="col">Current use</th></tr></thead>
             <tbody>
+              <tr><th scope="row">Essential choice</th><td><code>apm-cookie-choice</code> stores only your allow/browse-without selection for 90 days. It has no account identifier and is readable by this website to display the notice. It uses SameSite=Lax, path / and Secure on production HTTPS. It stays when sign-in cookies are declined so we can remember and respect that choice.</td></tr>
               <tr><th scope="row">Essential session</th><td><code>apm-auth</code> and numbered chunks such as <code>apm-auth.0</code> hold the session. Maximum browser lifetime is seven days, renewed when the session is refreshed; the provider also checks token expiry. These are HttpOnly, SameSite=Lax and Secure on production HTTPS. Signing out removes this device’s session cookies.</td></tr>
               <tr><th scope="row">Essential sign-in flow</th><td><code>apm-auth-code-verifier</code>, <code>apm-auth-flows-code-verifier</code> and per-request <code>apm-auth-flow-…-code-verifier</code> cookies support the authentication exchange for up to ten minutes. <code>apm-sign-in-retry-at</code> limits resends for up to 60 seconds and contains a retry timestamp, not your email or code. Signing out removes these app cookies too.</td></tr>
               <tr><th scope="row">Essential abuse prevention</th><td>Cloudflare Turnstile loads only on sign-in when configured. Its challenge response stays in page memory until submitted or expired. This app does not enable Turnstile pre-clearance cookies. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare’s privacy notice</a> for its processing.</td></tr>
-              <tr><th scope="row">Functional and preferences</th><td>No preference cookies, local storage or session storage. Search uses temporary page memory; your explicitly saved place is held in the private database instead.</td></tr>
+              <tr><th scope="row">Functional and preferences</th><td>Apart from the essential cookie-choice record above, no preference cookies, local storage or session storage. Search uses temporary page memory; your explicitly saved place is held in the private database instead.</td></tr>
               <tr><th scope="row">Analytics</th><td>Not installed. No analytics cookies, identifiers or engagement events.</td></tr>
               <tr><th scope="row">Marketing</th><td>Not installed. No advertising cookies or tracking pixels.</td></tr>
               <tr><th scope="row">Local development only</th><td>Next.js may set the session cookie <code>__next_hmr_refresh_hash__</code> for hot reload. It is not a production learner-tracking cookie.</td></tr>
             </tbody>
           </table>
           <p>Fonts are served by this website; your browser does not contact Google Fonts to display them. External APM links and email links leave this website when you choose them. Other services have their own privacy and storage practices.</p>
-          <p>There is no optional cookie setting to turn on today. If optional tracking is introduced, it will stay off until you choose it and you will be able to withdraw that choice. See the <a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/">ICO’s storage and cookie guidance</a>.</p>
+          <p>There are no optional cookies to enable today. Allowing sign-in cookies does not consent to future analytics. If optional tracking is introduced, it will stay off until you make a separate informed choice, and you will be able to withdraw it. See the <a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/">ICO’s storage and cookie guidance</a>.</p>
         </section>
 
         <section id="providers">
