@@ -146,8 +146,7 @@ export default async function Home() {
 
           <section className="resource-strip" id="resources">
             <div className="resource-symbol"><Sparkles size={18} /></div>
-            <div className="resource-copy"><span>YOUR TOOLKIT</span><strong>Learn the language of projects.</strong><p>Glossary, study tips and exam guidance—all in one place.</p></div>
-            <a href="#resources" className="resource-link">Explore resources <ArrowRight size={16} /></a>
+            <div className="resource-copy"><span>YOUR TOOLKIT</span><strong>Learn the language of projects.</strong><p>Study resources are coming soon.</p></div>
             <span className="resource-decoration" aria-hidden="true"><Check size={18} /></span>
           </section>
           <footer className="page-footer"><span>APM PROJECT FUNDAMENTALS QUALIFICATION</span><span><Clock3 size={13} /> A little progress adds up.</span></footer>
