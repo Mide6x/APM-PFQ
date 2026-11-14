@@ -11,6 +11,8 @@ export type StudyModule = {
   duration_minutes: number;
   lesson_count: number;
   sort_order: number;
+  guide_section: string | null;
+  guide_page: number | null;
 };
 
 export type ModuleResult =
@@ -41,12 +43,13 @@ export async function getStudyModules(): Promise<ModuleResult> {
   try {
     const { data, error } = await supabase
       .from("study_modules")
-      .select("id, slug, title, category, summary, duration_minutes, lesson_count, sort_order")
+      .select("id, slug, title, category, summary, duration_minutes, lesson_count, sort_order, guide_section, guide_page")
       .eq("published", true)
-      .order("sort_order", { ascending: true });
+      .not("guide_section", "is", null)
+      .order("guide_section", { ascending: true });
 
     if (error) {
-      console.error("Could not load study modules:", error.message);
+      console.error("Could not load study modules.");
       return {
         status: "error",
         modules: [],
@@ -56,8 +59,8 @@ export async function getStudyModules(): Promise<ModuleResult> {
 
     if (!data?.length) return { status: "empty", modules: [] };
     return { status: "ready", modules: data as StudyModule[] };
-  } catch (error) {
-    console.error("Could not connect to Supabase:", error);
+  } catch {
+    console.error("Could not connect to Supabase.");
     return {
       status: "error",
       modules: [],
@@ -73,18 +76,18 @@ export async function getStudyModule(slug: string): Promise<ModuleDetailResult> 
   try {
     const { data, error } = await supabase
       .from("study_modules")
-      .select("id, slug, title, category, summary, duration_minutes, lesson_count, sort_order")
+      .select("id, slug, title, category, summary, duration_minutes, lesson_count, sort_order, guide_section, guide_page")
       .eq("published", true)
       .eq("slug", slug)
       .maybeSingle();
 
     if (error) {
-      console.error("Could not load study module:", error.message);
+      console.error("Could not load study module.");
       return { status: "error" };
     }
     return data ? { status: "ready", module: data as StudyModule } : { status: "missing" };
-  } catch (error) {
-    console.error("Could not connect to Supabase:", error);
+  } catch {
+    console.error("Could not connect to Supabase.");
     return { status: "error" };
   }
 }
