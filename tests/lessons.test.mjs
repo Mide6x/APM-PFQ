@@ -8,7 +8,7 @@ import { lessons, getLesson, getStudyPosition } from "../lib/lessons.ts";
 const questions=JSON.parse(readFileSync(new URL('../content/checkpoints.json',import.meta.url),'utf8'));
 test("all 15 guide stops have original lessons and repeatable, validated checkpoint seeds",()=>{
  assert.equal(lessons.length,15);
- assert.equal(questions.length,45);
+ assert.equal(questions.length,75);
  execFileSync(process.execPath,['scripts/generate-phase4-seed.mjs','--check'],{cwd:new URL('..',import.meta.url),stdio:'pipe'});
  assert.equal(getLesson('2.1.1').guidePages,'8–9');
  assert.ok(getLesson('2.1.1').syllabusRefs.includes('1.6'));
@@ -32,7 +32,7 @@ test("pre-submit questions contain only stable IDs, stems and choices",()=>{
  const exports={};
  new Function('require','exports',code)((name)=>name==='server-only'?{}:{default:questions},exports);
  const data=exports.getCheckpointQuestions('project-environment');
- assert.equal(data.length,3);
+ assert.equal(data.length,5);
  for(const q of data){assert.deepEqual(Object.keys(q).sort(),['choices','id','stem']);assert.equal(q.choices.length,4);for(const c of q.choices)assert.deepEqual(Object.keys(c).sort(),['id','text']);}
  assert.equal(JSON.stringify(data).includes(questions[0].explanation),false);
  assert.equal(exports.getCheckpointQuestions('not-published').length,0);

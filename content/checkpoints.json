@@ -2,7 +2,7 @@
   {
     "id": "project-environment-01",
     "lessonId": "project-environment",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "1.6",
     "stem": "Before selecting a booking-system supplier, the manager reviews population changes, legislation and technology trends. What is the main purpose of this PESTLE analysis?",
     "choices": [
@@ -29,7 +29,7 @@
   {
     "id": "project-environment-02",
     "lessonId": "project-environment",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "1.2",
     "stem": "Which activity is most clearly business as usual after a digital ticketing project has closed?",
     "choices": [
@@ -56,7 +56,7 @@
   {
     "id": "project-environment-03",
     "lessonId": "project-environment",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "1.6",
     "stem": "A new statutory accessibility requirement changes what an online service must provide. Which PESTLE heading is most directly involved?",
     "choices": [
@@ -81,9 +81,63 @@
     "explanation": "A statutory requirement is a legal influence. Implementing it may involve technology or cost, but those consequences do not change the primary source of the requirement. Environmental here concerns ecological or natural-world factors."
   },
   {
+    "id": "project-environment-04",
+    "lessonId": "project-environment",
+    "version": 2,
+    "syllabusRef": "1.1",
+    "stem": "Which feature most clearly makes replacing a museum’s admission system a project?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "It has a defined change to deliver through a temporary effort."
+      },
+      {
+        "id": "b",
+        "text": "It must continue unchanged for the life of the museum."
+      },
+      {
+        "id": "c",
+        "text": "It consists only of the daily ticket-selling operation."
+      },
+      {
+        "id": "d",
+        "text": "It has no identifiable objective or endpoint."
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A project is a temporary effort directed at a particular change. The resulting service may continue for years, but operating it is different from creating it. An indefinite routine without a defined change is not the distinguishing feature."
+  },
+  {
+    "id": "project-environment-05",
+    "lessonId": "project-environment",
+    "version": 2,
+    "syllabusRef": "1.6",
+    "stem": "A PESTLE workshop identifies a technology that may soon make the preferred system obsolete. What is the most useful follow-up?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "File the heading and assume the scan has removed the risk."
+      },
+      {
+        "id": "b",
+        "text": "Automatically stop every activity without assessing the impact."
+      },
+      {
+        "id": "c",
+        "text": "Ignore the finding because the team cannot control external technology."
+      },
+      {
+        "id": "d",
+        "text": "Investigate the evidence, assign a follow-up owner and reconsider options or assumptions."
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "The scan should inform action and decisions. A factor can matter even when the team cannot control its cause. Neither filing it nor automatically stopping the project is a proportionate substitute for assessing its effect."
+  },
+  {
     "id": "project-programme-portfolio-01",
     "lessonId": "project-programme-portfolio",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "1.5",
     "stem": "An organisation coordinates a new appointment website, staff training and redesigned telephone processes to reduce missed appointments. Which description best fits that joint coordination?",
     "choices": [
@@ -110,7 +164,7 @@
   {
     "id": "project-programme-portfolio-02",
     "lessonId": "project-programme-portfolio",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "1.5",
     "stem": "There is insufficient specialist capacity to fund every proposed change initiative. Which decision most clearly belongs at portfolio level?",
     "choices": [
@@ -137,7 +191,7 @@
   {
     "id": "project-programme-portfolio-03",
     "lessonId": "project-programme-portfolio",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "1.4",
     "stem": "Why does an organisation use project management rather than simply letting each specialist complete their own tasks independently?",
     "choices": [
@@ -162,9 +216,63 @@
     "explanation": "Project management integrates specialist contributions and handles constraints, dependencies and uncertainty. Specialists still provide expertise, and trade-offs still need decisions. A schedule supports this work but does not replace it."
   },
   {
+    "id": "project-programme-portfolio-04",
+    "lessonId": "project-programme-portfolio",
+    "version": 2,
+    "syllabusRef": "1.3",
+    "stem": "Which activity best illustrates project management rather than only specialist delivery?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "A technician configures a single scanner."
+      },
+      {
+        "id": "b",
+        "text": "The manager integrates scope, schedule, resources and risk decisions towards the agreed change."
+      },
+      {
+        "id": "c",
+        "text": "An operator sells the same tickets each day after handover."
+      },
+      {
+        "id": "d",
+        "text": "A designer selects a colour without reference to any agreed objective."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Project management coordinates and controls contributions towards objectives. Configuring a component is specialist work, and routine ticket sales are operations. An isolated preference without an objective does not describe integrated management."
+  },
+  {
+    "id": "project-programme-portfolio-05",
+    "lessonId": "project-programme-portfolio",
+    "version": 2,
+    "syllabusRef": "1.5",
+    "stem": "Why might portfolio leaders decide not to start a well-defined project that has a credible business case?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "A credible case guarantees priority over every other investment."
+      },
+      {
+        "id": "b",
+        "text": "Portfolio management is limited to checking individual task durations."
+      },
+      {
+        "id": "c",
+        "text": "Another mix of investments better fits strategy, risk appetite and available capacity."
+      },
+      {
+        "id": "d",
+        "text": "A project can only belong to a portfolio if it shares a supplier with every other component."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "A sound individual case does not settle the organisation-wide priority decision. Portfolio leaders balance the overall investment mix and constraints. Common suppliers and individual task durations do not define portfolio selection."
+  },
+  {
     "id": "project-roles-01",
     "lessonId": "project-roles",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "3.1",
     "stem": "Who remains accountable for the investment justification and continuing business case?",
     "choices": [
@@ -191,7 +299,7 @@
   {
     "id": "project-roles-02",
     "lessonId": "project-roles",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "3.1",
     "stem": "A delay could exceed the project manager’s delegated budget authority. What is the most appropriate next step?",
     "choices": [
@@ -218,7 +326,7 @@
   {
     "id": "project-roles-03",
     "lessonId": "project-roles",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "3.1",
     "stem": "Where a product owner role is used, which contribution is most characteristic?",
     "choices": [
@@ -243,9 +351,63 @@
     "explanation": "A product owner represents product priorities and helps clarify what should be developed. Portfolio decisions, governance and independent assurance are different responsibilities and do not automatically belong to that role."
   },
   {
+    "id": "project-roles-04",
+    "lessonId": "project-roles",
+    "version": 2,
+    "syllabusRef": "3.1",
+    "stem": "A team needs help applying consistent reporting standards across several projects. Which role is particularly suited to providing that support?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "The project management office, within its agreed remit."
+      },
+      {
+        "id": "b",
+        "text": "Every end user acting as the investment sponsor."
+      },
+      {
+        "id": "c",
+        "text": "The product owner replacing all governance bodies."
+      },
+      {
+        "id": "d",
+        "text": "The customer receiving no delivery information."
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A PMO can support common methods, reporting and coordination. Its authority depends on the organisation. Users and product owners have other contributions and do not automatically replace sponsorship or governance."
+  },
+  {
+    "id": "project-roles-05",
+    "lessonId": "project-roles",
+    "version": 2,
+    "syllabusRef": "3.1",
+    "stem": "Why should end users be involved in defining needs and testing an output?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "They must personally authorise all project expenditure."
+      },
+      {
+        "id": "b",
+        "text": "Their involvement removes the sponsor’s accountability."
+      },
+      {
+        "id": "c",
+        "text": "They can guarantee there will be no operational change."
+      },
+      {
+        "id": "d",
+        "text": "They provide evidence about practical use and whether the output meets real needs."
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "Users contribute operational knowledge and acceptance evidence. That does not automatically give them every spending authority, transfer sponsorship or remove the work of adoption."
+  },
+  {
     "id": "business-case-01",
     "lessonId": "business-case",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.4",
     "stem": "A large forecast increase in support costs appears after project approval. How should the business case be treated?",
     "choices": [
@@ -272,7 +434,7 @@
   {
     "id": "business-case-02",
     "lessonId": "business-case",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.7",
     "stem": "Which statement describes a benefit rather than merely a delivered output?",
     "choices": [
@@ -299,7 +461,7 @@
   {
     "id": "business-case-03",
     "lessonId": "business-case",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.5",
     "stem": "Which pairing correctly describes responsibility for a business case?",
     "choices": [
@@ -324,9 +486,63 @@
     "explanation": "The sponsor is accountable for justification while the manager helps maintain delivery estimates, risks and change impacts. Users, suppliers and the PMO can contribute evidence without automatically becoming the accountable investment owner."
   },
   {
+    "id": "business-case-04",
+    "lessonId": "business-case",
+    "version": 2,
+    "syllabusRef": "4.7",
+    "stem": "Which arrangement makes a promised benefit most manageable after handover?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "An attractive benefit statement without any measurement."
+      },
+      {
+        "id": "b",
+        "text": "A named operational owner, baseline, measure and agreed review point."
+      },
+      {
+        "id": "c",
+        "text": "A rule that project installation counts as proof of every benefit."
+      },
+      {
+        "id": "d",
+        "text": "A decision to wait until closure before defining the intended improvement."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Benefits need ownership and a way to compare actual improvements with expectations. Delivering an output supports value but does not prove it; vague claims and late definition make evaluation difficult."
+  },
+  {
+    "id": "business-case-05",
+    "lessonId": "business-case",
+    "version": 2,
+    "syllabusRef": "4.4",
+    "stem": "Why should a business case compare the preferred proposal with doing nothing or doing the minimum?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "To prove that doing nothing is always the best option."
+      },
+      {
+        "id": "b",
+        "text": "To eliminate all assumptions about costs and benefits."
+      },
+      {
+        "id": "c",
+        "text": "To make the incremental costs, benefits and risks of investment visible."
+      },
+      {
+        "id": "d",
+        "text": "To avoid involving the sponsor in the investment decision."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "A baseline alternative helps decision-makers judge what changes because of the proposed investment. It does not predetermine the answer, remove uncertainty or replace the sponsor’s decision-making responsibility."
+  },
+  {
     "id": "project-life-cycles-01",
     "lessonId": "project-life-cycles",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "2.3",
     "stem": "A project uses sequential construction approvals but develops its booking interface through repeated user-feedback cycles. Which life-cycle description fits best?",
     "choices": [
@@ -353,7 +569,7 @@
   {
     "id": "project-life-cycles-02",
     "lessonId": "project-life-cycles",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "2.4",
     "stem": "Why would an extended life-cycle view continue beyond handover of equipment?",
     "choices": [
@@ -380,7 +596,7 @@
   {
     "id": "project-life-cycles-03",
     "lessonId": "project-life-cycles",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "2.2",
     "stem": "Which feature best characterises iterative delivery?",
     "choices": [
@@ -405,9 +621,63 @@
     "explanation": "Iteration creates opportunities to learn and refine through repeated cycles. It still needs direction, constraints and governance. Delaying all feedback or assuming fixed detailed requirements defeats that learning purpose."
   },
   {
+    "id": "project-life-cycles-04",
+    "lessonId": "project-life-cycles",
+    "version": 2,
+    "syllabusRef": "2.1",
+    "stem": "In a typical linear life cycle, which sequence places the main phases in a sensible order?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Concept, definition, deployment, transition."
+      },
+      {
+        "id": "b",
+        "text": "Transition, deployment, definition, concept."
+      },
+      {
+        "id": "c",
+        "text": "Deployment, transition, concept, definition."
+      },
+      {
+        "id": "d",
+        "text": "Definition, benefits review, concept, initial investigation."
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "The idea and viability are explored before detailed definition, followed by carrying out the work and transition into use. Organisations may use different phase labels, but reversing those purposes is not a credible linear sequence."
+  },
+  {
+    "id": "project-life-cycles-05",
+    "lessonId": "project-life-cycles",
+    "version": 2,
+    "syllabusRef": "2.2",
+    "stem": "An iterative team reviews working outputs with users at the end of each cycle. What should happen to useful feedback?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Discard it because planning happened once at the beginning."
+      },
+      {
+        "id": "b",
+        "text": "Implement every suggestion immediately without considering priorities or constraints."
+      },
+      {
+        "id": "c",
+        "text": "Treat it as proof that governance is unnecessary."
+      },
+      {
+        "id": "d",
+        "text": "Use it to refine understanding and prioritise later work within agreed controls."
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "Iteration creates opportunities to learn and adapt. Feedback should inform choices within the project’s constraints and authority, rather than being ignored or automatically implemented without assessment."
+  },
+  {
     "id": "project-management-plan-01",
     "lessonId": "project-management-plan",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.1",
     "stem": "A manager replaces the approved deployment baseline with the latest forecast without authorisation. What is the main problem?",
     "choices": [
@@ -434,7 +704,7 @@
   {
     "id": "project-management-plan-02",
     "lessonId": "project-management-plan",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.3",
     "stem": "Which group should contribute to or be considered when developing a project management plan?",
     "choices": [
@@ -461,7 +731,7 @@
   {
     "id": "project-management-plan-03",
     "lessonId": "project-management-plan",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.10",
     "stem": "What is the best reason to agree measurable success criteria near the start?",
     "choices": [
@@ -486,9 +756,63 @@
     "explanation": "Success criteria clarify how results will be judged and support decisions and acceptance. They do not guarantee success, remove uncertainty or eliminate legitimate differences between stakeholders."
   },
   {
+    "id": "project-management-plan-04",
+    "lessonId": "project-management-plan",
+    "version": 2,
+    "syllabusRef": "4.2",
+    "stem": "How can a deployment baseline differ between linear and iterative delivery?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "An iterative project cannot have any agreed budget or delivery constraints."
+      },
+      {
+        "id": "b",
+        "text": "Linear work may baseline detailed scope early; iterative work may refine near-term detail within agreed overall constraints."
+      },
+      {
+        "id": "c",
+        "text": "A linear baseline must be rewritten silently whenever a forecast changes."
+      },
+      {
+        "id": "d",
+        "text": "Iterative work guarantees that every requirement is completely defined before the first cycle."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The level and timing of detail can differ while authorised control references still exist. Iteration does not mean no control, and linear delivery does not justify unapproved changes to the baseline."
+  },
+  {
+    "id": "project-management-plan-05",
+    "lessonId": "project-management-plan",
+    "version": 2,
+    "syllabusRef": "4.10",
+    "stem": "At handover, what is a particularly useful role for previously agreed success criteria?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Replace all evidence with the manager’s personal confidence."
+      },
+      {
+        "id": "b",
+        "text": "Make future benefit measurement impossible."
+      },
+      {
+        "id": "c",
+        "text": "Provide a shared basis for judging acceptance and outstanding conditions."
+      },
+      {
+        "id": "d",
+        "text": "Guarantee that operational adoption has already delivered every long-term benefit."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Success criteria help the relevant parties judge whether conditions for acceptance have been met. They require evidence and do not automatically demonstrate benefits that arise only after sustained use."
+  },
+  {
     "id": "stakeholder-engagement-01",
     "lessonId": "stakeholder-engagement",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.6",
     "stem": "An affected passenger group has little formal influence over a station redesign. What should the manager do?",
     "choices": [
@@ -515,7 +839,7 @@
   {
     "id": "stakeholder-engagement-02",
     "lessonId": "stakeholder-engagement",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.6",
     "stem": "Which output shows that stakeholder analysis has informed action?",
     "choices": [
@@ -542,7 +866,7 @@
   {
     "id": "stakeholder-engagement-03",
     "lessonId": "stakeholder-engagement",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.6",
     "stem": "A new operator joins the project and changes how the service will be used. What should happen to the stakeholder analysis?",
     "choices": [
@@ -567,9 +891,63 @@
     "explanation": "Changed stakeholders and operating assumptions are reasons to revisit analysis. Preserving an obsolete list is not useful control, and cost estimating does not replace engagement planning."
   },
   {
+    "id": "stakeholder-engagement-04",
+    "lessonId": "stakeholder-engagement",
+    "version": 2,
+    "syllabusRef": "4.6",
+    "stem": "A highly influential stakeholder appears supportive, but the manager has not checked what matters to them. What is the best response?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Explore their interests and expectations before deciding the engagement approach."
+      },
+      {
+        "id": "b",
+        "text": "Assume influence proves permanent support."
+      },
+      {
+        "id": "c",
+        "text": "Remove them from analysis because supportive people need no attention."
+      },
+      {
+        "id": "d",
+        "text": "Send them every technical record without asking about their information needs."
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Analysis should be based on understanding rather than an unchecked label. Interests and support can change. Neither exclusion nor indiscriminate distribution is a reliable engagement strategy."
+  },
+  {
+    "id": "stakeholder-engagement-05",
+    "lessonId": "stakeholder-engagement",
+    "version": 2,
+    "syllabusRef": "4.6",
+    "stem": "An engagement plan contains workshops and named owners. How should the manager judge whether it is working?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Count invitations only and assume understanding follows."
+      },
+      {
+        "id": "b",
+        "text": "Stop listening once the initial plan is approved."
+      },
+      {
+        "id": "c",
+        "text": "Measure success solely by how many documents were distributed."
+      },
+      {
+        "id": "d",
+        "text": "Check whether relevant concerns are understood, addressed and reflected in decisions or agreed actions."
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "Engagement aims at a useful working relationship and informed decisions. Attendance and distribution figures can be supporting evidence, but they do not establish that concerns or commitments have been handled."
+  },
+  {
     "id": "communication-01",
     "lessonId": "communication",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "9.1",
     "stem": "A report was sent successfully, but its recipient misunderstood the decision required. What best explains the gap?",
     "choices": [
@@ -596,7 +974,7 @@
   {
     "id": "communication-02",
     "lessonId": "communication",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "9.4",
     "stem": "Which information belongs in a communication-plan entry?",
     "choices": [
@@ -623,7 +1001,7 @@
   {
     "id": "communication-03",
     "lessonId": "communication",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "9.3",
     "stem": "Which is a realistic disadvantage of virtual communication for a dispersed team?",
     "choices": [
@@ -648,9 +1026,63 @@
     "explanation": "Virtual methods can improve reach while introducing access, timing and interpretation challenges. They can share documents and reduce travel, but no channel guarantees understanding."
   },
   {
+    "id": "communication-04",
+    "lessonId": "communication",
+    "version": 2,
+    "syllabusRef": "9.2",
+    "stem": "For a sensitive disagreement requiring rapid clarification, what is a useful advantage of a face-to-face discussion?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "It automatically creates a complete written audit trail."
+      },
+      {
+        "id": "b",
+        "text": "It allows immediate questions and richer non-verbal feedback."
+      },
+      {
+        "id": "c",
+        "text": "It guarantees that everyone can attend without travel."
+      },
+      {
+        "id": "d",
+        "text": "It removes the need to record agreed decisions."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Direct discussion can support clarification and interpretation through immediate and non-verbal feedback. It may still require travel, and important decisions should be recorded rather than assuming the conversation is its own complete record."
+  },
+  {
+    "id": "communication-05",
+    "lessonId": "communication",
+    "version": 2,
+    "syllabusRef": "9.5",
+    "stem": "How does an agreed communication plan benefit the project manager?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "It makes all stakeholders require identical information."
+      },
+      {
+        "id": "b",
+        "text": "It prevents communication needs changing during delivery."
+      },
+      {
+        "id": "c",
+        "text": "It clarifies responsibilities and timing, reducing gaps and unnecessary duplication."
+      },
+      {
+        "id": "d",
+        "text": "It guarantees that a sent message has been understood without feedback."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "A plan coordinates who communicates what, when and how. It needs review as audiences and needs change, and it does not replace checking understanding or tailoring information."
+  },
+  {
     "id": "risk-and-issue-management-01",
     "lessonId": "risk-and-issue-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "7.7",
     "stem": "A component has already arrived damaged and needs a decision about replacement. How should this situation primarily be handled?",
     "choices": [
@@ -677,7 +1109,7 @@
   {
     "id": "risk-and-issue-management-02",
     "lessonId": "risk-and-issue-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "7.4",
     "stem": "Which risk-register entry is most useful for management?",
     "choices": [
@@ -704,7 +1136,7 @@
   {
     "id": "risk-and-issue-management-03",
     "lessonId": "risk-and-issue-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "7.1",
     "stem": "Which statement correctly describes a project risk?",
     "choices": [
@@ -729,9 +1161,63 @@
     "explanation": "Risk includes uncertain threats and opportunities. A current problem is an issue, and invoices or handover dates are not defining characteristics of risk."
   },
   {
+    "id": "risk-and-issue-management-04",
+    "lessonId": "risk-and-issue-management",
+    "version": 2,
+    "syllabusRef": "7.3",
+    "stem": "After identifying and analysing a significant threat, what is an appropriate next step?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Agree a proportionate response, an owner and arrangements to monitor the remaining exposure."
+      },
+      {
+        "id": "b",
+        "text": "Close the entry automatically because it has been analysed."
+      },
+      {
+        "id": "c",
+        "text": "Keep only the risk title and remove ownership."
+      },
+      {
+        "id": "d",
+        "text": "Assume that every threat must be transferred to a supplier."
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Analysis should lead to a response decision and follow-up. Exposure can remain after action, so monitoring and eventual justified closure matter. No single response is appropriate for every threat."
+  },
+  {
+    "id": "risk-and-issue-management-05",
+    "lessonId": "risk-and-issue-management",
+    "version": 2,
+    "syllabusRef": "7.8",
+    "stem": "A current issue has an owner and an agreed solution. When should it normally be closed?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "As soon as the issue is first described."
+      },
+      {
+        "id": "b",
+        "text": "Immediately after someone proposes an untested idea."
+      },
+      {
+        "id": "c",
+        "text": "Whenever the reporting colour needs to improve."
+      },
+      {
+        "id": "d",
+        "text": "After the response is implemented and resolution and remaining effects are checked."
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "Closure should be supported by evidence that the issue has been resolved and relevant consequences addressed. A proposal, a description or a cosmetic status change is not enough."
+  },
+  {
     "id": "quality-management-01",
     "lessonId": "quality-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "8.4",
     "stem": "Measuring a delivered bench against its agreed dimensions is primarily which activity?",
     "choices": [
@@ -758,7 +1244,7 @@
   {
     "id": "quality-management-02",
     "lessonId": "quality-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "8.5",
     "stem": "Reviewing whether suitable inspection procedures exist and are being followed primarily provides what?",
     "choices": [
@@ -785,7 +1271,7 @@
   {
     "id": "quality-management-03",
     "lessonId": "quality-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "8.6",
     "stem": "Which review is best suited to checking whether the expected queue-time improvement actually occurred after adoption?",
     "choices": [
@@ -810,9 +1296,63 @@
     "explanation": "A benefit review examines realised improvement in use. Version checks, supplier selection and daily coordination can support delivery but do not establish whether that benefit occurred."
   },
   {
+    "id": "quality-management-04",
+    "lessonId": "quality-management",
+    "version": 2,
+    "syllabusRef": "8.1",
+    "stem": "A costly display case fails an agreed accessibility requirement. Which conclusion best reflects project quality?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "High cost automatically proves high quality."
+      },
+      {
+        "id": "b",
+        "text": "The output does not fulfil an agreed requirement, despite its cost."
+      },
+      {
+        "id": "c",
+        "text": "Quality concerns only visual appearance."
+      },
+      {
+        "id": "d",
+        "text": "The acceptance requirement should be deleted without an authorised decision."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Quality concerns fulfilment of requirements. Price and appearance may be relevant considerations, but they do not override an agreed requirement or authorise changing acceptance criteria."
+  },
+  {
+    "id": "quality-management-05",
+    "lessonId": "quality-management",
+    "version": 2,
+    "syllabusRef": "8.3",
+    "stem": "Which activity belongs primarily to quality planning?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Re-labelling a failed test result as successful."
+      },
+      {
+        "id": "b",
+        "text": "Waiting until handover before asking users what is acceptable."
+      },
+      {
+        "id": "c",
+        "text": "Agreeing requirements, acceptance criteria, responsibilities and how evidence will be obtained."
+      },
+      {
+        "id": "d",
+        "text": "Assuming an independent audit can replace all acceptance tests."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Planning defines how the required quality will be achieved and demonstrated. It should influence work early. Neither changing labels nor postponing criteria provides credible evidence of fulfilment."
+  },
+  {
     "id": "scope-management-01",
     "lessonId": "scope-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "5.3",
     "stem": "Which pairing correctly distinguishes a PBS from a WBS?",
     "choices": [
@@ -839,7 +1379,7 @@
   {
     "id": "scope-management-02",
     "lessonId": "scope-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "5.6",
     "stem": "A drawing is labelled with a new version number. What must still be established before an associated scope change is implemented?",
     "choices": [
@@ -866,7 +1406,7 @@
   {
     "id": "scope-management-03",
     "lessonId": "scope-management",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "5.4",
     "stem": "What is the purpose of a responsibility assignment matrix?",
     "choices": [
@@ -891,9 +1431,63 @@
     "explanation": "A RAM links responsibilities to work. Scheduling calculations and investment justification are different purposes. Nine team-role contributions come from Belbin and are not a required staffing number or a RAM rule."
   },
   {
+    "id": "scope-management-04",
+    "lessonId": "scope-management",
+    "version": 2,
+    "syllabusRef": "5.7",
+    "stem": "A stakeholder requests an additional display case after the scope baseline is agreed. What should happen before implementation?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Record the request, assess impacts and obtain the authorised decision."
+      },
+      {
+        "id": "b",
+        "text": "Implement it first because any requested addition must be beneficial."
+      },
+      {
+        "id": "c",
+        "text": "Approve it merely by changing the drawing filename."
+      },
+      {
+        "id": "d",
+        "text": "Delete the original baseline so there is no variance."
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Change control evaluates the request against agreed objectives and constraints before the appropriate authority decides. A filename change is not approval, and removing the reference conceals the effect rather than managing it."
+  },
+  {
+    "id": "scope-management-05",
+    "lessonId": "scope-management",
+    "version": 2,
+    "syllabusRef": "5.8",
+    "stem": "Which set describes typical configuration management activities?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Supplier selection, invoicing and recruitment only."
+      },
+      {
+        "id": "b",
+        "text": "Unrecorded changes followed by deletion of every earlier record."
+      },
+      {
+        "id": "c",
+        "text": "Taking user feedback without identifying any controlled item."
+      },
+      {
+        "id": "d",
+        "text": "Planning, identification, control, status accounting and verification/audit."
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "Configuration management maintains reliable identities, versions, approved characteristics and status. Its activities support traceability and checking that the correct approved configuration is being used."
+  },
+  {
     "id": "estimating-01",
     "lessonId": "estimating",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.8",
     "stem": "An installer uses a validated rate of £18 per metre for a 240-metre cable-installation element. Which method and amount are correct?",
     "choices": [
@@ -920,7 +1514,7 @@
   {
     "id": "estimating-02",
     "lessonId": "estimating",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.9",
     "stem": "What does the estimating funnel illustrate?",
     "choices": [
@@ -947,7 +1541,7 @@
   {
     "id": "estimating-03",
     "lessonId": "estimating",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.8",
     "stem": "A manager adjusts the total cost of a comparable completed project to estimate a new one. Which method is being used?",
     "choices": [
@@ -972,9 +1566,63 @@
     "explanation": "Analogous estimating draws on comparable previous work and adjusts for differences. The other activities concern scheduling, configuration records or output checks, rather than estimating from a comparable total."
   },
   {
+    "id": "estimating-04",
+    "lessonId": "estimating",
+    "version": 2,
+    "syllabusRef": "4.8",
+    "stem": "The team estimates survey, installation, testing and handover work packages, then combines those estimates. Which method is this?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Analogous estimating from one previous project total."
+      },
+      {
+        "id": "b",
+        "text": "Analytical estimating from the component work."
+      },
+      {
+        "id": "c",
+        "text": "A project audit."
+      },
+      {
+        "id": "d",
+        "text": "Resource smoothing."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Analytical estimating builds from a breakdown of the work. It still needs care over inclusions, shared work and double-counting. Audits and resource optimisation have different purposes."
+  },
+  {
+    "id": "estimating-05",
+    "lessonId": "estimating",
+    "version": 2,
+    "syllabusRef": "4.9",
+    "stem": "An early estimate is presented as £10,000.00 even though important access conditions are unknown. What is the main concern?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "An estimate can never contain a currency amount."
+      },
+      {
+        "id": "b",
+        "text": "More decimal places guarantee a narrower uncertainty range."
+      },
+      {
+        "id": "c",
+        "text": "The apparent precision may conceal weak information and untested assumptions."
+      },
+      {
+        "id": "d",
+        "text": "The estimate must automatically equal the final authorised budget."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Precision of presentation is different from confidence in the forecast. Explain assumptions and a reasonable range. Better evidence, rather than extra decimal places, supports a narrower estimating funnel."
+  },
+  {
     "id": "resource-scheduling-01",
     "lessonId": "resource-scheduling",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "6.2",
     "stem": "A takes 2 days. B takes 3 days after A. C takes 4 days after A. D takes 2 days after both B and C. With sufficient resources, what is the earliest finish?",
     "choices": [
@@ -1001,7 +1649,7 @@
   {
     "id": "resource-scheduling-02",
     "lessonId": "resource-scheduling",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "6.5",
     "stem": "An activity is moved only within available float to reduce a resource peak while retaining the finish date. What is this?",
     "choices": [
@@ -1028,7 +1676,7 @@
   {
     "id": "resource-scheduling-03",
     "lessonId": "resource-scheduling",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "6.6",
     "stem": "Which description best fits a procurement strategy?",
     "choices": [
@@ -1053,9 +1701,63 @@
     "explanation": "Procurement strategy addresses how the required supply will be obtained and managed. Price is one consideration, alongside capability, contracts, timing and risk. A printing sequence or unrelated list is not a sourcing approach."
   },
   {
+    "id": "resource-scheduling-04",
+    "lessonId": "resource-scheduling",
+    "version": 2,
+    "syllabusRef": "6.3",
+    "stem": "What distinguishes a milestone from a normal schedule activity?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "It marks a significant event or decision and has zero duration."
+      },
+      {
+        "id": "b",
+        "text": "It is always the longest task in the project."
+      },
+      {
+        "id": "c",
+        "text": "It contains every resource assignment."
+      },
+      {
+        "id": "d",
+        "text": "It automatically replaces a decision gate’s evidence."
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A milestone marks an event, not a duration of work. Work leading to it still needs activities, resources and evidence; the marker itself does not perform or authorise that work."
+  },
+  {
+    "id": "resource-scheduling-05",
+    "lessonId": "resource-scheduling",
+    "version": 2,
+    "syllabusRef": "6.4",
+    "stem": "A team commits to a two-week delivery timebox. What does timeboxing mean?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Every idea must be delivered even if the period needs indefinite extension."
+      },
+      {
+        "id": "b",
+        "text": "No priorities or acceptance conditions may be discussed."
+      },
+      {
+        "id": "c",
+        "text": "All project phases must last exactly two weeks."
+      },
+      {
+        "id": "d",
+        "text": "Work is managed within a fixed period, with scope or priority handled through agreed rules."
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "The fixed period is the defining feature. Teams still need prioritisation, acceptance and controls. Extending every timebox until everything is finished removes the constraint the technique is intended to provide."
+  },
+  {
     "id": "information-and-reporting-01",
     "lessonId": "information-and-reporting",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.11",
     "stem": "Eight of ten units are installed, but only four have passed acceptance tests. What should a useful report do?",
     "choices": [
@@ -1082,7 +1784,7 @@
   {
     "id": "information-and-reporting-02",
     "lessonId": "information-and-reporting",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.11",
     "stem": "What most improves a sponsor report about a forecast delay?",
     "choices": [
@@ -1109,7 +1811,7 @@
   {
     "id": "information-and-reporting-03",
     "lessonId": "information-and-reporting",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "4.11",
     "stem": "Why should reports distinguish actual performance from forecast performance?",
     "choices": [
@@ -1134,9 +1836,63 @@
     "explanation": "Actuals describe performance to a reporting date; forecasts describe the expected future position. Both are useful and neither removes the need to examine assumptions, remaining work or the authorised baseline."
   },
   {
+    "id": "information-and-reporting-04",
+    "lessonId": "information-and-reporting",
+    "version": 2,
+    "syllabusRef": "4.11",
+    "stem": "A project is currently under budget but has substantial uncompleted work and a known fault. Which reporting approach best supports control?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Report only the favourable current expenditure figure."
+      },
+      {
+        "id": "b",
+        "text": "Show actuals, remaining-work assumptions and an updated forecast against the authorised baseline."
+      },
+      {
+        "id": "c",
+        "text": "Assume that underspending now guarantees a favourable final cost."
+      },
+      {
+        "id": "d",
+        "text": "Remove the fault from the report until its replacement cost is certain."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Actual expenditure alone does not establish the expected final position. Forecast assumptions and known issues help stakeholders understand consequences and decisions. Uncertainty should be explained rather than concealed."
+  },
+  {
+    "id": "information-and-reporting-05",
+    "lessonId": "information-and-reporting",
+    "version": 2,
+    "syllabusRef": "4.11",
+    "stem": "Why should a progress report name the owner and due date of an agreed corrective action?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "To make the baseline unnecessary."
+      },
+      {
+        "id": "b",
+        "text": "To guarantee that no further issue will arise."
+      },
+      {
+        "id": "c",
+        "text": "To make follow-up and accountability clear."
+      },
+      {
+        "id": "d",
+        "text": "To ensure that every stakeholder receives all confidential detail."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "An action needs responsibility and a review point to be managed. This supports follow-up but does not eliminate uncertainty, replace the baseline or justify excessive distribution of sensitive information."
+  },
+  {
     "id": "leadership-and-teamwork-01",
     "lessonId": "leadership-and-teamwork",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "10.4",
     "stem": "A new team needs orientation and clearer roles, and members are beginning to disagree about ways of working. How can Tuckman’s model help?",
     "choices": [
@@ -1163,7 +1919,7 @@
   {
     "id": "leadership-and-teamwork-02",
     "lessonId": "leadership-and-teamwork",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "10.4",
     "stem": "A team has strong ideas but little attention to organising implementation and checking detail. What is a useful Belbin-based response?",
     "choices": [
@@ -1190,7 +1946,7 @@
   {
     "id": "leadership-and-teamwork-03",
     "lessonId": "leadership-and-teamwork",
-    "version": 1,
+    "version": 2,
     "syllabusRef": "10.2",
     "stem": "Which manager behaviour is most likely to support team performance?",
     "choices": [
@@ -1213,5 +1969,59 @@
     ],
     "correctOptionId": "a",
     "explanation": "Clear direction, constructive feedback and practical support help people contribute. Suppressing concerns or relying solely on authority can hide problems. Leadership should respond to the situation and team needs."
+  },
+  {
+    "id": "leadership-and-teamwork-04",
+    "lessonId": "leadership-and-teamwork",
+    "version": 2,
+    "syllabusRef": "10.1",
+    "stem": "Which statement best describes leadership in a project?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Creating direction and helping people work towards a shared purpose."
+      },
+      {
+        "id": "b",
+        "text": "Using formal authority as a substitute for every conversation."
+      },
+      {
+        "id": "c",
+        "text": "Performing all specialist work personally."
+      },
+      {
+        "id": "d",
+        "text": "Removing the need for agreed responsibilities."
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Leadership concerns direction and influence as well as support for collective work. Authority alone does not create commitment, and a leader does not need to replace specialist contributions or role clarity."
+  },
+  {
+    "id": "leadership-and-teamwork-05",
+    "lessonId": "leadership-and-teamwork",
+    "version": 2,
+    "syllabusRef": "10.3",
+    "stem": "A dispersed team has conflicting functional priorities and uneven experience. What is an appropriate leadership response?",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Assume that one message and one support style will suit everyone."
+      },
+      {
+        "id": "b",
+        "text": "Treat every request for help as evidence of poor commitment."
+      },
+      {
+        "id": "c",
+        "text": "Ignore functional conflicts because the team is temporary."
+      },
+      {
+        "id": "d",
+        "text": "Clarify priorities and responsibilities, adapt support and agree workable communication."
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "These are practical team-development challenges. Clear agreements, listening and proportionate support can improve collaboration; ignoring differences or discouraging concerns can hide problems."
   }
 ]

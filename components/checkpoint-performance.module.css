@@ -1,0 +1,13 @@
+.panel { margin-block: 2rem; padding: clamp(1rem, 3vw, 2rem); background: var(--paper); border: 1px solid var(--line); border-radius: 12px; scroll-margin-top: 2rem; }
+.panel h3 { margin-top: 0; }
+.list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.list li { display: grid; grid-template-columns: minmax(0, 1fr) 10rem 7rem; gap: 1rem; align-items: start; padding: 1rem 0; border-top: 1px solid var(--line); }
+.list a { display: inline-flex; align-items: center; min-height: 44px; color: var(--green); font-weight: 600; }
+.list a:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+.list p { margin: .25rem 0; font-size: .9rem; }
+.list span, .list strong { display: block; }
+.list span { font-size: .85rem; margin-bottom: .35rem; }
+@media (max-width: 640px) {
+  .list li { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .list li > div:first-child { grid-column: 1 / -1; }
+}

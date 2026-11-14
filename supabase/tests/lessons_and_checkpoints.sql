@@ -3,7 +3,7 @@ begin;
 insert into auth.users(id) values('40000000-0000-0000-0000-000000000001'),('40000000-0000-0000-0000-000000000002');
 do $$ begin
   assert (select count(*)=15 from public.study_lessons), 'Need all 15 published lessons';
-  assert (select count(*)=45 from apm_private.checkpoint_questions), 'Need 45 original questions';
+  assert (select count(*)=75 from apm_private.checkpoint_questions), 'Need 75 original questions';
 end $$;
 set local role authenticated;
 select set_config('request.jwt.claim.sub','40000000-0000-0000-0000-000000000001',true);
@@ -13,17 +13,17 @@ do $$
 declare result jsonb;
 begin
   assert (select count(*)=1 from public.lesson_completions), 'Repeated completion must be idempotent';
-  result:=public.submit_lesson_checkpoint('project-environment',1,'50000000-0000-4000-8000-000000000001','{"project-environment-01":"b","project-environment-02":"d","project-environment-03":"a"}');
-  assert result->>'score'='3' and result->>'total'='3' and result->>'saved'='true', 'Trusted grading must save correct score';
-  result:=public.submit_lesson_checkpoint('project-environment',1,'50000000-0000-4000-8000-000000000001','{"project-environment-01":"a","project-environment-02":"a","project-environment-03":"b"}');
-  assert result->>'score'='3', 'Duplicate submission must not replace original result';
-  result:=public.submit_lesson_checkpoint('project-environment',1,'50000000-0000-4000-8000-000000000002','{"project-environment-01":"a","project-environment-02":"a","project-environment-03":"b"}');
+  result:=public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000001','{"project-environment-01":"b","project-environment-02":"d","project-environment-03":"a","project-environment-04":"a","project-environment-05":"d"}');
+  assert result->>'score'='5' and result->>'total'='5' and result->>'saved'='true', 'Trusted grading must save correct score';
+  result:=public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000001','{"project-environment-01":"a","project-environment-02":"a","project-environment-03":"b","project-environment-04":"b","project-environment-05":"a"}');
+  assert result->>'score'='5', 'Duplicate submission must not replace original result';
+  result:=public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000002','{"project-environment-01":"a","project-environment-02":"a","project-environment-03":"b","project-environment-04":"b","project-environment-05":"a"}');
   assert result->>'score'='0', 'A fresh attempt must grade its own choices';
   assert (select count(*)=2 from public.checkpoint_attempts), 'Attempts must retain history';
   assert (select count(*)=1 from public.lesson_completions), 'Checkpoint scores cannot change completion';
   begin
     insert into public.checkpoint_attempts(id,user_id,lesson_id,content_version,answers,score,total,feedback)
-    values('50000000-0000-4000-8000-000000000099',auth.uid(),'project-environment',1,'{}',3,3,'[]');
+    values('50000000-0000-4000-8000-000000000099',auth.uid(),'project-environment',2,'{}',3,3,'[]');
     raise exception 'Forged score write was allowed';
   exception when insufficient_privilege then null; end;
   begin
@@ -44,21 +44,21 @@ do $$ begin
     raise exception 'Completion owner spoof was allowed';
   exception when insufficient_privilege then null; end;
   begin
-    perform public.submit_lesson_checkpoint('project-environment',1,'50000000-0000-4000-8000-000000000001','{}');
+    perform public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000001','{}');
     raise exception 'Other learner reused an owned attempt';
   exception when raise_exception then
     if sqlerrm<>'Invalid attempt' then raise; end if;
   end;
   begin
-    perform public.submit_lesson_checkpoint('project-environment',1,'50000000-0000-4000-8000-000000000003','{"project-environment-01":"z","project-environment-02":"d","project-environment-03":"a"}');
+    perform public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000003','{"project-environment-01":"z","project-environment-02":"d","project-environment-03":"a","project-environment-04":"a","project-environment-05":"d"}');
     raise exception 'Invalid option was allowed';
   exception when raise_exception then if sqlerrm<>'Invalid choice' then raise; end if; end;
   begin
-    perform public.submit_lesson_checkpoint('project-environment',1,'50000000-0000-4000-8000-000000000003','{"project-environment-01":"b"}');
+    perform public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000003','{"project-environment-01":"b"}');
     raise exception 'Incomplete answers were allowed';
   exception when raise_exception then if sqlerrm<>'Answer every checkpoint question' then raise; end if; end;
   begin
-    perform public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000003','{}');
+    perform public.submit_lesson_checkpoint('project-environment',99,'50000000-0000-4000-8000-000000000003','{}');
     raise exception 'Wrong content version was allowed';
   exception when raise_exception then if sqlerrm<>'Checkpoint updated; reload' then raise; end if; end;
 end $$;
@@ -67,8 +67,8 @@ select set_config('request.jwt.claim.sub','',true);
 do $$
 declare result jsonb;
 begin
-  result:=public.submit_lesson_checkpoint('project-environment',1,'50000000-0000-4000-8000-000000000004','{"project-environment-01":"b","project-environment-02":"d","project-environment-03":"a"}');
-  assert result->>'score'='3' and result->>'saved'='false', 'Guest grading must not invent a saved attempt';
+  result:=public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000004','{"project-environment-01":"b","project-environment-02":"d","project-environment-03":"a","project-environment-04":"a","project-environment-05":"d"}');
+  assert result->>'score'='5' and result->>'saved'='false', 'Guest grading must not invent a saved attempt';
   begin perform * from public.lesson_completions; raise exception 'Guest completion read'; exception when insufficient_privilege then null; end;
   begin perform * from public.checkpoint_attempts; raise exception 'Guest attempt read'; exception when insufficient_privilege then null; end;
   begin perform * from apm_private.checkpoint_questions; raise exception 'Guest answer read'; exception when insufficient_privilege then null; end;
@@ -85,7 +85,7 @@ do $$ begin
     raise exception 'Unpublished completion allowed';
   exception when insufficient_privilege then null; end;
   begin
-    perform public.submit_lesson_checkpoint('project-environment',1,'50000000-0000-4000-8000-000000000004','{}');
+    perform public.submit_lesson_checkpoint('project-environment',2,'50000000-0000-4000-8000-000000000004','{}');
     raise exception 'Unpublished checkpoint allowed';
   exception when raise_exception then if sqlerrm<>'Checkpoint unavailable' then raise; end if; end;
 end $$;

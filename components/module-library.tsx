@@ -33,7 +33,7 @@ export function ModuleLibrary({ modules, completedSections = [], nextSection = n
                       const stop = getStopNumber(module.guide_section);
                       const completed = completedSections.includes(module.guide_section ?? "");
                       const recommended = module.guide_section === nextSection;
-                      const status = completed ? "Completed" : recommended ? (signedIn ? "Next incomplete stop" : "Start here") : "";
+                      const status = completed ? "Completed" : recommended ? (signedIn ? "Up next" : "Start here") : "";
                       return (
                         <li key={module.id} id={`stop-${stop}`} value={stop ?? undefined} tabIndex={-1} className={`study-milestone${completed ? " completed-milestone" : recommended ? " next-milestone" : ""}`}>
                           <Link className="milestone-link" href={`/modules/${module.slug}`} aria-label={`Open stop ${stop}: ${module.title}${status ? `. ${status}` : ""}`}>
