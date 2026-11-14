@@ -354,7 +354,7 @@ p {
   font-size: 13px;
   font-weight: 700;
 }
-.first-milestone .stop-number {
+.next-milestone .stop-number {
   background: var(--yellow);
 }
 .milestone-reference {
@@ -797,3 +797,6 @@ p {
     transform: none;
   }
 }
+
+.completed-milestone .stop-number { color: var(--paper); background: var(--green); }
+.completed-milestone .milestone-link { background: var(--green-pale); }

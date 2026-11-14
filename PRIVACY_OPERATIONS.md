@@ -2,7 +2,7 @@
 
 Controller: APM Study. Privacy contact: adewoleolumide05@gmail.com.
 
-The public notice is `/privacy`. Footer links lead to the storage inventory and rights requests. Requests open the visitor's email composer; the site does not submit or store request forms. Phase 3 adds magic-link sign-in, private saved place and verified email-change requests. Names, lesson completion and quiz attempts are not collected in this phase. This document and notice do not establish GDPR compliance without the operational steps below.
+The public notice is `/privacy`. Footer links lead to the storage inventory and rights requests. Requests open the visitor's email composer; the site does not submit or store request forms. Phase 3 adds magic-link sign-in, private saved place and verified email-change requests. Phase 4 adds explicit lesson completions and checkpoint attempts; names are not collected. This document and notice do not establish GDPR compliance without the operational steps below.
 
 ## Handle rights requests
 
@@ -51,3 +51,7 @@ The public notice is `/privacy`. Footer links lead to the storage inventory and 
 `apm-cookie-choice` stores a versioned allow/block selection for 90 days, without an account ID. It is readable by the page, SameSite=Lax, path / and Secure in production. It is retained after rejection solely to respect the browser choice. New sign-in requests and callback exchanges require allow; declining locally signs out and clears app auth cookies, stops middleware refresh and prevents verified account access. Existing account data is kept. Choosing allow later enables sign-in, without automatically creating a session. Preferences apply per browser, not across devices. Browser-level cookie blocking can prevent remembering a choice or signing in.
 
 The user confirmed live magic-link sign-in works on 2026-11-14. Cookie controls were requested ahead of the analytics phase; no analytics provider/events were added. Real iPadOS/Pencil testing and full hosted two-account isolation remain separate manual checks.
+
+## Phase 4 records
+
+`lesson_completions` stores the verified account ID, lesson ID and first completion time (one row per learner/lesson). `checkpoint_attempts` stores the verified account ID, content version, selected option IDs, score, total, feedback snapshot and time. Guests receive grading but no persisted attempt. Checkpoint grades are computed by a restricted Postgres function; browser clients cannot write their own scores. These are requested learning features, not engagement analytics. Public database reads cannot read answer keys; learners can read only their own completions and graded attempts. Account deletion cascades these records; verify provider backup/log retention separately. A local two-learner RLS and deletion-cascade test is included. Hosted account-isolation and the legal/controller/provider decisions already listed remain manual checks.

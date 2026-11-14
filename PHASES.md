@@ -11,7 +11,7 @@ This revised plan supersedes the earlier phase definitions. Updating this docume
 - Phase 1 local verification is recorded below. The user has now run the hosted Supabase scripts. The project URL and publishable key remain in ignored `.env.local`, and the live API returns all 15 published canonical topics in guide order. Hosted catalogue setup is no longer pending.
 - Revised Phase 2 is working against the hosted catalogue: roadmap-first layout, explicit stops 1–15, per-stop return anchors and previous/next navigation. The subsequent colour correction removes purple in favour of green, yellow and neutral tones.
 - Live public checks return no unpublished modules and reject the Auth admin-users endpoint with HTTP 401. These checks do not inspect every hosted policy or prove future learner ownership. No hosted schema/policy/Auth-setting changes have been made by the agent; the user reports enabling RLS. Current SQL/management access remains unavailable, but is not needed for normal catalogue reads.
-- Phase 3 is implemented locally with magic-link sign-in (latest user preference), verified private sessions, saved place and account email-change requests. The user has confirmed production Turnstile and magic-link sign-in work. Hosted two-account isolation, two-device progress checks and production email-delivery limits remain to be verified. Phases 4–7 have not started. Historical results below remain as records of earlier checks.
+- Phase 3 is implemented locally with magic-link sign-in (latest user preference), verified private sessions, saved place and account email-change requests. The user has confirmed production Turnstile and magic-link sign-in work. Hosted two-account isolation, two-device progress checks and production email-delivery limits remain to be verified. Phase 4 now has a checkpoint below; Phases 5–7 remain unimplemented except the separately requested essential-cookie controls. Historical results below remain as records of earlier checks.
 
 ## Build on the current repo
 
@@ -115,6 +115,34 @@ Use this as the starting notice and keep it aligned with the actual implementati
 > We use essential cookies to keep you signed in and remember your cookie choice. With your permission, we also use optional analytics to understand how people use the roadmap, lessons and quizzes so we can improve them. You can change your choice in Cookie settings.
 
 Measure a small set of events such as roadmap opens, lesson completions and quiz starts. Keep email, username, Supabase user IDs, answer text and individual scores out of engagement analytics. Use progress records to provide the learner’s requested features and avoid joining them to analytics. Document the actual provider, storage, purpose and retention in the notice. Verify with browser network checks that analytics does not load or send before opt-in, stops on withdrawal and stays off after reload when declined. [ICO guidance on cookies and analytics](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/?search=iss)
+
+# Phase 4 checkpoint — lessons, explicit completion and checkpoint practice
+
+Started after inspecting a clean working tree and the Phase 3/cookie-control results. Live sign-in had been confirmed by the user. Outstanding controller/provider/privacy operations and hosted two-account checks were carried forward; no compliance certification is claimed. Phase 5 has not started.
+
+## Changed files
+
+- `content/lessons.json`, `content/checkpoints.json`, `content/COVERAGE.md`: 15 original lessons and 45 original four-choice checkpoint questions. Stop 1 covers project/BAU context and PESTLE with guide pages 8–9 and syllabus 1.6. Every stop has goals, explanations, a worked example and a recall prompt. Original PBS/WBS and dependency-path illustrations support the scope and scheduling lessons.
+- `lib/lessons.ts`, `lib/checkpoints.ts`, `lib/checkpoint-types.ts`, `components/{lesson,checkpoint}.tsx`, `components/lesson.module.css`, `app/modules/[slug]/{page.tsx,actions.ts}`: published lesson rendering, explicit completion, guest/signed-in checkpoint feedback, fresh attempts and latest saved score. Existing URLs, metadata, back anchors, previous/next links and saved place remain useful. No passing score is required for completion.
+- `lib/progress.ts`, `lib/supabase.ts`, `app/page.tsx`, `components/module-library.tsx`, `app/globals.css`: actual saved completion, green completed stops, yellow next incomplete stop, accessible status labels and guide-ordered Continue studying. Search does not renumber/reorder stops. Publication/version checks prevent displaying unavailable lesson content.
+- `supabase/migrations/004_lessons_and_checkpoints.sql`, `supabase/seed_phase4.sql`, `scripts/generate-phase4-seed.mjs`: repeatable metadata/content setup that preserves catalogue IDs, slugs, edited text and publication choices. Completion has one owner/lesson row. Attempts are immutable to browser writes; a restricted Postgres function grades stable choice IDs against a non-public answer table and derives the learner from auth context. Guests receive feedback without records. Attempt-ID reuse returns the original saved result and cannot cross ownership.
+- `tests/{lessons,lesson-actions}.test.mjs`, `supabase/tests/lessons_and_checkpoints.sql`: content/coverage/DTO, ordering, action validation, grading, ownership, duplicate handling, publication and deletion checks. `supabase/PHASE4_SETUP.md`, README and privacy/operations docs describe the actual new records and remaining checks.
+
+## Working learner flow
+
+Open any published stop, study and reveal its recall answer, then explicitly mark it complete. Guests are returned through sign-in to that lesson. Completion survives reload and is independent of checkpoint scores. The roadmap recommends the next incomplete published stop. Each stop has three original checkpoint questions, feedback explaining the answer and common mistakes, and a fresh attempt. Signed-in results are recorded and the latest result appears on return; guest results are clearly not saved. Declining sign-in cookies still allows reading and guest practice.
+
+## Checks passed
+
+- `npm run lint`, `npm run typecheck`, `npm run build`, all 28 Node tests, generated-seed/coverage consistency and `git diff --check`. No dependency or app credential was added.
+- The coverage map assigns all 59 current handbook outcomes to lessons and separately lists gaps in checkpoint practice. These short checkpoints do not constitute full exam coverage or an exam-ready question bank.
+- Migration and seed applied twice in disposable local PostgreSQL. SQL checks pass for two learners, one completion per lesson, trusted scores, repeated attempt IDs, independent retry history, score-write denial, private keys, guest non-persistence, unpublished content denial and account-deletion cascades. Tests are scoped to disposable fixture identities and roll back.
+- Browser tests use actual Next.js/Supabase SDK requests with a local identity adapter and real PostgreSQL: guest feedback/retry, no pre-submit keys, sign-in return, completion/reload, saved grading/reload, actual green/yellow roadmap state, same-account second-browser restore and another account's isolation pass. All 15 routes render lessons/checkpoints; all fit 320px. Desktop/phone/tablet layouts, recall Enter, radio arrow/Tab navigation, focus indicators and screen-reader progress labels pass. Screenshots reviewed.
+- Production client chunks contain none of the 45 authored checkpoint explanations. Anonymous hosted API reads of completions and attempts are denied, and the private answer schema is inaccessible. All 15 hosted version-1 lessons match this batch; all 15 hosted guest checkpoints correctly grade their 45 choices with `saved=false`.
+
+## Remaining/manual checks
+
+The hosted metadata/grader are present, so no new credential is currently needed by the app. This agent did not apply hosted DDL and cannot inspect all hosted policies using the public key. Verify completion/retry history with two real signed-in accounts and the same account on a second physical device after deployment. Local fixture checks establish the supplied policies, not every hosted policy. Physical iPadOS/Pencil, broader independent content review, provider contracts/transfers, retention and rights/breach operations remain manual checks. Account deletion is still the documented verified manual process; guest attempts are not retroactively saved after sign-in. Question-bank prerequisites/imports and mocks remain later phases.
 
 # Cookie-controls checkpoint — brought forward at the user's request
 

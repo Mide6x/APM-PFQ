@@ -63,7 +63,7 @@ export default function PrivacyPage() {
 
         <section id="information">
           <h2>What this version collects</h2>
-          <p>You can browse without an account. Magic-link sign-in stores your email and a private account identifier with Supabase. If you choose Save my place, we store your selected topic and when it was saved so you can resume on another device. We do not ask for a name or public username. Lesson completion and saved quiz attempts are not available yet.</p>
+          <p>You can browse without an account. Magic-link sign-in stores your email and a private account identifier with Supabase. If you choose Save my place, we store your selected topic and when it was saved. Marking a lesson complete stores its lesson identifier and completion time. Signed-in checkpoint submissions store your selected option identifiers, score, content version, feedback and attempt time so you can review results and continue across devices. Guest checkpoints are graded without saving an attempt. We do not ask for a name or public username.</p>
           <dl className={styles.dataList}>
             <div><dt>Browsing the study hub</dt><dd>Your browser sends your IP address, browser information and requested page to the web server. The hosting provider may keep operational and security logs. The app server reads the public study catalogue from Supabase; the browser does not query Supabase directly for it.</dd></div>
             <div><dt>Searching topics</dt><dd>Your search stays in the page’s memory. It is not submitted to our server or saved to persistent browser storage. A full page navigation resets it.</dd></div>
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
             <div><dt>Contacting us</dt><dd>If you email us, we receive your email address, any name you provide, your message and its attachments in our Gmail inbox. Share only what is needed for your request.</dd></div>
           </dl>
           <h3>Why we use information</h3>
-          <p>We use your account information to provide the sign-in and saved-place service you request. Our legitimate interests are to deliver public study pages, prevent abuse and reply to ordinary correspondence. We handle legal data-rights requests to meet our legal obligations. We do not sell personal information, run advertising or analytics, or make automated decisions with legal or similarly significant effects about you.</p>
+          <p>We use your account information to provide the sign-in, saved-place, completion and checkpoint-history services you request. Our legitimate interests are to deliver public study pages, prevent abuse and reply to ordinary correspondence. We handle legal data-rights requests to meet our legal obligations. We do not sell personal information, run advertising or analytics, or make automated decisions with legal or similarly significant effects about you.</p>
         </section>
 
         <section id="cookies">
@@ -99,7 +99,7 @@ export default function PrivacyPage() {
         <section id="providers">
           <h2>Providers and retention</h2>
           <p>We use <a href="https://supabase.com/privacy">Supabase</a> for authentication, the study database and the project’s sign-in email delivery, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> for sign-in security verification when configured, and <a href="https://policies.google.com/privacy">Google’s Gmail</a> for correspondence. Information is shared only as needed to operate these services, handle your request or meet legal requirements.</p>
-          <p>Account details and your saved place are retained while your account remains open. You can request deletion; after identity verification, deleting the Supabase account also removes its saved-place record. Provider backup and log retention must be confirmed for the deployment. Our retention policy for privacy-request correspondence is up to 12 months after a request is closed, unless a legal dispute or legal obligation requires longer retention.</p>
+          <p>Account details, your saved place, lesson completions and checkpoint attempts are retained while your account remains open. You can request deletion; after identity verification, deleting the Supabase account also removes its saved-place, completion and checkpoint records. Provider backup and log retention must be confirmed for the deployment. Our retention policy for privacy-request correspondence is up to 12 months after a request is closed, unless a legal dispute or legal obligation requires longer retention.</p>
           <p>Netlify hosts the production website at apmprep.netlify.app. The deployment region and access-log retention have not yet been confirmed. These details, processor arrangements and any safeguards for transfers outside the UK or EEA must be documented before public account registration opens. We do not claim that all provider processing stays in the UK or EEA.</p>
         </section>
 
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
         <section id="account-changes">
           <h2>Changing account details</h2>
           <p>Open <Link href="/account">Your account</Link> to request an email change. A recent magic-link sign-in is required, and the change is not complete until the email confirmation process succeeds. No display name is collected. To correct other information you have shared with APM Study, use <a href="#requests">Correct or change my details</a> above.</p>
-          <p>Export and deletion requests are handled through the privacy contact after proportionate identity verification. Signing out clears this device’s session but does not delete your account or saved place.</p>
+          <p>Export and deletion requests are handled through the privacy contact after proportionate identity verification. Signing out clears this device’s session but does not delete your account, saved place, completions or checkpoint history.</p>
         </section>
 
         <section id="complaints">

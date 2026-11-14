@@ -1,0 +1,36 @@
+.lesson section { margin-top: 32px; }
+.lesson h2 { font-size: 24px; }
+.lesson li { margin-bottom: 10px; }
+.references { color: var(--muted); font-size: 13px; margin: 20px 0; }
+.example { padding: 24px; border-left: 3px solid var(--green); background: var(--green-pale); }
+.example dl { margin: 22px 0; }
+.example dl > div { margin: 16px 0; }
+.example dt { margin-bottom: 4px; font-weight: 600; }
+.example dd { margin: 0; }
+.example figure { margin: 20px 0; }
+.example pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 13px; }
+.example figcaption { color: var(--muted); font-size: 12px; }
+.recall { padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.recall summary { min-height: 44px; padding: 10px 0; color: var(--green); cursor: pointer; font-weight: 600; }
+.recall summary:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+.completion, .checkpoint { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 46px; padding: 10px 16px; border: 1px solid var(--green); background: var(--green); color: var(--paper); font: inherit; cursor: pointer; }
+.button:disabled { opacity: .6; cursor: wait; }
+.quiz fieldset { min-width: 0; margin: 24px 0; padding: 18px; border: 1px solid var(--line); }
+.quiz legend { max-width: 100%; padding: 0 6px; font-weight: 600; overflow-wrap: anywhere; }
+.choice { display: flex; align-items: flex-start; gap: 12px; min-height: 44px; padding: 10px 0; cursor: pointer; }
+.choice input { flex: 0 0 22px; min-width: 22px; width: 22px; min-height: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--green); }
+.choice:has(input:checked) { background: var(--green-pale); }
+.choice:focus-within { outline: 2px solid var(--green); outline-offset: 3px; }
+.feedback { padding-left: 24px; }
+.feedback > li { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.feedback h4 { margin-top: 0; font-size: 17px; }
+.correct { color: var(--green); }
+.incorrect { color: var(--error); }
+.result { padding: 18px 0; }
+@media (max-width: 600px) {
+  .lesson h2 { font-size: 21px; }
+  .example { padding: 18px 14px; }
+  .quiz fieldset { padding: 12px; }
+  .choice { font-size: 14px; }
+}

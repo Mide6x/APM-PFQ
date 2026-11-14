@@ -63,3 +63,7 @@ Guide section numbers (`2.1.1`–`2.3.4`) and pages describe physical reading or
 Netlify builds read the public Turnstile site key from `netlify.toml`. Keep the matching secret in Supabase Auth CAPTCHA settings. The widget must allow `apmprep.netlify.app`; see the hosted setup guide for callback URLs and validation.
 
 Cookie controls: first-visit choices and `/cookies` let learners allow essential sign-in cookies or browse without them. Declining clears this device’s session and blocks new sign-in/sync until changed, while public study pages remain open. The selection is remembered for 90 days. No optional analytics/marketing is installed or implicitly authorised.
+
+Phase 4 publishes one original lesson and a three-question checkpoint at each of the 15 stops. Explicit completion and graded attempts use Supabase; the roadmap recommends the next incomplete published stop. Guests can read and practise without saving; signed-in learners can sync completion and results. A checkpoint score is never a completion requirement.
+
+For fresh/staging setup and ownership checks, see [Phase 4 setup](supabase/PHASE4_SETUP.md). Authoring files and reference-level gaps are listed in [coverage](content/COVERAGE.md). Regenerate the repeatable seed with `node scripts/generate-phase4-seed.mjs`; verify it with `--check`. Run all focused checks with `node --experimental-strip-types --test tests/*.test.mjs`. No dependency or extra app credential was added.

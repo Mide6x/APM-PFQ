@@ -4,13 +4,16 @@ import { ModuleLibrary } from "@/components/module-library";
 import { SiteFooter } from "@/components/site-footer";
 import { studyGroups } from "@/lib/roadmap";
 import { getStudyModules } from "@/lib/supabase";
+import { getStudyPosition } from "@/lib/lessons";
+import { getLearningProgress } from "@/lib/progress";
 import { getSavedPlace } from "@/lib/progress";
 import { AuthNavigation } from "@/components/auth-navigation";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const [result, saved] = await Promise.all([getStudyModules(), getSavedPlace()]);
+  const [result, saved, progress] = await Promise.all([getStudyModules(), getSavedPlace(), getLearningProgress()]);
+  const position = getStudyPosition(result.status === "ready" ? result.modules : [], progress.publishedLessonIds, progress.status === "ready" ? progress.completedLessonIds : []);
 
   return (
     <main className="app-shell" id="overview">
@@ -30,7 +33,10 @@ export default async function Home() {
             <h1 id="roadmap-title">Study roadmap</h1>
             <p>An independent companion to your APM PFQ guide. Follow the green thread, or open any published topic.</p>
           </div>
-          {saved.status === "ready" && <p className="saved-place"><Link className="text-link" href={`/modules/${saved.module.slug}`}>Continue studying: {saved.module.title} <ArrowRight size={16} aria-hidden="true" /></Link></p>}
+          {progress.status === "ready" && position.total > 0 && <p role="status">{position.completedSections.length} of {position.total} published stops complete. {position.total > 0 && !position.next && "All current stops are complete; revisit any lesson or checkpoint below."}</p>}
+          {progress.status === "ready" && position.next && <p className="saved-place"><Link className="text-link" href={`/modules/${position.next.slug}`}>Continue studying: {position.next.title} <ArrowRight size={16} aria-hidden="true" /></Link></p>}
+          {progress.status === "error" && <p role="status">Saved lesson progress is unavailable just now. Published topics remain open to browse.</p>}
+          {saved.status === "ready" && <p><Link className="text-link" href={`/modules/${saved.module.slug}`}>Your saved place: {saved.module.title} <ArrowRight size={16} aria-hidden="true" /></Link></p>}
           {saved.status === "error" && <p role="status">We couldn’t load your saved place. All published topics are still available below.</p>}
           <section className="study-planning" id="study-planning" aria-labelledby="planning-title">
             <h2 id="planning-title">Study planning</h2>
@@ -55,7 +61,7 @@ export default async function Home() {
               <div><strong>No topics have been published yet</strong><p>The roadmap will appear as soon as the study catalogue is ready.</p></div>
             </div>
           )}
-          {result.status === "ready" ? <ModuleLibrary modules={result.modules} /> : (
+          {result.status === "ready" ? <ModuleLibrary modules={result.modules} completedSections={position.completedSections} nextSection={progress.status === "error" ? null : position.next?.guide_section ?? null} signedIn={progress.status === "ready"} /> : (
             <div className="roadmap roadmap-pending">
               {studyGroups.map((group) => (
                 <section className="roadmap-group" id={group.id} key={group.id} aria-labelledby={`${group.id}-title`}>
@@ -71,7 +77,7 @@ export default async function Home() {
           <h2 id="assessment-title">Self-assessment</h2>
           <p>After the study areas, revisit what you have learned with your guide’s self-assessment sections.</p>
           <ol className="assessment-list">
-            <li><h3>3.1 Test questions <span>p. 87</span></h3><p>Topic practice and review. Interactive quizzes are not yet available.</p></li>
+            <li><h3>3.1 Test questions <span>p. 87</span></h3><p>Each published lesson has an end-of-stop checkpoint. Open a topic to practise and review its explanations. The searchable question bank is a later phase.</p></li>
             <li><h3>3.2 Examination practice <span>p. 129</span></h3><p>Prepare for a full practice paper. Timed mocks are not yet available.</p></li>
           </ol>
         </section>

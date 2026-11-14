@@ -27,7 +27,7 @@ export type ModuleDetailResult =
   | { status: "missing" }
   | { status: "ready"; module: StudyModule };
 
-function createSupabase() {
+export function createSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !anonKey) return null;

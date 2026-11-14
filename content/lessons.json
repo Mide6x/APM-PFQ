@@ -1,0 +1,1092 @@
+[
+  {
+    "id": "project-environment",
+    "guideSection": "2.1.1",
+    "title": "Project environment",
+    "guidePages": "8–9",
+    "version": 1,
+    "syllabusRefs": [
+      "1.1",
+      "1.2",
+      "1.6"
+    ],
+    "goals": [
+      "Distinguish a project from ongoing operations.",
+      "Use PESTLE to connect external changes to a project decision."
+    ],
+    "sections": [
+      {
+        "title": "Projects happen in a wider environment",
+        "paragraphs": [
+          "A project is a temporary effort to achieve a particular change. It has a defined purpose and an end, even when its outputs will be used for years. Creating a booking service is a project; answering bookings every day is business as usual. The project should hand over something the operational team can actually use.",
+          "The environment includes the organisation, its stakeholders and the wider world. The team can influence some conditions, but cannot assume that external conditions will remain still."
+        ],
+        "points": []
+      },
+      {
+        "title": "Why a project manager uses PESTLE",
+        "paragraphs": [
+          "PESTLE is a structured scan of external influences. It helps the project manager test assumptions, notice threats and opportunities, and decide what needs further investigation. Findings can change options, estimates, risks, stakeholder engagement and the business case. It does not replace a risk register or predict the future."
+        ],
+        "points": [
+          "Political: government priorities, policy direction and public funding.",
+          "Economic: prices, interest rates, exchange rates and labour-market conditions.",
+          "Social or sociological: demographics, expectations, behaviours and accessibility needs.",
+          "Technological: new tools, infrastructure, compatibility and obsolescence.",
+          "Legal: relevant laws, mandatory standards and contractual obligations.",
+          "Environmental: climate, energy, waste and impacts on the natural world."
+        ]
+      },
+      {
+        "title": "Turn observations into decisions",
+        "paragraphs": [
+          "Record the factor, its possible effect, the evidence needed and who will follow it up. Prioritise the factors that could change an important decision. Revisit the scan at decision gates or after a significant change. Some factors overlap: the purpose is better judgement, not finding one perfect category."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A council is considering replacing paper room bookings with an online service. The project manager runs a PESTLE discussion before committing to a supplier.",
+      "steps": [
+        {
+          "label": "Political",
+          "detail": "A funding programme may change after an election. Ask the sponsor to check whether the investment still has backing."
+        },
+        {
+          "label": "Economic",
+          "detail": "Supplier support prices are rising. Compare whole-life costs rather than only the purchase price."
+        },
+        {
+          "label": "Social",
+          "detail": "Some residents cannot use a smartphone. Include an assisted booking route in the options."
+        },
+        {
+          "label": "Technological",
+          "detail": "The existing identity system may not integrate with the proposed service. Arrange an early compatibility test."
+        },
+        {
+          "label": "Legal",
+          "detail": "A statutory accessibility requirement affects acceptance criteria. Obtain the relevant specialist advice."
+        },
+        {
+          "label": "Environmental",
+          "detail": "Hosting and equipment choices affect energy use and disposal. Include those effects in the option appraisal."
+        }
+      ],
+      "takeaway": "The useful output is a set of informed actions and updated assumptions. A list of six headings with no effect on decisions adds little value.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Why would a project manager revisit PESTLE after the business case has been approved?",
+      "answer": "External assumptions can change. A fresh scan can reveal a threat or opportunity that changes risks, delivery choices or whether the investment remains worthwhile."
+    }
+  },
+  {
+    "id": "project-programme-portfolio",
+    "guideSection": "2.1.2",
+    "title": "Project, programme and portfolio management",
+    "guidePages": "12",
+    "version": 1,
+    "syllabusRefs": [
+      "1.3",
+      "1.4",
+      "1.5"
+    ],
+    "goals": [
+      "Explain the purpose of managing a project.",
+      "Choose whether a decision belongs at project, programme or portfolio level."
+    ],
+    "sections": [
+      {
+        "title": "Managing delivery",
+        "paragraphs": [
+          "Project management brings together planning, organising, monitoring and control to achieve agreed objectives. It coordinates people and resources, manages uncertainty and makes trade-offs visible. A schedule is one tool within that work; producing a schedule alone is not project management.",
+          "The purpose is to deliver the agreed change within its constraints and support the intended value. Scope, quality, time, cost, risk and resources interact. An apparently cheap shortcut can fail if the resulting output is not fit for use."
+        ],
+        "points": []
+      },
+      {
+        "title": "Three levels of coordination",
+        "paragraphs": [],
+        "points": [
+          "A project delivers a defined change through a temporary organisation. Its manager coordinates day-to-day delivery and escalates decisions beyond their authority.",
+          "A programme coordinates related projects and other change activities to achieve outcomes and benefits that need joint management. Dependencies and operational adoption matter as well as individual outputs.",
+          "A portfolio brings investments together so leaders can choose, prioritise and balance work against strategy and capacity. Its components need not all depend on one another."
+        ]
+      },
+      {
+        "title": "Follow the decision",
+        "paragraphs": [
+          "A delivery sequencing problem within one project normally starts with its project manager. A conflict between related change initiatives may need programme coordination. Choosing which investments to fund when the organisation lacks capacity is a portfolio decision. The levels work together; a programme is not simply a large project renamed."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A health organisation wants people to arrange appointments more easily.",
+      "steps": [
+        {
+          "label": "Project",
+          "detail": "A team builds an accessible appointment website and hands it over to service operations."
+        },
+        {
+          "label": "Programme",
+          "detail": "The website, staff training and a redesigned telephone process are coordinated so the organisation can reduce missed appointments."
+        },
+        {
+          "label": "Portfolio",
+          "detail": "Leaders compare the appointment programme with estate repairs and laboratory upgrades to decide where limited investment and specialist capacity should go."
+        }
+      ],
+      "takeaway": "Project output, programme benefit and portfolio investment choice are related, but they are different management problems.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Why might a portfolio contain projects that have no delivery dependency on one another?",
+      "answer": "They still compete for investment and resources and must collectively support organisational priorities."
+    }
+  },
+  {
+    "id": "project-roles",
+    "guideSection": "2.1.3",
+    "title": "Project roles",
+    "guidePages": "18",
+    "version": 1,
+    "syllabusRefs": [
+      "3.1"
+    ],
+    "goals": [
+      "Separate sponsorship, governance and delivery responsibilities.",
+      "Explain the contributions of users, a product owner and a PMO."
+    ],
+    "sections": [
+      {
+        "title": "Accountability and authority",
+        "paragraphs": [
+          "Clear roles prevent decisions being missed or made by people without the necessary authority. Agree who decides, who carries out work and how escalation works. A person may hold several roles on a small project, but the responsibilities still need to be explicit."
+        ],
+        "points": [
+          "The sponsor owns the justification for the investment, secures support and remains accountable for the business case and intended benefits.",
+          "The project manager plans and coordinates delivery, monitors performance and manages issues within delegated authority.",
+          "Governance provides the decision framework, oversight, controls and escalation routes. It is wider than a recurring status meeting."
+        ]
+      },
+      {
+        "title": "Contributions around delivery",
+        "paragraphs": [],
+        "points": [
+          "Project team members contribute specialist work, estimates, evidence and early warnings about delivery problems.",
+          "End users help define needs and test whether outputs will work in practice. They are not automatically the sponsor or the paying customer.",
+          "A product owner represents product priorities, clarifies requirements and orders a backlog where that role is used. They do not replace all sponsorship or project management responsibilities.",
+          "A project management office can provide standards, reporting support, coordination and assurance information. It supports management; its exact authority must be agreed."
+        ]
+      },
+      {
+        "title": "Make escalation usable",
+        "paragraphs": [
+          "A useful role description includes responsibilities, decision limits and working relationships. Ask a simple question before a problem occurs: if this decision exceeds the project manager’s tolerance, who has authority to resolve it?"
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A museum is introducing digital admission tickets.",
+      "steps": [
+        {
+          "label": "Sponsor",
+          "detail": "The operations director owns the investment case and resolves a funding decision outside the project manager’s authority."
+        },
+        {
+          "label": "Project manager and team",
+          "detail": "The manager coordinates installation and training; specialists design, configure and test the service."
+        },
+        {
+          "label": "Users and product owner",
+          "detail": "Front-of-house staff test entry workflows. A product owner prioritises improvements such as group bookings."
+        },
+        {
+          "label": "Governance and PMO",
+          "detail": "A review board makes gate decisions; the PMO helps maintain consistent reporting evidence."
+        }
+      ],
+      "takeaway": "Responsibility for producing a deliverable is different from accountability for the investment.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "A supplier delay threatens the approved budget beyond the manager’s authority. What should the manager do?",
+      "answer": "Analyse the impact and options, then escalate through the agreed governance route to the sponsor or authorised decision-maker."
+    }
+  },
+  {
+    "id": "business-case",
+    "guideSection": "2.1.4",
+    "title": "Business case",
+    "guidePages": "23",
+    "version": 1,
+    "syllabusRefs": [
+      "4.4",
+      "4.5",
+      "4.7"
+    ],
+    "goals": [
+      "Explain what a business case is for and who owns it.",
+      "Distinguish outputs, outcomes and benefits."
+    ],
+    "sections": [
+      {
+        "title": "Keep asking whether the investment is worthwhile",
+        "paragraphs": [
+          "The business case explains why the investment should proceed and remain justified. Typical content covers the need, objectives, options, expected benefits, costs, timescales, risks and assumptions. Include a credible comparison with doing nothing or doing the minimum; choosing an option first and inventing justification later hides trade-offs.",
+          "The case is maintained, not merely written once. New forecasts, risks or changes can undermine its assumptions. Approval to start does not remove the need to reconsider whether continuing is worthwhile."
+        ],
+        "points": []
+      },
+      {
+        "title": "Ownership and supporting work",
+        "paragraphs": [
+          "The sponsor is accountable for the business case and continuing justification. The project manager helps develop and maintain realistic delivery information: estimates, schedules, risks, options and the impacts of proposed changes. Business specialists and benefit owners provide evidence about operational effects."
+        ],
+        "points": []
+      },
+      {
+        "title": "Benefits need management",
+        "paragraphs": [
+          "An output is something delivered, such as new equipment. An outcome is a change in how people operate, such as using it consistently. A benefit is a measurable improvement that stakeholders value. Benefits management identifies, plans, owns, tracks and reviews those improvements.",
+          "A benefit needs a measure, a baseline, an owner and a review point. Completing installation does not prove that the benefit has occurred. Many benefits need operational adoption and are measured after project handover."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A college proposes self-service printing to reduce queues.",
+      "steps": [
+        {
+          "label": "Option appraisal",
+          "detail": "Compare keeping existing machines, changing opening hours and introducing self-service printing, including support and training costs."
+        },
+        {
+          "label": "Output and outcome",
+          "detail": "Installed kiosks are an output. Students independently completing routine printing is an outcome."
+        },
+        {
+          "label": "Benefit",
+          "detail": "The service owner measures whether the average queue time falls from the current baseline, while checking that assisted access remains available."
+        },
+        {
+          "label": "Review",
+          "detail": "If support costs rise substantially, the manager updates forecasts and the sponsor reassesses the case rather than relying on the original approval."
+        }
+      ],
+      "takeaway": "Delivery success and benefit realisation need different evidence.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Who should remain accountable for the business case when the project manager changes?",
+      "answer": "The sponsor remains accountable. A change in the delivery manager does not transfer investment ownership."
+    }
+  },
+  {
+    "id": "project-life-cycles",
+    "guideSection": "2.1.5",
+    "title": "Project life cycles",
+    "guidePages": "27",
+    "version": 1,
+    "syllabusRefs": [
+      "2.1",
+      "2.2",
+      "2.3",
+      "2.4"
+    ],
+    "goals": [
+      "Compare linear, iterative, hybrid and extended life cycles.",
+      "Explain what changes between phases and iterations."
+    ],
+    "sections": [
+      {
+        "title": "A framework for the whole journey",
+        "paragraphs": [
+          "A life cycle gives a project a high-level structure from an initial idea through delivery and transition into use. It helps people see what decisions and evidence are needed. A typical linear sequence is concept, definition, deployment and transition. Phase names may vary across organisations; learn the purpose as well as the label."
+        ],
+        "points": [
+          "Concept: explore the need and whether a proposed change merits further work.",
+          "Definition: develop requirements, the business case and credible delivery plans.",
+          "Deployment: carry out the work, monitor progress and verify what is being produced.",
+          "Transition: secure acceptance, prepare operations, hand over and close the temporary delivery arrangements."
+        ]
+      },
+      {
+        "title": "Iterative and hybrid delivery",
+        "paragraphs": [
+          "An iterative approach builds understanding through repeated cycles of planning, developing and reviewing. An initial concept and direction are still needed; within deployment the team revisits detail using feedback. Transition into use must still be managed. Iteration does not mean unlimited change or no governance.",
+          "A hybrid life cycle combines linear and iterative elements. For example, physical building work may need carefully sequenced approvals while a customer interface develops through short feedback cycles. Choose the combination for the nature and uncertainty of the work."
+        ],
+        "points": []
+      },
+      {
+        "title": "Looking beyond handover",
+        "paragraphs": [
+          "An extended life cycle includes the period in which outcomes and benefits are realised after outputs enter use. Operational owners may lead much of that work. A handover date is therefore not automatically the final point at which value can be judged."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A town is opening a community learning centre.",
+      "steps": [
+        {
+          "label": "Linear element",
+          "detail": "Building access and safety work follows an agreed design and sequential construction activities."
+        },
+        {
+          "label": "Iterative element",
+          "detail": "A booking interface is developed in short cycles with staff and resident feedback."
+        },
+        {
+          "label": "Transition",
+          "detail": "Staff practise operating the centre and formally accept the facilities and support arrangements."
+        },
+        {
+          "label": "Extended view",
+          "detail": "The service owner later checks whether participation and access have improved as intended."
+        }
+      ],
+      "takeaway": "An approach can combine delivery styles while keeping decisions, acceptance and benefit ownership clear.",
+      "diagram": "Concept → Definition → Deployment → Transition\n                          ↺ plan / develop / review where iterative\nAfter transition: use, adoption and benefits review in an extended view"
+    },
+    "recall": {
+      "prompt": "Why is an extended life cycle useful when most benefits appear months after opening?",
+      "answer": "It keeps attention on adoption and measurable value after project outputs have been handed over."
+    }
+  },
+  {
+    "id": "project-management-plan",
+    "guideSection": "2.1.6",
+    "title": "Project management plan",
+    "guidePages": "32",
+    "version": 1,
+    "syllabusRefs": [
+      "4.1",
+      "4.2",
+      "4.3",
+      "4.10"
+    ],
+    "goals": [
+      "Distinguish the management plan from its deployment baseline.",
+      "Agree success criteria with the people who will use them."
+    ],
+    "sections": [
+      {
+        "title": "Coordinate how delivery will be managed",
+        "paragraphs": [
+          "The project management plan brings together the agreed approach to delivery and control. It explains how work, resources, quality, risk, communications, change and governance fit together. A schedule alone cannot answer all those questions.",
+          "The sponsor, manager, team, users, operational owners, suppliers and governance bodies may contribute to or rely on the plan. Involve the people whose assumptions, constraints and acceptance decisions the plan depends on. Not everyone needs the same level of detail or approval authority."
+        ],
+        "points": []
+      },
+      {
+        "title": "A baseline is a reference for control",
+        "paragraphs": [
+          "A deployment baseline is the authorised reference against which delivery performance is assessed. It integrates agreed scope with time, cost and resource plans. Forecasts describe what is now expected; a baseline should not be quietly overwritten whenever forecasts change. Use the agreed change process to authorise changes to it.",
+          "A linear project may baseline much of its detailed scope and delivery sequence early. In iterative work, overall constraints and direction can be set while near-term detail is refined for each iteration. The appropriate baseline and authority for changing it must still be clear."
+        ],
+        "points": []
+      },
+      {
+        "title": "Define success before you measure it",
+        "paragraphs": [
+          "Success criteria express the conditions against which success will be judged. At the start they align expectations and guide options. During delivery they support trade-offs and control. At handover they provide a basis for acceptance, while later benefit reviews assess improvements in use.",
+          "Avoid measures that reward the wrong behaviour: an on-time launch with inaccessible services may fail an important success criterion. Agree evidence, an owner and a review point for each criterion."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A library is introducing self-service borrowing.",
+      "steps": [
+        {
+          "label": "Plan",
+          "detail": "Agree how the supplier, library staff and technical team will coordinate testing, training and issue escalation."
+        },
+        {
+          "label": "Baseline",
+          "detail": "Record the approved kiosk scope, installation dates, resource assumptions and budget."
+        },
+        {
+          "label": "Control",
+          "detail": "Report a forecast delay against that reference and seek approval before changing the authorised installation sequence."
+        },
+        {
+          "label": "Success criteria",
+          "detail": "Agree acceptance evidence for reliable borrowing and accessible assisted use; measure any promised queue reduction after adoption."
+        }
+      ],
+      "takeaway": "The plan explains management; the baseline provides a control reference; success criteria explain what good looks like.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Why does replacing the baseline with the latest forecast conceal useful information?",
+      "answer": "It removes the reference needed to understand variance and can hide an unapproved change to the agreed commitment."
+    }
+  },
+  {
+    "id": "stakeholder-engagement",
+    "guideSection": "2.2.1",
+    "title": "Stakeholder engagement",
+    "guidePages": "37",
+    "version": 1,
+    "syllabusRefs": [
+      "4.6"
+    ],
+    "goals": [
+      "Use stakeholder analysis to choose engagement actions.",
+      "Revisit the analysis as interests and influence change."
+    ],
+    "sections": [
+      {
+        "title": "Understand whose interests matter",
+        "paragraphs": [
+          "Stakeholders can affect a project or be affected by it. Stakeholder analysis identifies those people and groups, examines their interests, influence, attitudes and likely impacts, and informs how to engage them. A list of names alone does not explain what to do next.",
+          "Influence and interest are useful lenses, but not the whole picture. A group with little formal power may be strongly affected or have valuable knowledge. Consider accessibility, representation and the consequences of decisions as well as who can approve funding."
+        ],
+        "points": []
+      },
+      {
+        "title": "From analysis to engagement",
+        "paragraphs": [
+          "Use what you learn to select the purpose, timing and method of engagement. Someone who can authorise a major decision may need a concise options discussion. People who will operate an output may need workshops, trials and feedback opportunities. Engagement is a two-way relationship, not simply sending announcements."
+        ],
+        "points": [
+          "Record the stakeholder or group, relevant needs and concerns, likely influence/impact, engagement action and owner.",
+          "Check assumptions by listening rather than treating an early label as fact.",
+          "Review the analysis when people, priorities, impacts or the project itself change."
+        ]
+      },
+      {
+        "title": "Keep learning from the relationship",
+        "paragraphs": [
+          "Early engagement can reveal requirements, risks and adoption obstacles that the team would otherwise miss. Track whether concerns are addressed and commitments are followed up. Repeating a standard message is not proof that engagement has worked."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A station project will relocate a ticket desk.",
+      "steps": [
+        {
+          "label": "Identify",
+          "detail": "Include passengers, staff, accessibility representatives, neighbours, the operator and the funder."
+        },
+        {
+          "label": "Analyse",
+          "detail": "Staff know daily operating pressures. Some passengers may be highly affected despite having little formal authority."
+        },
+        {
+          "label": "Act",
+          "detail": "Run an accessible layout trial with affected passengers and staff; give the funder a clear decision brief on the options."
+        },
+        {
+          "label": "Update",
+          "detail": "When a new operator joins, reassess interests and responsibilities rather than reusing an outdated contact list."
+        }
+      ],
+      "takeaway": "Analysis earns its place by changing who you involve and how you work with them.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Why should a low-influence group still receive substantial engagement?",
+      "answer": "It may face substantial impacts, hold important knowledge or need support to use the change successfully."
+    }
+  },
+  {
+    "id": "communication",
+    "guideSection": "2.2.2",
+    "title": "Communication",
+    "guidePages": "40",
+    "version": 1,
+    "syllabusRefs": [
+      "9.1",
+      "9.2",
+      "9.3",
+      "9.4",
+      "9.5"
+    ],
+    "goals": [
+      "Match a communication method to its purpose and audience.",
+      "Build a plan that includes feedback and ownership."
+    ],
+    "sections": [
+      {
+        "title": "Communication creates shared understanding",
+        "paragraphs": [
+          "Communication involves exchanging information and meaning. Sending a message is not the same as establishing that someone has understood it. Think about the audience, purpose, message, channel, timing and feedback.",
+          "A communication plan coordinates those decisions. Typical entries identify recipients, their information needs, the content and format, channel, frequency or trigger, sender/owner and feedback route. Include confidentiality and accessibility where relevant."
+        ],
+        "points": []
+      },
+      {
+        "title": "Choose the method deliberately",
+        "paragraphs": [],
+        "points": [
+          "Face-to-face discussion supports quick clarification, relationships and non-verbal cues. It can require travel, exclude remote people and leave no reliable written record unless one is created.",
+          "Physical notices, drawings or reports can provide a visible, persistent reference in a workplace. Distribution and updating are slower, remote people may miss them, and readers cannot assume a response has been understood.",
+          "Virtual meetings and shared digital documents connect dispersed teams and can support rapid updates and recorded decisions. They depend on technology and access; distractions, time zones and missing non-verbal cues can cause misunderstanding."
+        ]
+      },
+      {
+        "title": "Why the plan helps the manager",
+        "paragraphs": [
+          "A plan reduces gaps and duplication, clarifies who communicates and makes important decision dates visible. It also helps the manager choose concise information for each audience rather than sending every document to everyone. Review whether communication is achieving its purpose, and adjust it as stakeholder needs change."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A museum must close a gallery temporarily for electrical work.",
+      "steps": [
+        {
+          "label": "Public visitors",
+          "detail": "Use accessible booking messages and clear physical signs before the closure; provide a route for questions."
+        },
+        {
+          "label": "Installation team",
+          "detail": "Hold a short coordination discussion about safety and dependencies, then record agreed actions."
+        },
+        {
+          "label": "Sponsor",
+          "detail": "Provide a dated decision report covering variance, options and the decision required."
+        },
+        {
+          "label": "Feedback",
+          "detail": "Ask front-of-house staff what visitors are misunderstanding and update the messages accordingly."
+        }
+      ],
+      "takeaway": "The same project may need several methods, each chosen for a specific purpose.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "A stakeholder receives every report but still misunderstands a decision. What is missing?",
+      "answer": "Feedback and clarification: delivery of information does not establish shared understanding."
+    }
+  },
+  {
+    "id": "risk-and-issue-management",
+    "guideSection": "2.2.3",
+    "title": "Risk and issue management",
+    "guidePages": "45",
+    "version": 1,
+    "syllabusRefs": [
+      "7.1",
+      "7.2",
+      "7.3",
+      "7.4",
+      "7.5",
+      "7.6",
+      "7.7",
+      "7.8"
+    ],
+    "goals": [
+      "Distinguish uncertain events from current issues.",
+      "Connect identification, analysis, ownership, response and closure."
+    ],
+    "sections": [
+      {
+        "title": "Risk and issue are different starting points",
+        "paragraphs": [
+          "A risk concerns uncertainty that could affect objectives. It may be a threat or an opportunity. Risk management aims to understand that uncertainty and select proportionate responses, not to promise that nothing unexpected will happen.",
+          "An issue is a current matter requiring attention or resolution. A supplier might miss a future delivery date: risk. The agreed delivery date has passed with no equipment: issue. Once an uncertain event occurs, deal with its consequences rather than leaving the entry unchanged as a future possibility."
+        ],
+        "points": []
+      },
+      {
+        "title": "Make risk management actionable",
+        "paragraphs": [],
+        "points": [
+          "Identify: describe the cause, uncertain event and possible effect on objectives.",
+          "Analyse: consider likelihood, impact, timing and relationships; use the result to prioritise attention.",
+          "Respond: agree a response, an owner, resources and a review trigger. For threats, options include avoiding, reducing, transferring or accepting exposure; opportunities may be pursued or enhanced.",
+          "Monitor and close: check whether responses work and whether exposure remains. Close an entry when it is no longer relevant, recording the reason."
+        ]
+      },
+      {
+        "title": "Registers and issue resolution",
+        "paragraphs": [
+          "A risk register keeps the description, assessment, owner, responses and review status together. It supports decisions and follow-up; filling in a spreadsheet without acting is not management.",
+          "For an issue, log and describe it, assess effects and urgency, assign an owner, consider options, obtain decisions at the right authority level, implement the response and confirm resolution before closure. Escalate an issue that exceeds the manager’s authority. Keep links to any remaining risks or changes."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A school is replacing its heating controls before winter.",
+      "steps": [
+        {
+          "label": "Risk",
+          "detail": "Because a specialist component has a long lead time, delivery may slip and delay commissioning."
+        },
+        {
+          "label": "Response",
+          "detail": "The purchasing lead checks alternatives and orders early; the manager reviews lead-time evidence at an agreed date."
+        },
+        {
+          "label": "Issue",
+          "detail": "The component arrives damaged. Log the actual problem, assess replacement options and assign an owner."
+        },
+        {
+          "label": "Closure",
+          "detail": "Close the issue only after the replacement has been tested and the effects have been addressed; reassess any remaining schedule risk."
+        }
+      ],
+      "takeaway": "A good entry names an owner and next action, not only a colour or a description.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Can an accepted risk be removed from monitoring immediately?",
+      "answer": "No. Acceptance is a response decision; the exposure can still need monitoring, a contingency and a review trigger."
+    }
+  },
+  {
+    "id": "quality-management",
+    "guideSection": "2.2.4",
+    "title": "Quality management",
+    "guidePages": "51",
+    "version": 1,
+    "syllabusRefs": [
+      "8.1",
+      "8.2",
+      "8.3",
+      "8.4",
+      "8.5",
+      "8.6"
+    ],
+    "goals": [
+      "Distinguish planning, control and assurance.",
+      "Choose the right review for delivery, compliance or benefits."
+    ],
+    "sections": [
+      {
+        "title": "Quality starts with requirements",
+        "paragraphs": [
+          "Quality is about how well the characteristics of an output fulfil requirements. An expensive or elaborate output is not automatically a high-quality solution. Quality management coordinates the work needed to define, achieve and demonstrate the required quality.",
+          "Quality planning identifies requirements, standards, acceptance criteria, responsibilities and how evidence will be obtained. Agree tolerances and checks early enough to influence design and work methods."
+        ],
+        "points": []
+      },
+      {
+        "title": "Control and assurance answer different questions",
+        "paragraphs": [
+          "Quality control checks outputs against requirements, for example inspecting a fitted component or testing a booking workflow. A failed check should trigger action on the nonconformity, not a quiet change to the criterion.",
+          "Quality assurance provides confidence that suitable processes and controls are in place and are being followed. It can include planned process reviews or independent examination. Assurance does not replace testing the actual output, and a test alone does not prove that management processes are effective."
+        ],
+        "points": []
+      },
+      {
+        "title": "Reviews have different purposes",
+        "paragraphs": [],
+        "points": [
+          "A decision gate supports an authorised decision about whether and how work should continue, using evidence such as the business case, risks and readiness.",
+          "A post-project review examines how delivery went and captures lessons for future work.",
+          "A benefit review checks whether the expected improvements have actually been realised in use.",
+          "A project audit provides a systematic, appropriately independent assessment of compliance or effectiveness against defined criteria."
+        ]
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A college is installing new laboratory benches.",
+      "steps": [
+        {
+          "label": "Plan",
+          "detail": "Agree dimensions, load capacity and acceptance evidence with users before manufacture."
+        },
+        {
+          "label": "Control",
+          "detail": "Measure a delivered bench and test it against the agreed requirement."
+        },
+        {
+          "label": "Assurance",
+          "detail": "Check whether the supplier’s inspection and change procedures are appropriate and are being followed."
+        },
+        {
+          "label": "Review",
+          "detail": "Use a gate to decide readiness to open; later check whether the redesigned space delivers the intended teaching benefits."
+        }
+      ],
+      "takeaway": "Testing an output, auditing a process and checking a benefit are complementary activities.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Why can a successful acceptance test coexist with a later disappointing benefit review?",
+      "answer": "The output may meet its specification while adoption, assumptions or operational conditions prevent the expected improvement."
+    }
+  },
+  {
+    "id": "scope-management",
+    "guideSection": "2.2.5",
+    "title": "Scope management",
+    "guidePages": "56",
+    "version": 1,
+    "syllabusRefs": [
+      "5.1",
+      "5.2",
+      "5.3",
+      "5.4",
+      "5.5",
+      "5.6",
+      "5.7",
+      "5.8"
+    ],
+    "goals": [
+      "Make scope boundaries and responsibilities visible.",
+      "Distinguish change decisions from configuration control."
+    ],
+    "sections": [
+      {
+        "title": "Define what is included",
+        "paragraphs": [
+          "Scope management establishes and controls the outputs and work needed to meet objectives. Agree both inclusions and exclusions so different people do not plan different projects. In linear delivery, scope is usually defined in more detail before deployment. In iterative delivery, scope detail develops through feedback and prioritisation within agreed constraints. Neither approach removes the need to manage boundaries."
+        ],
+        "points": []
+      },
+      {
+        "title": "Use breakdowns for different questions",
+        "paragraphs": [],
+        "points": [
+          "A product breakdown structure (PBS) shows the hierarchy of required products or deliverables: what will exist.",
+          "A work breakdown structure (WBS) divides the work into manageable packages: what must be done to produce the outputs. It is not a time sequence by itself.",
+          "A cost breakdown structure (CBS) organises costs for budgeting and control.",
+          "An organisational breakdown structure (OBS) shows organisational units or roles.",
+          "A responsibility assignment matrix (RAM) connects work to responsible roles. RACI is one notation: responsible, accountable, consulted and informed. Normally make one accountable owner clear for each item."
+        ]
+      },
+      {
+        "title": "Authorise change; maintain reliable definitions",
+        "paragraphs": [
+          "Change control evaluates proposed changes against the agreed baseline. A typical process records the request, assesses impacts and options, obtains an authorised decision, communicates it, implements approved work and updates affected records. Not every request should be approved, and a manager should not implement an unapproved change merely because it looks useful.",
+          "Configuration management keeps the identity, approved characteristics, versions and status of items reliable. Its activities include planning the approach, identifying controlled items, controlling their versions and changes, keeping status accounts and conducting verification/audit. Change control decides whether a change is authorised; configuration management helps ensure the correct approved version is actually used and traceable."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A project is fitting out a small exhibition room.",
+      "steps": [
+        {
+          "label": "PBS and WBS",
+          "detail": "The PBS includes display cases and lighting. The WBS includes designing, purchasing, fitting and testing them."
+        },
+        {
+          "label": "CBS, OBS and RAM",
+          "detail": "Costs are grouped into equipment and installation; the organisational view names the curatorial and technical teams; a RAM assigns accountability and delivery responsibility for each work package."
+        },
+        {
+          "label": "Change control",
+          "detail": "A request for an extra case is assessed for cost, space, safety and schedule effects before the authorised decision."
+        },
+        {
+          "label": "Configuration management",
+          "detail": "The approved layout is labelled version 3, superseded drawings are withdrawn, status records are updated and the installed room is verified against the approved design."
+        }
+      ],
+      "takeaway": "A deliverable tree, a work tree, a schedule and a responsibility matrix answer different questions.",
+      "diagram": "PBS: Exhibition room\n  ├─ Display cases\n  └─ Lighting\nWBS: Fit out room\n  ├─ Design layout\n  ├─ Procure equipment\n  ├─ Install\n  └─ Test and hand over\nRAM example: Approve layout → accountable: sponsor; responsible: design lead"
+    },
+    "recall": {
+      "prompt": "Does recording a new drawing version automatically authorise the change it contains?",
+      "answer": "No. Version identification supports configuration management; the change still needs the agreed approval decision."
+    }
+  },
+  {
+    "id": "estimating",
+    "guideSection": "2.3.1",
+    "title": "Estimating",
+    "guidePages": "66",
+    "version": 1,
+    "syllabusRefs": [
+      "4.8",
+      "4.9"
+    ],
+    "goals": [
+      "Choose analytical, analogous or parametric estimating.",
+      "Explain why an estimate should show uncertainty."
+    ],
+    "sections": [
+      {
+        "title": "An estimate is a reasoned forecast",
+        "paragraphs": [
+          "An estimate predicts the resources, time or cost needed for work, using the information currently available. State its scope, assumptions, units, source data and uncertainty. An estimate does not become a reliable commitment merely because it is expressed to two decimal places.",
+          "The estimating funnel illustrates how uncertainty generally narrows as understanding improves. Early estimates often need wider ranges. Investigation and design can support a narrower range later, but detail does not guarantee accuracy if the assumptions are wrong."
+        ],
+        "points": []
+      },
+      {
+        "title": "Three useful methods",
+        "paragraphs": [],
+        "points": [
+          "Analogous estimating uses evidence from comparable previous work, adjusted for differences. It is useful early, but weak comparisons or unrecognised differences can mislead.",
+          "Parametric estimating uses a credible relationship between a measurable quantity and the effort or cost required, such as metres installed multiplied by a validated rate. Check that the relationship applies at the proposed scale.",
+          "Analytical estimating breaks the work down, estimates the parts and combines them. It supports detail but needs enough scope information and careful treatment of shared work and dependencies."
+        ]
+      },
+      {
+        "title": "Review the basis, not just the number",
+        "paragraphs": [
+          "Use appropriate expertise and compare methods where possible. Explain exclusions and avoid confusing an activity’s effort with its elapsed duration: two days of specialist effort may be spread across a week. Update forecasts when evidence changes, keeping authorised baseline changes distinct."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A team is planning network cabling for a training centre.",
+      "steps": [
+        {
+          "label": "Analogous",
+          "detail": "A previous small centre cost £8,000, but its layout and access differed. Adjust the comparison and keep a broad range."
+        },
+        {
+          "label": "Parametric",
+          "detail": "For 240 metres at a validated £18 per metre, the calculated cable-installation element is £4,320. Check what the rate includes."
+        },
+        {
+          "label": "Analytical",
+          "detail": "Separately estimate survey, preparation, installation, testing and handover, taking care not to count testing twice."
+        },
+        {
+          "label": "Funnel",
+          "detail": "After surveying hidden routes, narrow the estimate range only if the new evidence justifies doing so."
+        }
+      ],
+      "takeaway": "The method and assumptions explain how much confidence to place in the result.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Why is multiplying an untested rate by an exact quantity not enough to produce a dependable estimate?",
+      "answer": "The calculation can be exact while the underlying relationship, inclusions or working conditions are wrong."
+    }
+  },
+  {
+    "id": "resource-scheduling",
+    "guideSection": "2.3.2",
+    "title": "Resource scheduling and optimisation",
+    "guidePages": "69",
+    "version": 1,
+    "syllabusRefs": [
+      "6.1",
+      "6.2",
+      "6.3",
+      "6.4",
+      "6.5",
+      "6.6"
+    ],
+    "goals": [
+      "Connect dependencies, duration and resource feasibility.",
+      "Distinguish critical path, milestones, timeboxes, levelling and smoothing."
+    ],
+    "sections": [
+      {
+        "title": "A schedule must be workable",
+        "paragraphs": [
+          "Scheduling places activities and events in time, using dependencies, estimated durations and available resources. A sequence that ignores a shared specialist or access restriction may be impossible to deliver.",
+          "Critical path analysis identifies the dependency chain that determines the earliest completion of the modelled work and helps show where delay would affect that completion. Float describes scheduling flexibility; it is not automatically spare resource capacity. A critical path can change as work and assumptions change."
+        ],
+        "points": []
+      },
+      {
+        "title": "Different controls for different needs",
+        "paragraphs": [],
+        "points": [
+          "A milestone is a significant event or decision point with zero duration in a schedule. It is not a long task with a memorable name.",
+          "A timebox is a fixed period within which work is managed. Iterative teams can adjust priority or scope within agreed rules rather than endlessly extending the period.",
+          "Resource levelling adjusts timing to respect resource limits and can move the completion date.",
+          "Resource smoothing adjusts work within available float to improve resource use while preserving the required finish date. It may not resolve every overload."
+        ]
+      },
+      {
+        "title": "Include procurement choices",
+        "paragraphs": [
+          "A procurement strategy sets out how required goods and services will be obtained. It can address make-or-buy choices, packaging of work, supplier selection, contractual approach, risk allocation and timing. Lead times and supplier constraints belong in the schedule; choosing the cheapest quote is not a complete strategy."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "For a small installation, A is a 2-day survey. B is a 3-day preparation task after A. C is a 4-day assembly task after A. D is a 2-day final test after both B and C.",
+      "steps": [
+        {
+          "label": "Dependencies",
+          "detail": "With suitable resources, B and C can run in parallel after A."
+        },
+        {
+          "label": "Critical path",
+          "detail": "A–C–D takes 8 days; A–B–D takes 7. B therefore has 1 day of total float in this simple model."
+        },
+        {
+          "label": "Resource check",
+          "detail": "If the same specialist must do both B and C, they cannot run in parallel. Levelling them sequentially gives an 11-day finish in this example."
+        },
+        {
+          "label": "Smoothing limit",
+          "detail": "The single day of float on B cannot remove a three-day shared-specialist conflict while retaining the original finish date."
+        }
+      ],
+      "takeaway": "A mathematically short schedule is useful only if its resource and procurement assumptions are credible.",
+      "diagram": "       B: 3 days\n      ↗         ↘\nA: 2             D: 2\n      ↘         ↗\n       C: 4 days\nDependency-only earliest finish: 2 + 4 + 2 = 8 days"
+    },
+    "recall": {
+      "prompt": "Can resource smoothing always solve a shortage without changing the completion date?",
+      "answer": "No. It is constrained by available float; a hard resource shortage may need levelling, extra capacity or another authorised change."
+    }
+  },
+  {
+    "id": "information-and-reporting",
+    "guideSection": "2.3.3",
+    "title": "Information management and reporting",
+    "guidePages": "77",
+    "version": 1,
+    "syllabusRefs": [
+      "4.11"
+    ],
+    "goals": [
+      "Explain how progress reports support decisions.",
+      "Separate baseline, actual performance and forecast."
+    ],
+    "sections": [
+      {
+        "title": "Information is useful when it supports action",
+        "paragraphs": [
+          "Information management keeps project information identifiable, accessible to the right people, accurate enough for its purpose and appropriately controlled. Decide who owns important records, which version is authoritative and how access, updates and retention will work. A large shared folder is not automatically a reliable information system."
+        ],
+        "points": []
+      },
+      {
+        "title": "Report performance and what it means",
+        "paragraphs": [
+          "Progress reporting gives stakeholders a timely view of delivery, emerging problems and decisions required. It can support coordination, accountability, escalation and continued assessment of the investment. The most useful report explains consequences and actions rather than reproducing every activity log."
+        ],
+        "points": [
+          "Baseline: the authorised reference against which performance is compared.",
+          "Actual: what has happened, using a clear reporting date and credible evidence.",
+          "Forecast: what is now expected, including the effects of risks, issues and corrective actions.",
+          "Decision/action: what needs to happen, who owns it and by when."
+        ]
+      },
+      {
+        "title": "Tailor without distorting",
+        "paragraphs": [
+          "A sponsor may need an exception report and a decision; the team may need detailed dependencies and actions. Agree definitions and reporting frequency so people do not compare incompatible figures. A green status label without supporting evidence can hide a problem. Report uncertainty honestly and protect sensitive information from unnecessary distribution."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "An exhibition project has installed eight of ten display units, but final testing is behind plan.",
+      "steps": [
+        {
+          "label": "Evidence",
+          "detail": "State the reporting date and distinguish installed from tested-and-accepted units."
+        },
+        {
+          "label": "Comparison",
+          "detail": "Compare actual testing progress with the approved plan, rather than treating installation as completion."
+        },
+        {
+          "label": "Forecast",
+          "detail": "Explain how the remaining tests and an unresolved fault affect the expected opening date."
+        },
+        {
+          "label": "Decision",
+          "detail": "Name the manager’s corrective action and the sponsor decision needed if extra funds or a changed opening date exceed delegated authority."
+        }
+      ],
+      "takeaway": "A report should make the next decision easier, not merely look reassuring.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Why should a report show a forecast as well as actual expenditure to date?",
+      "answer": "Current spending does not reveal the expected final position or the effect of known remaining work, risks and corrective actions."
+    }
+  },
+  {
+    "id": "leadership-and-teamwork",
+    "guideSection": "2.3.4",
+    "title": "Leadership and teamwork",
+    "guidePages": "80",
+    "version": 1,
+    "syllabusRefs": [
+      "10.1",
+      "10.2",
+      "10.3",
+      "10.4"
+    ],
+    "goals": [
+      "Explain how leadership influences performance.",
+      "Use team models as aids to judgement rather than labels."
+    ],
+    "sections": [
+      {
+        "title": "Lead people as well as coordinating work",
+        "paragraphs": [
+          "Leadership creates direction and helps people work towards a shared purpose. A project manager can influence performance by clarifying goals and roles, listening, setting a constructive example, giving feedback, recognising contributions and removing obstacles. Authority alone does not create trust or commitment.",
+          "Common challenges include conflict, temporary membership, competing functional priorities, dispersed locations, cultural differences, uneven experience and wellbeing pressures. Choose communication and support that fit the people and situation. Make it safe to raise a problem early rather than rewarding silence."
+        ],
+        "points": []
+      },
+      {
+        "title": "Tuckman: recognise changing team needs",
+        "paragraphs": [
+          "Tuckman’s model describes forming, storming, norming, performing and adjourning. Forming often needs orientation and clarity; storming can involve disagreement about roles or working methods; norming involves developing shared expectations; performing supports effective cooperation; adjourning concerns closure and transition.",
+          "Teams do not follow an inevitable straight line. New members or changed work can alter needs. Use the model to ask what leadership support is useful now, not to excuse harmful conflict or assume that performance will improve automatically."
+        ],
+        "points": []
+      },
+      {
+        "title": "Belbin: value different contributions",
+        "paragraphs": [
+          "Belbin describes nine team-role contributions. Action-oriented contributions include Shaper, Implementer and Completer Finisher; people-oriented contributions include Co-ordinator, Teamworker and Resource Investigator; thinking contributions include Plant, Monitor Evaluator and Specialist.",
+          "The model can help a team discuss strengths, gaps and complementary contributions. These are not job titles, fixed personality verdicts or a requirement to recruit nine people. One person may contribute in several ways. Combine the model with observation and feedback rather than restricting someone to a label."
+        ],
+        "points": []
+      }
+    ],
+    "example": {
+      "title": "Worked example",
+      "scenario": "A temporary team is preparing a community science event.",
+      "steps": [
+        {
+          "label": "Diagnose",
+          "detail": "New members are unclear about decisions and disagree about priorities. The manager clarifies purpose and working agreements instead of assuming poor motivation."
+        },
+        {
+          "label": "Use Tuckman",
+          "detail": "The forming/storming ideas suggest a need for orientation, constructive conflict handling and clearer responsibilities."
+        },
+        {
+          "label": "Use Belbin",
+          "detail": "The team has many new ideas but weak follow-through. Discuss whether organising implementation and checking details are receiving enough attention."
+        },
+        {
+          "label": "Support performance",
+          "detail": "Agree realistic workloads, remove an access obstacle and review how collaboration is working."
+        }
+      ],
+      "takeaway": "Models help you ask better questions; they do not replace listening and evidence.",
+      "diagram": null
+    },
+    "recall": {
+      "prompt": "Does identifying a missing team-role contribution mean recruiting an additional person is always necessary?",
+      "answer": "No. Existing members may develop or share that contribution, and the team should consider its actual needs, capability and workload."
+    }
+  }
+]
