@@ -124,7 +124,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .error-state .state-icon { color: #a45b40; background: #fbefeb; }
 .error-state > a { display: flex; align-items: center; gap: 5px; color: var(--navy); font-size: 9px; font-weight: 700; }
 .module-toolbar { display: flex; justify-content: space-between; align-items: center; margin: 17px 0 10px; }
-.module-toolbar > span { display: flex; align-items: center; gap: 7px; color: #82909a; font-size: 8px; font-weight: 700; letter-spacing: .1em; }
+.module-toolbar > span { display: flex; align-items: center; gap: 7px; color: #82909a; font-size: 9px; font-weight: 700; letter-spacing: .1em; }
 .module-search { display: flex; align-items: center; gap: 7px; width: 170px; padding: 7px 8px; border-bottom: 1px solid #d8dfdf; color: #71818d; }
 .module-search input { width: 100%; padding: 0; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 9px; }
 .module-search input::placeholder { color: #89969e; }
@@ -147,7 +147,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .module-duration { display: flex; align-items: center; gap: 4px; color: #87939b; font-size: 9px; letter-spacing: .05em; white-space: nowrap; }
 .module-body h3 { margin: 11px 0 5px; color: var(--ink); font-size: 12px; letter-spacing: -.02em; font-weight: 600; }
 .module-body p { margin: 0; color: #74828c; font-size: 9px; line-height: 1.6; }
-.module-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 11px; color: #87939b; font-size: 8px; }
+.module-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 11px; color: #87939b; font-size: 9px; }
 .module-bottom a { display: grid; place-items: center; width: 23px; height: 23px; border: 1px solid #e6ebeb; color: var(--navy); transition: color .2s ease, background .2s ease; }
 .module-bottom a:hover { color: white; background: var(--navy); }
 .no-results { padding: 26px; border: 1px solid var(--line); color: #71818d; background: white; font-size: 10px; text-align: center; }
@@ -198,6 +198,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
   .welcome h1 { font-size: clamp(28px, 5vw, 38px); }
   .welcome-art { min-height: 276px; }
   .art-note { right: 10px; min-width: 142px; }
+  .milestone-two { left: calc(100% - 100px); }
   .milestone-three { left: calc(100% - 65px); }
 }
 @media (max-width: 620px) {
