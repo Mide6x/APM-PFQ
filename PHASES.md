@@ -116,11 +116,15 @@ Use this as the starting notice and keep it aligned with the actual implementati
 
 Measure a small set of events such as roadmap opens, lesson completions and quiz starts. Keep email, username, Supabase user IDs, answer text and individual scores out of engagement analytics. Use progress records to provide the learner’s requested features and avoid joining them to analytics. Document the actual provider, storage, purpose and retention in the notice. Verify with browser network checks that analytics does not load or send before opt-in, stops on withdrawal and stays off after reload when declined. [ICO guidance on cookies and analytics](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/?search=iss)
 
+# Netlify scan correction
+
+Netlify blocked the Turnstile deployment because its scanner marked the three public environment values as secrets. Verified the local Supabase runtime key is `sb_publishable_`, not privileged. `netlify.toml` now exempts only `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` by exact name. Scanning remains enabled, with no path exclusions. A focused configuration test guards these boundaries. This resolves a false positive, not a privileged-key leak; deployed delivery and real challenge verification still need checking after rebuild.
+
 # Turnstile integration checkpoint
 
 Continued on 2026-11-14 with the user's existing widget and production hostname `apmprep.netlify.app`. No new widget or secret was created, retrieved or stored in the app. Existing widget clearance settings were not changed.
 
-- Configured the supplied public site key in ignored `.env.local`, `.env.example` and `netlify.toml` so Netlify builds receive it. Added the `login` action to the existing widget. Tokens are passed once through the Next.js action to Supabase Auth; Supabase owns Siteverify and the secret. Adding another Siteverify redemption would consume the token twice.
+- Configured the supplied public site key in ignored `.env.local` and `netlify.toml` (the user cleared `.env.example`) so Netlify builds receive it. Added the `login` action to the existing widget. Tokens are passed once through the Next.js action to Supabase Auth; Supabase owns Siteverify and the secret. Adding another Siteverify redemption would consume the token twice.
 - Tightened token length to Cloudflare's 2048-character limit and added recoverable CAPTCHA rejection feedback while keeping account/delivery responses neutral. Added `tests/turnstile.test.mjs` for missing/oversize tokens, exactly-once forwarding, provider rejection, neutral delivery errors and resend cooldown.
 - Increased touch targets for branding, controls and inline links on touch devices. Kept native semantic interactions, scrolling/pinch zoom, responsive reading columns and reduced-motion support. No drawing tools or pressure/tilt logic were added.
 - Browser layout/target checks pass for roadmap, sign-in, module and privacy at 820×1180, 1180×820, 507×1024 and 375×900. All measured interactive targets are at least 44×44 CSS pixels and there is no horizontal overflow. This used Chromium viewport emulation; real iPadOS Safari and Apple Pencil hardware have not been tested.

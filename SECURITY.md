@@ -19,3 +19,5 @@ Keep `.env.local`, database credentials, personal exports and privileged keys ou
 Redact `/auth/callback` query strings and all credentials from hosting/proxy logs. Restrict dashboard access, enable MFA for GitHub/Supabase/hosting administrators, use least-privilege access, protect the main branch, maintain backups and review dependency alerts. Provider settings require the owner's dashboard access and are not configured by source changes.
 
 Run lint, typecheck, the Node tests, build and `npm audit` before releases. Review new dependencies and keep the lockfile current. A clean scan is not proof that no vulnerability exists.
+
+Netlify scanning omits only the exact environment names `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`, because their values are intentionally public and embedded by Next.js. The Supabase key must be publishable/anon, never secret/service-role. All other variable/file scanning remains enabled; do not add broad path exclusions or disable scanning.
