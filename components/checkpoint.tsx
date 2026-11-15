@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
 import { submitCheckpoint } from "@/app/modules/[slug]/actions";
 import type { CheckpointQuestion, CheckpointState } from "@/lib/checkpoint-types";
 import styles from "./lesson.module.css";
@@ -13,8 +14,8 @@ function CheckpointAttempt({ questions, lessonId, version, slug, attemptId, onRe
   const resultHeading = useRef<HTMLHeadingElement>(null);
   useEffect(() => { if (state.status === "graded") resultHeading.current?.focus(); }, [state]);
   if (state.status === "graded") return (
-    <div className={styles.result}>
-      <h3 ref={resultHeading} tabIndex={-1}>Result: {state.score} / {state.total}</h3>
+    <div className={`${styles.result} submission-feedback`} data-result={state.score === state.total ? "correct" : "review"}>
+      <h3 ref={resultHeading} tabIndex={-1}>{state.score === state.total && <CheckCircle2 className="result-confirmation" size={22} aria-hidden="true" />}Result: {state.score} / {state.total}</h3>
       <p role="status">{state.saved ? "Result saved." : "Guest result. Sign in to save future attempts."}</p>
       {!state.saved && <p><Link href={`/sign-in?next=${encodeURIComponent(`/modules/${slug}#checkpoint`)}`}>Sign in to save future attempts</Link>.</p>}
       <ol className={styles.feedback}>
@@ -33,7 +34,7 @@ function CheckpointAttempt({ questions, lessonId, version, slug, attemptId, onRe
     </div>
   );
   return (
-    <form action={action} className={styles.quiz}>
+    <form action={action} className={styles.quiz} aria-busy={pending}>
       <input type="hidden" name="lessonId" value={lessonId} />
       <input type="hidden" name="slug" value={slug} />
       <input type="hidden" name="version" value={version} />
@@ -46,7 +47,7 @@ function CheckpointAttempt({ questions, lessonId, version, slug, attemptId, onRe
         </label>)}
       </fieldset>)}
       <p role={state.status === "error" ? "alert" : "status"}>{state.message}</p>
-      <button className={styles.button} disabled={pending} type="submit">{pending ? "Submitting…" : "Submit"}</button>
+      <button className={styles.button} disabled={pending} aria-busy={pending} type="submit">{pending ? "Submitting…" : "Submit"}</button>
     </form>
   );
 }

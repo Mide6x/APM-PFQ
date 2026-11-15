@@ -34,3 +34,7 @@
   .quiz fieldset { padding: 12px; }
   .choice { font-size: 14px; }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .choice { transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease; }
+}

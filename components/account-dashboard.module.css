@@ -41,3 +41,9 @@
   .study { padding: 1.2rem; }
   .metric { padding: 1.25rem; }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .tabs a { transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease; }
+  .progress::-webkit-progress-value { transition: width var(--motion-normal) var(--motion-ease); }
+  .progress::-moz-progress-bar { transition: width var(--motion-normal) var(--motion-ease); }
+}

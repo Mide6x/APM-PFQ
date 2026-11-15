@@ -11,9 +11,9 @@ function Attempt({ question, attemptId, retry }: { question: PracticeQuestion; a
   const resultHeading = useRef<HTMLHeadingElement>(null);
   useEffect(() => { if (state.status === "graded") resultHeading.current?.focus(); }, [state]);
 
-  if (state.status === "graded") return <div className={styles.feedback}>
+  if (state.status === "graded") return <div className={`${styles.feedback} submission-feedback`} data-result={state.correct ? "correct" : "review"}>
     <h2 ref={resultHeading} tabIndex={-1}>{state.correct ? "Correct" : "Incorrect"}</h2>
-    <p role="status" className={state.correct ? styles.correct : styles.review}>{state.correct && <CheckCircle2 size={18} aria-hidden="true" />}{state.message}</p>
+    <p role="status" className={state.correct ? styles.correct : styles.review}>{state.correct && <CheckCircle2 className="result-confirmation" size={18} aria-hidden="true" />}{state.message}</p>
     <p><strong>{question.stem}</strong></p>
     <p><strong>Your answer:</strong> {question.choices.find(choice => choice.id === state.selectedOptionId)?.text}</p>
     {!state.correct && <p><strong>Correct answer:</strong> {question.choices.find(choice => choice.id === state.correctOptionId)?.text}</p>}
@@ -33,7 +33,7 @@ function Attempt({ question, attemptId, retry }: { question: PracticeQuestion; a
       </label>)}
     </fieldset>
     {state.status === "error" && <p role="alert" className={styles.review}>{state.message}</p>}
-    <button className={styles.button} type="submit" disabled={pending}>{pending ? "Checking your answer…" : "Submit"}</button>
+    <button className={styles.button} type="submit" disabled={pending} aria-busy={pending}>{pending ? "Checking your answer…" : "Submit"}</button>
   </form>;
 }
 

@@ -80,3 +80,7 @@
   .feedback { padding: 1rem; }
   .historyList li { grid-template-columns: 1fr; gap: .25rem; }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .choice { transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease; }
+}

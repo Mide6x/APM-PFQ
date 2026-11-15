@@ -9,6 +9,9 @@
   --line: #d9e2dc;
   --error: #99482e;
   --font: var(--font-montserrat), sans-serif;
+  --motion-fast: 140ms;
+  --motion-normal: 200ms;
+  --motion-ease: cubic-bezier(.2, .8, .2, 1);
 }
 
 * {
@@ -656,7 +659,10 @@ p {
     font-size: 17px;
   }
   .primary-nav {
-    gap: 20px;
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 0 20px;
   }
   .nav-link {
     font-size: 12px;
@@ -777,9 +783,8 @@ p {
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    transition: none !important;
+    animation: none !important;
   }
   .milestone-link:hover .milestone-arrow {
     transform: none;
@@ -788,3 +793,39 @@ p {
 
 .completed-milestone .stop-number { color: var(--paper); background: var(--green); }
 .completed-milestone .milestone-link { background: var(--green-pale); }
+
+
+@keyframes page-enter { from { opacity: .75; } to { opacity: 1; } }
+@keyframes feedback-enter { from { opacity: .6; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes confirmation-enter { from { opacity: .5; transform: scale(.8); } 70% { transform: scale(1.08); } to { opacity: 1; transform: none; } }
+@keyframes control-spin { to { transform: rotate(360deg); } }
+
+button[aria-busy="true"] { gap: .6rem; }
+button[aria-busy="true"]::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: control-spin .8s linear infinite;
+}
+.submission-feedback > h3 { display: flex; align-items: center; gap: .5rem; }
+.result-confirmation { flex-shrink: 0; color: var(--green); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .route-enter { animation: page-enter var(--motion-normal) ease-out; }
+  .submission-feedback { animation: feedback-enter var(--motion-normal) var(--motion-ease); }
+  .submission-feedback[data-result="correct"] .result-confirmation { animation: confirmation-enter 220ms var(--motion-ease); }
+  button, .detail-action, .milestone-link, .nav-link {
+    transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease, opacity var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease);
+  }
+  button:not(:disabled):active, .detail-action:active { transform: scale(.98); }
+}
+@media (hover: hover) and (pointer: fine) {
+  button:not(:disabled):hover { filter: brightness(.96); }
+}
+@media (prefers-reduced-motion: reduce) {
+  button[aria-busy="true"]::before { border-color: currentColor; }
+}

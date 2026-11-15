@@ -19,3 +19,17 @@
 .panel[open] > .toggle { margin-bottom: 1rem; }
 .panel[open] > .toggle svg { transform: rotate(180deg); }
 .toggle:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .toggle svg { transition: transform var(--motion-fast) var(--motion-ease); }
+  @supports (interpolate-size: allow-keywords) and selector(details::details-content) {
+    .panel { interpolate-size: allow-keywords; }
+    .panel::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: clip;
+      transition: block-size var(--motion-normal) var(--motion-ease), opacity var(--motion-fast) ease, content-visibility var(--motion-normal) allow-discrete;
+    }
+    .panel[open]::details-content { block-size: auto; opacity: 1; }
+  }
+}

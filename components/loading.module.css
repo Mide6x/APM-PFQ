@@ -4,3 +4,7 @@
 .spinner { width: 24px; height: 24px; flex-shrink: 0; border: 3px solid var(--line); border-top-color: var(--green); border-radius: 50%; animation: spin .8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .spinner { animation: none; border-color: var(--green); } }
+
+@media (prefers-reduced-motion: no-preference) { .status { animation: loading-enter var(--motion-fast) ease-out; } }
+
+@keyframes loading-enter { from { opacity: .75; } to { opacity: 1; } }
