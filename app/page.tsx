@@ -39,6 +39,7 @@ export default async function Home() {
           <a className="nav-link is-active" href="#modules" aria-current="page">
             Roadmap
           </a>
+          <Link className="nav-link" href="/questions">Questions</Link>
           <a className="nav-link" href="#self-assessment">
             Self-assessment
           </a>
@@ -179,8 +180,7 @@ export default async function Home() {
               </h3>
               <p>
                 Each published lesson has an end-of-stop checkpoint. Open a
-                topic to practise and review its explanations. The searchable
-                question bank is a later phase.
+                topic to practise and review its explanations. <Link href="/questions">Browse the Questions bank</Link> for more practice unlocked by lesson completion.
               </p>
             </li>
             <li>

@@ -6,7 +6,8 @@ import styles from "./privacy.module.css";
 
 export const metadata: Metadata = {
   title: "Privacy and your data | APM Study",
-  description: "How APM Study handles information, cookies and requests to access, correct or delete your data.",
+  description:
+    "How APM Study handles information, cookies and requests to access, correct or delete your data.",
 };
 
 const contact = "adewoleolumide05@gmail.com";
@@ -47,13 +48,25 @@ export default function PrivacyPage() {
   return (
     <main className="detail-page">
       <header className="detail-header">
-        <Link href="/" className="detail-brand"><BookOpen size={24} aria-hidden="true" /><strong>APM PFQ <span>Study Hub</span></strong></Link>
-        <Link href="/" className="detail-back"><ArrowLeft size={16} aria-hidden="true" /> Back to roadmap</Link>
+        <Link href="/" className="detail-brand">
+          <BookOpen size={24} aria-hidden="true" />
+          <strong>
+            APM PFQ <span>Study Hub</span>
+          </strong>
+        </Link>
+        <Link href="/" className="detail-back">
+          <ArrowLeft size={16} aria-hidden="true" /> Back to roadmap
+        </Link>
       </header>
       <article className={`detail-content ${styles.article}`}>
         <h1>Privacy and your data</h1>
         <p className={styles.updated}>Last updated: 14 November 2026</p>
-        <p><strong>APM Study</strong> is responsible for how this website uses your information. Contact us at <a href={`mailto:${contact}`}>{contact}</a>. This is an independent study companion, not an official APM service.</p>
+        <p>
+          <strong>APM Study</strong> is responsible for how this website uses
+          your information. Contact us at{" "}
+          <a href={`mailto:${contact}`}>{contact}</a>. This is an independent
+          study companion, not an official APM service.
+        </p>
         <nav className={styles.contents} aria-label="Privacy page sections">
           <a href="#information">Your information</a>
           <a href="#cookies">Cookies and storage</a>
@@ -63,74 +76,299 @@ export default function PrivacyPage() {
 
         <section id="information">
           <h2>What this version collects</h2>
-          <p>You can browse without an account. Magic-link sign-in stores your email and a private account identifier with Supabase. If you choose Save my place, we store your selected topic and when it was saved. Marking a lesson complete stores its lesson identifier and completion time. Signed-in checkpoint submissions store your selected option identifiers, score, content version, feedback and attempt time so you can review results and continue across devices. Guest checkpoints are graded without saving an attempt. We do not ask for a name or public username.</p>
+          <p>
+            You can browse without an account. Magic-link sign-in stores your
+            email and a private account identifier with Supabase. If you choose
+            Save my place, we store your selected topic and when it was saved.
+            Marking a lesson complete stores its lesson identifier and
+            completion time. Signed-in checkpoint submissions store your
+            selected option identifiers, score, content version, feedback and
+            attempt time so you can review results and continue across devices.
+            Question-bank attempts store the question and content version, selected option, correct/incorrect result, feedback and time. They unlock using your saved lesson completion. Guest checkpoints are graded without saving an attempt. We do not
+            ask for a name or public username.
+          </p>
           <dl className={styles.dataList}>
-            <div><dt>Browsing the study hub</dt><dd>Your browser sends your IP address, browser information and requested page to the web server. The hosting provider may keep operational and security logs. The app server reads the public study catalogue from Supabase; the browser does not query Supabase directly for it.</dd></div>
-            <div><dt>Searching topics</dt><dd>Your search stays in the page’s memory. It is not submitted to our server or saved to persistent browser storage. A full page navigation resets it.</dd></div>
-            <div><dt>Signing in</dt><dd>Your email is sent to Supabase through our server to request a one-time sign-in link. Opening that link in the same browser exchanges it for a verified session. Authentication credentials and email addresses are not added to our application logs or analytics. Supabase may maintain its own security and delivery logs. When configured, Cloudflare Turnstile checks the sign-in request for abuse and processes technical information such as IP and browser details.</dd></div>
-            <div><dt>Contacting us</dt><dd>If you email us, we receive your email address, any name you provide, your message and its attachments in our Gmail inbox. Share only what is needed for your request.</dd></div>
+            <div>
+              <dt>Browsing the study hub</dt>
+              <dd>
+                Your browser sends your IP address, browser information and
+                requested page to the web server. The hosting provider may keep
+                operational and security logs. The app server reads the public
+                study catalogue from Supabase; the browser does not query
+                Supabase directly for it.
+              </dd>
+            </div>
+            <div>
+              <dt>Searching topics</dt>
+              <dd>
+                Your search stays in the page’s memory. It is not submitted to
+                our server or saved to persistent browser storage. A full page
+                navigation resets it.
+              </dd>
+            </div>
+            <div>
+              <dt>Signing in</dt>
+              <dd>
+                Your email is sent to Supabase through our server to request a
+                one-time sign-in link. Opening that link in the same browser
+                exchanges it for a verified session. Authentication credentials
+                and email addresses are not added to our application logs or
+                analytics. Supabase may maintain its own security and delivery
+                logs. When configured, Cloudflare Turnstile checks the sign-in
+                request for abuse and processes technical information such as IP
+                and browser details.
+              </dd>
+            </div>
+            <div>
+              <dt>Contacting us</dt>
+              <dd>
+                If you email us, we receive your email address, any name you
+                provide, your message and its attachments in our Gmail inbox.
+                Share only what is needed for your request.
+              </dd>
+            </div>
           </dl>
           <h3>Why we use information</h3>
-          <p>We use your account information to provide the sign-in, saved-place, completion and checkpoint-history services you request. Our legitimate interests are to deliver public study pages, prevent abuse and reply to ordinary correspondence. We handle legal data-rights requests to meet our legal obligations. We do not sell personal information, run advertising or analytics, or make automated decisions with legal or similarly significant effects about you.</p>
+          <p>
+            We use your account information to provide the sign-in, saved-place,
+            completion, checkpoint-history and question-practice services you request. Our
+            legitimate interests are to deliver public study pages, prevent
+            abuse and reply to ordinary correspondence. We handle legal
+            data-rights requests to meet our legal obligations. We do not sell
+            personal information, run advertising or analytics, or make
+            automated decisions with legal or similarly significant effects
+            about you.
+          </p>
         </section>
 
         <section id="cookies">
           <h2>Cookies and storage settings</h2>
-          <p>Sign-in uses strictly necessary cookies to keep your session and limit repeated sign-in requests. No optional analytics or marketing is installed. Use Cookie settings to allow essential sign-in cookies or browse without them. Declining signs out this device and blocks sign-in and progress sync until changed; public topics remain browsable. All features work without optional tracking.</p>
-          <p><Link href="/cookies" className="text-link">Open Cookie settings</Link></p>
+          <p>
+            Sign-in uses strictly necessary cookies to keep your session and
+            limit repeated sign-in requests. No optional analytics or marketing
+            is installed. Use Cookie settings to allow essential sign-in cookies
+            or browse without them. Declining signs out this device and blocks
+            sign-in and progress sync until changed; public topics remain
+            browsable. All features work without optional tracking.
+          </p>
+          <p>
+            <Link href="/cookies" className="text-link">
+              Open Cookie settings
+            </Link>
+          </p>
           <table className={styles.storageTable}>
             <caption>Storage used by this release</caption>
-            <thead><tr><th scope="col">Category</th><th scope="col">Current use</th></tr></thead>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Current use</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><th scope="row">Essential choice</th><td><code>apm-cookie-choice</code> stores only your allow/browse-without selection for 90 days. It has no account identifier and is readable by this website to display the notice. It uses SameSite=Lax, path / and Secure on production HTTPS. It stays when sign-in cookies are declined so we can remember and respect that choice.</td></tr>
-              <tr><th scope="row">Essential session</th><td><code>apm-auth</code> and numbered chunks such as <code>apm-auth.0</code> hold the session. Maximum browser lifetime is seven days, renewed when the session is refreshed; the provider also checks token expiry. These are HttpOnly, SameSite=Lax and Secure on production HTTPS. Signing out removes this device’s session cookies.</td></tr>
-              <tr><th scope="row">Essential sign-in flow</th><td><code>apm-auth-code-verifier</code>, <code>apm-auth-flows-code-verifier</code> and per-request <code>apm-auth-flow-…-code-verifier</code> cookies support the authentication exchange for up to ten minutes. <code>apm-sign-in-retry-at</code> limits resends for up to 60 seconds and contains a retry timestamp, not your email or code. Signing out removes these app cookies too.</td></tr>
-              <tr><th scope="row">Essential abuse prevention</th><td>Cloudflare Turnstile loads only on sign-in when configured. Its challenge response stays in page memory until submitted or expired. This app does not enable Turnstile pre-clearance cookies. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare’s privacy notice</a> for its processing.</td></tr>
-              <tr><th scope="row">Functional and preferences</th><td>Apart from the essential cookie-choice record above, no preference cookies, local storage or session storage. Search uses temporary page memory; your explicitly saved place is held in the private database instead.</td></tr>
-              <tr><th scope="row">Analytics</th><td>Not installed. No analytics cookies, identifiers or engagement events.</td></tr>
-              <tr><th scope="row">Marketing</th><td>Not installed. No advertising cookies or tracking pixels.</td></tr>
-              <tr><th scope="row">Local development only</th><td>Next.js may set the session cookie <code>__next_hmr_refresh_hash__</code> for hot reload. It is not a production learner-tracking cookie.</td></tr>
+              <tr>
+                <th scope="row">Essential choice</th>
+                <td>
+                  <code>apm-cookie-choice</code> stores only your
+                  allow/browse-without selection for 90 days. It has no account
+                  identifier and is readable by this website to display the
+                  notice. It uses SameSite=Lax, path / and Secure on production
+                  HTTPS. It stays when sign-in cookies are declined so we can
+                  remember and respect that choice.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Essential session</th>
+                <td>
+                  <code>apm-auth</code> and numbered chunks such as{" "}
+                  <code>apm-auth.0</code> hold the session. Maximum browser
+                  lifetime is seven days, renewed when the session is refreshed;
+                  the provider also checks token expiry. These are HttpOnly,
+                  SameSite=Lax and Secure on production HTTPS. Signing out
+                  removes this device’s session cookies.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Essential sign-in flow</th>
+                <td>
+                  <code>apm-auth-code-verifier</code>,{" "}
+                  <code>apm-auth-flows-code-verifier</code> and per-request{" "}
+                  <code>apm-auth-flow-…-code-verifier</code> cookies support the
+                  authentication exchange for up to ten minutes.{" "}
+                  <code>apm-sign-in-retry-at</code> limits resends for up to 60
+                  seconds and contains a retry timestamp, not your email or
+                  code. Signing out removes these app cookies too.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Essential abuse prevention</th>
+                <td>
+                  Cloudflare Turnstile loads only on sign-in when configured.
+                  Its challenge response stays in page memory until submitted or
+                  expired. This app does not enable Turnstile pre-clearance
+                  cookies. See{" "}
+                  <a href="https://www.cloudflare.com/privacypolicy/">
+                    Cloudflare’s privacy notice
+                  </a>{" "}
+                  for its processing.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Functional and preferences</th>
+                <td>
+                  Apart from the essential cookie-choice record above, no
+                  preference cookies, local storage or session storage. Search
+                  uses temporary page memory; your explicitly saved place is
+                  held in the private database instead.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Analytics</th>
+                <td>
+                  Not installed. No analytics cookies, identifiers or engagement
+                  events.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Marketing</th>
+                <td>
+                  Not installed. No advertising cookies or tracking pixels.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Local development only</th>
+                <td>
+                  Next.js may set the session cookie{" "}
+                  <code>__next_hmr_refresh_hash__</code> for hot reload. It is
+                  not a production learner-tracking cookie.
+                </td>
+              </tr>
             </tbody>
           </table>
-          <p>Fonts are served by this website; your browser does not contact Google Fonts to display them. External APM links and email links leave this website when you choose them. Other services have their own privacy and storage practices.</p>
-          <p>There are no optional cookies to enable today. Allowing sign-in cookies does not consent to future analytics. If optional tracking is introduced, it will stay off until you make a separate informed choice, and you will be able to withdraw it. See the <a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/">ICO’s storage and cookie guidance</a>.</p>
+          <p>
+            Fonts are served by this website; your browser does not contact
+            Google Fonts to display them. External APM links and email links
+            leave this website when you choose them. Other services have their
+            own privacy and storage practices.
+          </p>
+          <p>
+            There are no optional cookies to enable today. Allowing sign-in
+            cookies does not consent to future analytics. If optional tracking
+            is introduced, it will stay off until you make a separate informed
+            choice, and you will be able to withdraw it. See the{" "}
+            <a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/">
+              ICO’s storage and cookie guidance
+            </a>
+            .
+          </p>
         </section>
 
         <section id="providers">
           <h2>Providers and retention</h2>
-          <p>We use <a href="https://supabase.com/privacy">Supabase</a> for authentication, the study database and the project’s sign-in email delivery, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> for sign-in security verification when configured, and <a href="https://policies.google.com/privacy">Google’s Gmail</a> for correspondence. Information is shared only as needed to operate these services, handle your request or meet legal requirements.</p>
-          <p>Account details, your saved place, lesson completions and checkpoint attempts are retained while your account remains open. You can request deletion; after identity verification, deleting the Supabase account also removes its saved-place, completion and checkpoint records. Provider backup and log retention must be confirmed for the deployment. Our retention policy for privacy-request correspondence is up to 12 months after a request is closed, unless a legal dispute or legal obligation requires longer retention.</p>
-          <p>Netlify hosts the production website at apmprep.netlify.app. The deployment region and access-log retention have not yet been confirmed. These details, processor arrangements and any safeguards for transfers outside the UK or EEA must be documented before public account registration opens. We do not claim that all provider processing stays in the UK or EEA.</p>
+          <p>
+            We use <a href="https://supabase.com/privacy">Supabase</a> for
+            authentication, the study database and the project’s sign-in email
+            delivery,{" "}
+            <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>{" "}
+            for sign-in security verification when configured, and{" "}
+            <a href="https://policies.google.com/privacy">Google’s Gmail</a> for
+            correspondence. Information is shared only as needed to operate
+            these services, handle your request or meet legal requirements.
+          </p>
+          <p>
+            Account details, your saved place, lesson completions, checkpoint attempts and question-bank attempts are retained while your account remains open. You can
+            request deletion; after identity verification, deleting the Supabase
+            account also removes its saved-place, completion, checkpoint and question-attempt records. Provider backup and log retention must be confirmed for the
+            deployment. Our retention policy for privacy-request correspondence
+            is up to 12 months after a request is closed, unless a legal dispute
+            or legal obligation requires longer retention.
+          </p>
+          <p>
+            Netlify hosts the production website at apmprep.netlify.app. The
+            deployment region and access-log retention have not yet been
+            confirmed. These details, processor arrangements and any safeguards
+            for transfers outside the UK or EEA must be documented before public
+            account registration opens. We do not claim that all provider
+            processing stays in the UK or EEA.
+          </p>
         </section>
 
         <section id="requests">
           <h2>Access, correct or delete your data</h2>
-          <p>You can ask whether we hold information about you, request a copy, correct it or request its deletion. You can also request restriction, object to processing, request portability where applicable, or withdraw consent where consent is used. Some rights have legal limits; we will explain these when they apply.</p>
-          <p>No sign-in is needed to make a request. The links below open your email app with a draft. <strong>Nothing is sent by this website.</strong> If you do not have an email app configured, write directly to <a href={`mailto:${contact}`}>{contact}</a>.</p>
+          <p>
+            You can ask whether we hold information about you, request a copy,
+            correct it or request its deletion. You can also request
+            restriction, object to processing, request portability where
+            applicable, or withdraw consent where consent is used. Some rights
+            have legal limits; we will explain these when they apply.
+          </p>
+          <p>
+            No sign-in is needed to make a request. The links below open your
+            email app with a draft.{" "}
+            <strong>Nothing is sent by this website.</strong> If you do not have
+            an email app configured, write directly to{" "}
+            <a href={`mailto:${contact}`}>{contact}</a>.
+          </p>
           <ul className={styles.requestList}>
             {requests.map((request) => (
               <li key={request.subject}>
-                <a href={`mailto:${contact}?subject=${encodeURIComponent(request.subject)}&body=${encodeURIComponent(request.body)}`}>
-                  {request.label}<ArrowUpRight size={17} aria-hidden="true" />
+                <a
+                  href={`mailto:${contact}?subject=${encodeURIComponent(request.subject)}&body=${encodeURIComponent(request.body)}`}
+                >
+                  {request.label}
+                  <ArrowUpRight size={17} aria-hidden="true" />
                 </a>
               </li>
             ))}
           </ul>
-          <p>We may ask for information reasonably needed to verify your identity before disclosing or changing personal information. Do not email passwords, one-time codes or unsolicited identity-document scans.</p>
-          <p>We normally respond within one calendar month. If a lawful extension is needed, we will tell you why and when to expect a response. You can read more about <a href="https://ico.org.uk/for-the-public/getting-copies-of-your-information-subject-access-request/">requesting a copy of your information from the ICO</a>.</p>
+          <p>
+            We may ask for information reasonably needed to verify your identity
+            before disclosing or changing personal information. Do not email
+            passwords, one-time codes or unsolicited identity-document scans.
+          </p>
+          <p>
+            We normally respond within one calendar month. If a lawful extension
+            is needed, we will tell you why and when to expect a response. You
+            can read more about{" "}
+            <a href="https://ico.org.uk/for-the-public/getting-copies-of-your-information-subject-access-request/">
+              requesting a copy of your information from the ICO
+            </a>
+            .
+          </p>
         </section>
 
         <section id="account-changes">
           <h2>Changing account details</h2>
-          <p>Open <Link href="/account">Your account</Link> to request an email change. A recent magic-link sign-in is required, and the change is not complete until the email confirmation process succeeds. No display name is collected. To correct other information you have shared with APM Study, use <a href="#requests">Correct or change my details</a> above.</p>
-          <p>Export and deletion requests are handled through the privacy contact after proportionate identity verification. Signing out clears this device’s session but does not delete your account, saved place, completions or checkpoint history.</p>
+          <p>
+            Open <Link href="/account">Your account</Link> to request an email
+            change. A recent magic-link sign-in is required, and the change is
+            not complete until the email confirmation process succeeds. No
+            display name is collected. To correct other information you have
+            shared with APM Study, use{" "}
+            <a href="#requests">Correct or change my details</a> above.
+          </p>
+          <p>
+            Export and deletion requests are handled through the privacy contact
+            after proportionate identity verification. Signing out clears this
+            device’s session but does not delete your account, saved place,
+            completions, checkpoint history or question attempts.
+          </p>
         </section>
 
         <section id="complaints">
           <h2>Questions and complaints</h2>
-          <p>Contact <a href={`mailto:${contact}`}>{contact}</a> if something is unclear or you are unhappy with how a request was handled. You can also <a href="https://ico.org.uk/make-a-complaint/">complain to the UK Information Commissioner’s Office</a>, or contact your local EEA supervisory authority where applicable.</p>
+          <p>
+            Contact <a href={`mailto:${contact}`}>{contact}</a> if something is
+            unclear or you are unhappy with how a request was handled. You can
+            also{" "}
+            <a href="https://ico.org.uk/make-a-complaint/">
+              complain to the UK Information Commissioner’s Office
+            </a>
+            , or contact your local EEA supervisory authority where applicable.
+          </p>
         </section>
-        <Link href="/" className="detail-action"><ArrowLeft size={17} aria-hidden="true" /> Back to roadmap</Link>
+        <Link href="/" className="detail-action">
+          <ArrowLeft size={17} aria-hidden="true" /> Back to roadmap
+        </Link>
       </article>
       <SiteFooter />
     </main>

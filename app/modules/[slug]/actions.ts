@@ -84,6 +84,7 @@ export async function markLessonComplete(form: FormData) {
   }
   revalidatePath("/");
   revalidatePath(destination);
+  revalidatePath("/questions");
   redirect(
     `${destination}${failed ? "?completion=error" : ""}#lesson-completion`,
   );

@@ -1,0 +1,1056 @@
+{
+  "batch": "phase5-v1",
+  "questions": [
+    {
+      "id": "PFQ-0001",
+      "lessonId": "project-environment",
+      "title": "Scanning the external environment",
+      "syllabusRefs": [
+        "1.6"
+      ],
+      "requiredLessonIds": [
+        "project-environment"
+      ],
+      "difficulty": "Easy",
+      "version": 1,
+      "published": true,
+      "stem": "A community theatre plans a new ticketing service. The team records a proposed accessibility law, rising supplier prices and changing audience habits. Why would its manager group these findings using PESTLE?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "To turn the findings into a detailed task schedule."
+        },
+        {
+          "id": "b",
+          "text": "To examine external influences that may change assumptions and decisions."
+        },
+        {
+          "id": "c",
+          "text": "To allocate individual work packages to team members."
+        },
+        {
+          "id": "d",
+          "text": "To confirm that every uncertainty is now controlled."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "PESTLE gives a structured view of external influences and their possible implications. A schedule and work allocation need further planning; recording a factor does not control it or remove uncertainty."
+    },
+    {
+      "id": "PFQ-0002",
+      "lessonId": "project-environment",
+      "title": "Using environmental evidence",
+      "syllabusRefs": [
+        "1.6"
+      ],
+      "requiredLessonIds": [
+        "project-environment",
+        "business-case"
+      ],
+      "difficulty": "Very hard",
+      "version": 1,
+      "published": true,
+      "stem": "A library’s self-service project assumes stable energy costs. An external review identifies a sustained price rise that could change the operating costs and the preferred option. What is the most useful management response?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Keep the original operating-cost assumption because the project budget was approved."
+        },
+        {
+          "id": "b",
+          "text": "Treat the external review as sufficient proof that the project should be cancelled."
+        },
+        {
+          "id": "c",
+          "text": "Add more technical features to compensate without reviewing costs."
+        },
+        {
+          "id": "d",
+          "text": "Assess the evidence, revisit the business-case assumptions and route any proposed change through the agreed decision process."
+        }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Environmental scanning should inform decisions: test the evidence and reconsider the investment assumptions with the right decision makers. Approval does not make an assumption permanent; a finding alone neither proves cancellation is needed nor authorises extra scope."
+    },
+    {
+      "id": "PFQ-0003",
+      "lessonId": "project-programme-portfolio",
+      "title": "Coordinating related investments",
+      "syllabusRefs": [
+        "1.5"
+      ],
+      "requiredLessonIds": [
+        "project-programme-portfolio"
+      ],
+      "difficulty": "Medium",
+      "version": 1,
+      "published": true,
+      "stem": "A regional organisation runs linked projects to introduce a shared booking service, train staff and change operating procedures. Their combined benefits depend on coordinated change. Which management approach fits this relationship?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Programme management."
+        },
+        {
+          "id": "b",
+          "text": "Managing each project independently with no shared coordination."
+        },
+        {
+          "id": "c",
+          "text": "Business-as-usual supervision only."
+        },
+        {
+          "id": "d",
+          "text": "Portfolio selection alone, without coordinating delivery."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "A programme coordinates related projects and change to realise benefits from their combined outcomes. A portfolio supports strategic investment choices, while business as usual operates continuing services. Independent delivery would not manage the stated interdependencies."
+    },
+    {
+      "id": "PFQ-0004",
+      "lessonId": "project-programme-portfolio",
+      "title": "Choosing a balanced portfolio",
+      "syllabusRefs": [
+        "1.5"
+      ],
+      "requiredLessonIds": [
+        "project-programme-portfolio"
+      ],
+      "difficulty": "Hard",
+      "version": 1,
+      "published": true,
+      "stem": "Two proposed projects each have positive business cases, but both need the same scarce specialists next quarter. Which question belongs most directly to portfolio management?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Which specialist should complete today’s test task?"
+        },
+        {
+          "id": "b",
+          "text": "Which defect should the delivery team fix first?"
+        },
+        {
+          "id": "c",
+          "text": "Which combination and timing of investments best supports strategy within available capacity?"
+        },
+        {
+          "id": "d",
+          "text": "Which attendance record should the operational supervisor update?"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Portfolio management considers the strategic fit, balance and capacity of investments together. Assigning a test task and prioritising an individual defect are delivery decisions; routine attendance administration is an operational activity."
+    },
+    {
+      "id": "PFQ-0005",
+      "lessonId": "project-roles",
+      "title": "Sponsorship at a decision point",
+      "syllabusRefs": [
+        "3.1"
+      ],
+      "requiredLessonIds": [
+        "project-roles"
+      ],
+      "difficulty": "Easy",
+      "version": 1,
+      "published": true,
+      "stem": "A project manager reports that the forecast benefits no longer justify the remaining investment. Who would normally own the business case and sponsor the decision about continued viability?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "An external supplier acting alone."
+        },
+        {
+          "id": "b",
+          "text": "The project sponsor."
+        },
+        {
+          "id": "c",
+          "text": "Any end user who attended a demonstration."
+        },
+        {
+          "id": "d",
+          "text": "The project management office, automatically for every project."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "The sponsor owns the business case and champions the investment and its benefits. The project manager provides information and manages delivery. Suppliers, users and a PMO can contribute evidence, but their participation does not automatically transfer sponsorship accountability."
+    },
+    {
+      "id": "PFQ-0006",
+      "lessonId": "project-roles",
+      "title": "Responsibility across the team",
+      "syllabusRefs": [
+        "3.1"
+      ],
+      "requiredLessonIds": [
+        "project-roles"
+      ],
+      "difficulty": "Very hard",
+      "version": 1,
+      "published": true,
+      "stem": "A project’s senior user, sponsor and manager disagree over an acceptance decision. Their responsibilities have never been agreed. Which response best addresses the underlying governance weakness?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Let the manager accept on behalf of every stakeholder."
+        },
+        {
+          "id": "b",
+          "text": "Ask the supplier to decide because it built the output."
+        },
+        {
+          "id": "c",
+          "text": "Avoid documenting the decision until the disagreement disappears."
+        },
+        {
+          "id": "d",
+          "text": "Clarify decision rights, responsibilities and escalation arrangements with the appropriate governance roles."
+        }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Clear roles and governance establish who has authority and how disagreements are escalated. Neither managing delivery nor supplying an output automatically confers every acceptance right. Avoiding a record leaves the responsibility gap unresolved."
+    },
+    {
+      "id": "PFQ-0007",
+      "lessonId": "business-case",
+      "title": "Investment justification",
+      "syllabusRefs": [
+        "4.4"
+      ],
+      "requiredLessonIds": [
+        "business-case"
+      ],
+      "difficulty": "Medium",
+      "version": 1,
+      "published": true,
+      "stem": "A council is deciding whether to fund an archive digitisation project. Which information most directly helps its business case justify the investment?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Options, expected benefits, costs, risks and the reasons for the preferred choice."
+        },
+        {
+          "id": "b",
+          "text": "Only the names of the people attending the launch."
+        },
+        {
+          "id": "c",
+          "text": "Only a list of completed technical tasks."
+        },
+        {
+          "id": "d",
+          "text": "An unconditional promise that no assumptions will change."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "A business case explains why an investment is worthwhile by comparing options and considering benefits, costs, risks and assumptions. Attendance and task records cannot supply that justification, and uncertainty cannot be removed by promising it away."
+    },
+    {
+      "id": "PFQ-0008",
+      "lessonId": "business-case",
+      "title": "Benefits after delivery",
+      "syllabusRefs": [
+        "4.7"
+      ],
+      "requiredLessonIds": [
+        "business-case"
+      ],
+      "difficulty": "Hard",
+      "version": 1,
+      "published": true,
+      "stem": "A new process has been handed over, but nobody is measuring the expected reduction in waiting time. What is missing from the benefits-management arrangements?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "A larger logo on the handover pack."
+        },
+        {
+          "id": "b",
+          "text": "More detailed records of the developer’s working hours alone."
+        },
+        {
+          "id": "c",
+          "text": "An accountable benefit owner and a plan to measure and review the outcome."
+        },
+        {
+          "id": "d",
+          "text": "A rule that output delivery automatically proves every benefit."
+        }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Benefits management needs responsibility for realising and measuring the intended improvement, including after handover. Delivering an output is distinct from obtaining a benefit. Branding or time records do not establish whether waiting times improved."
+    },
+    {
+      "id": "PFQ-0009",
+      "lessonId": "project-life-cycles",
+      "title": "Combining delivery approaches",
+      "syllabusRefs": [
+        "2.3"
+      ],
+      "requiredLessonIds": [
+        "project-life-cycles"
+      ],
+      "difficulty": "Easy",
+      "version": 1,
+      "published": true,
+      "stem": "A building conversion uses a planned sequence for structural work while a team develops the visitor app in short feedback cycles. How can the overall life cycle best be described?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Extended, solely because more than one supplier is involved."
+        },
+        {
+          "id": "b",
+          "text": "Hybrid, because it combines linear and iterative approaches."
+        },
+        {
+          "id": "c",
+          "text": "Business as usual, because some tasks repeat."
+        },
+        {
+          "id": "d",
+          "text": "Purely linear, because structural work exists."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "A hybrid life cycle combines linear and iterative approaches to suit the work. An extended life cycle includes attention to benefits beyond delivery; supplier count does not define it. Repeated development activities do not make a temporary change business as usual."
+    },
+    {
+      "id": "PFQ-0010",
+      "lessonId": "project-life-cycles",
+      "title": "Looking beyond the output",
+      "syllabusRefs": [
+        "2.4"
+      ],
+      "requiredLessonIds": [
+        "project-life-cycles"
+      ],
+      "difficulty": "Very hard",
+      "version": 1,
+      "published": true,
+      "stem": "A sponsor wants governance to consider whether the delivered equipment is actually adopted and produces the intended operational improvement, beyond the project’s delivery work. Which life-cycle concept best supports that wider view?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Treating handover as proof that the benefits already exist."
+        },
+        {
+          "id": "b",
+          "text": "Removing operational ownership so the manager owns benefits indefinitely."
+        },
+        {
+          "id": "c",
+          "text": "Using iterations solely to avoid any transition work."
+        },
+        {
+          "id": "d",
+          "text": "An extended project life cycle that includes benefits realisation beyond delivery."
+        }
+      ],
+      "correctOptionId": "d",
+      "explanation": "An extended life cycle connects delivery with adoption and benefits realisation. It does not make handover proof of success or remove operational ownership. Iterative delivery alone does not ensure the resulting change is adopted."
+    },
+    {
+      "id": "PFQ-0011",
+      "lessonId": "project-management-plan",
+      "title": "The agreed delivery reference",
+      "syllabusRefs": [
+        "4.1"
+      ],
+      "requiredLessonIds": [
+        "project-management-plan"
+      ],
+      "difficulty": "Medium",
+      "version": 1,
+      "published": true,
+      "stem": "A manager needs an agreed reference against which to monitor the integrated scope, schedule, resources and costs of delivery. What is this reference called?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The deployment baseline."
+        },
+        {
+          "id": "b",
+          "text": "The issue log."
+        },
+        {
+          "id": "c",
+          "text": "The stakeholder contact directory."
+        },
+        {
+          "id": "d",
+          "text": "The unapproved list of possible changes."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "The deployment baseline provides an agreed integrated reference for managing delivery and assessing change. Issue and contact records support particular activities; proposed changes are not part of the baseline until appropriately authorised."
+    },
+    {
+      "id": "PFQ-0012",
+      "lessonId": "project-management-plan",
+      "title": "Keeping plans integrated",
+      "syllabusRefs": [
+        "4.3"
+      ],
+      "requiredLessonIds": [
+        "project-management-plan"
+      ],
+      "difficulty": "Hard",
+      "version": 1,
+      "published": true,
+      "stem": "A specialist produces a revised resource plan that shifts a key delivery date. What should happen before the project manager treats it as the agreed plan?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Update the resource document alone and assume other plans will adjust themselves."
+        },
+        {
+          "id": "b",
+          "text": "Hide the date change until the next handover."
+        },
+        {
+          "id": "c",
+          "text": "Review the effect with relevant planning stakeholders and follow the agreed approval/change arrangements."
+        },
+        {
+          "id": "d",
+          "text": "Ask only a person with no responsibility for the affected work."
+        }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Integrated planning needs input from the stakeholders responsible for the affected work and decisions. A resource change can affect schedule, cost and other commitments. Isolated editing, concealment or irrelevant consultation cannot establish an agreed integrated plan."
+    },
+    {
+      "id": "PFQ-0013",
+      "lessonId": "stakeholder-engagement",
+      "title": "Understanding stakeholder influence",
+      "syllabusRefs": [
+        "4.6"
+      ],
+      "requiredLessonIds": [
+        "stakeholder-engagement"
+      ],
+      "difficulty": "Easy",
+      "version": 1,
+      "published": true,
+      "stem": "A project manager discovers that a small operations team can delay a vital handover even though it has few members. What should stakeholder analysis consider?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Only how many people are in each team."
+        },
+        {
+          "id": "b",
+          "text": "Only whether a stakeholder has attended a meeting."
+        },
+        {
+          "id": "c",
+          "text": "Only the manager’s personal familiarity with the team."
+        },
+        {
+          "id": "d",
+          "text": "The team’s interests, influence and relationship to the project decisions."
+        }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Stakeholder analysis examines interests and influence, rather than using group size or attendance as a substitute. Understanding how the operations team affects handover helps the manager plan proportionate engagement."
+    },
+    {
+      "id": "PFQ-0014",
+      "lessonId": "stakeholder-engagement",
+      "title": "Adapting engagement",
+      "syllabusRefs": [
+        "4.6"
+      ],
+      "requiredLessonIds": [
+        "stakeholder-engagement"
+      ],
+      "difficulty": "Very hard",
+      "version": 1,
+      "published": true,
+      "stem": "A regulator becomes more influential after a proposed operating rule changes. The team’s stakeholder analysis still places it in a low-influence group. What should the manager do?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Keep the original category because analyses should never change."
+        },
+        {
+          "id": "b",
+          "text": "Reassess the regulator’s influence and concerns, then adjust engagement responsibilities and activities."
+        },
+        {
+          "id": "c",
+          "text": "Stop engaging all other stakeholders immediately."
+        },
+        {
+          "id": "d",
+          "text": "Assume frequent generic newsletters will satisfy every new concern."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Analysis needs revisiting as the project environment changes. Updated interests and influence should inform targeted engagement. Freezing categories, abandoning every other relationship or sending undifferentiated messages would not respond to the new situation."
+    },
+    {
+      "id": "PFQ-0015",
+      "lessonId": "communication",
+      "title": "Choosing an appropriate channel",
+      "syllabusRefs": [
+        "9.2"
+      ],
+      "requiredLessonIds": [
+        "communication"
+      ],
+      "difficulty": "Medium",
+      "version": 1,
+      "published": true,
+      "stem": "A team member needs to communicate a complex, disputed requirement and check that colleagues understand it. Which approach best supports that purpose?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "An interactive discussion supported by a clear written record of the agreed outcome."
+        },
+        {
+          "id": "b",
+          "text": "A cryptic subject line with no explanation."
+        },
+        {
+          "id": "c",
+          "text": "A message sent to an unrelated mailing list."
+        },
+        {
+          "id": "d",
+          "text": "A notice that prevents recipients from asking questions."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "An interactive channel supports clarification, while a written record helps preserve the agreement. The method should suit the message and audience. Obscure, misdirected or one-way communication makes understanding harder."
+    },
+    {
+      "id": "PFQ-0016",
+      "lessonId": "communication",
+      "title": "Planning communication for an audience",
+      "syllabusRefs": [
+        "9.4"
+      ],
+      "requiredLessonIds": [
+        "communication"
+      ],
+      "difficulty": "Hard",
+      "version": 1,
+      "published": true,
+      "stem": "A steering group wants exception reports, while site users need practical instructions before transition. Which communication-plan decision is most useful?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Send both groups every raw project file daily."
+        },
+        {
+          "id": "b",
+          "text": "Assume a single technical report suits all audiences."
+        },
+        {
+          "id": "c",
+          "text": "Specify each audience’s information needs, method, timing and responsibility."
+        },
+        {
+          "id": "d",
+          "text": "Remove the user instructions because the steering group has priority."
+        }
+      ],
+      "correctOptionId": "c",
+      "explanation": "A communication plan identifies who needs what information, how and when it will be communicated, and who is responsible. Different needs justify different communication. More raw data or one report for everyone does not necessarily improve understanding."
+    },
+    {
+      "id": "PFQ-0017",
+      "lessonId": "risk-and-issue-management",
+      "title": "Opportunity as well as threat",
+      "syllabusRefs": [
+        "7.1"
+      ],
+      "requiredLessonIds": [
+        "risk-and-issue-management"
+      ],
+      "difficulty": "Easy",
+      "version": 1,
+      "published": true,
+      "stem": "A supplier offers an unproven technique that might reduce delivery time, but success is uncertain. How should the possible favourable effect be understood?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "As an issue that has definitely occurred."
+        },
+        {
+          "id": "b",
+          "text": "As proof the schedule can be shortened immediately."
+        },
+        {
+          "id": "c",
+          "text": "As a reason to remove all existing risks."
+        },
+        {
+          "id": "d",
+          "text": "As an opportunity to assess and manage as part of risk management."
+        }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Risk concerns uncertainty that can affect objectives, including favourable opportunities. An uncertain advantage is not a confirmed outcome or a current issue. It needs assessment and an appropriate response rather than an automatic schedule change."
+    },
+    {
+      "id": "PFQ-0018",
+      "lessonId": "risk-and-issue-management",
+      "title": "Separating issues and future exposure",
+      "syllabusRefs": [
+        "7.7"
+      ],
+      "requiredLessonIds": [
+        "risk-and-issue-management"
+      ],
+      "difficulty": "Very hard",
+      "version": 1,
+      "published": true,
+      "stem": "A permit decision has already been delayed and is disrupting work. Further delays remain possible. How should the manager distinguish the immediate problem from the future uncertainty?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Treat both only as completed benefits."
+        },
+        {
+          "id": "b",
+          "text": "Manage the current disruption as an issue and assess the uncertain further delay as a risk."
+        },
+        {
+          "id": "c",
+          "text": "Describe the current disruption only as a future risk so no action owner is needed."
+        },
+        {
+          "id": "d",
+          "text": "Remove both from the records because they have the same cause."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "The disruption has happened and needs issue resolution; additional delay remains uncertain and needs risk assessment. A shared cause does not erase either management need. Labelling a current problem only as a future uncertainty can postpone necessary action."
+    },
+    {
+      "id": "PFQ-0019",
+      "lessonId": "quality-management",
+      "title": "Assurance and control",
+      "syllabusRefs": [
+        "8.5"
+      ],
+      "requiredLessonIds": [
+        "quality-management"
+      ],
+      "difficulty": "Medium",
+      "version": 1,
+      "published": true,
+      "stem": "A reviewer checks whether the team follows a suitable, agreed quality process, rather than testing one finished output. Which activity does this most closely describe?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Quality assurance."
+        },
+        {
+          "id": "b",
+          "text": "Scope creep."
+        },
+        {
+          "id": "c",
+          "text": "An individual product acceptance test only."
+        },
+        {
+          "id": "d",
+          "text": "Resource smoothing."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Quality assurance gives confidence that appropriate processes are being used. Quality control examines outputs against requirements. Scope change and resource smoothing serve different purposes and do not describe this process review."
+    },
+    {
+      "id": "PFQ-0020",
+      "lessonId": "quality-management",
+      "title": "Responding to a failed check",
+      "syllabusRefs": [
+        "8.4"
+      ],
+      "requiredLessonIds": [
+        "quality-management"
+      ],
+      "difficulty": "Hard",
+      "version": 1,
+      "published": true,
+      "stem": "A sample of completed components fails a specified tolerance check. What is the immediate quality-control purpose of that finding?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "To prove that every project process is effective."
+        },
+        {
+          "id": "b",
+          "text": "To authorise a new tolerance without consulting anyone."
+        },
+        {
+          "id": "c",
+          "text": "To identify non-conforming output so appropriate corrective action can be taken."
+        },
+        {
+          "id": "d",
+          "text": "To replace the project’s stakeholder analysis."
+        }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Quality control compares output with defined requirements and identifies non-conformance. The result supports correction and investigation; it does not by itself prove process effectiveness or authorise changing the acceptance standard."
+    },
+    {
+      "id": "PFQ-0021",
+      "lessonId": "scope-management",
+      "title": "Controlling versions",
+      "syllabusRefs": [
+        "5.5"
+      ],
+      "requiredLessonIds": [
+        "scope-management"
+      ],
+      "difficulty": "Easy",
+      "version": 1,
+      "published": true,
+      "stem": "Two teams are using different approved-looking drawings for the same component. Which management discipline directly addresses identification and control of the product versions?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Benefits realisation only."
+        },
+        {
+          "id": "b",
+          "text": "Informal team motivation only."
+        },
+        {
+          "id": "c",
+          "text": "Portfolio prioritisation only."
+        },
+        {
+          "id": "d",
+          "text": "Configuration management."
+        }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Configuration management identifies products and controls their versions and status so people can use the correct information. The other activities may matter to the project but do not directly establish which drawing version is authorised."
+    },
+    {
+      "id": "PFQ-0022",
+      "lessonId": "scope-management",
+      "title": "Assessing a scope request",
+      "syllabusRefs": [
+        "5.7"
+      ],
+      "requiredLessonIds": [
+        "scope-management"
+      ],
+      "difficulty": "Very hard",
+      "version": 1,
+      "published": true,
+      "stem": "A client asks for a useful additional feature and offers to pay its direct development cost. The delivery date is fixed and testing uses scarce resources. What should the manager do before accepting?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Accept immediately because direct development is funded."
+        },
+        {
+          "id": "b",
+          "text": "Assess the wider scope, schedule, resource, quality and risk effects, then seek the required change decision."
+        },
+        {
+          "id": "c",
+          "text": "Add it quietly if a developer is willing to work late."
+        },
+        {
+          "id": "d",
+          "text": "Reject every request regardless of its value or impact."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Change control considers integrated impact and appropriate authority, not just direct development cost. Testing capacity and the fixed date may affect feasibility. Quiet additions bypass control, while a blanket rejection avoids an informed decision."
+    },
+    {
+      "id": "PFQ-0023",
+      "lessonId": "estimating",
+      "title": "Estimating from a rate",
+      "syllabusRefs": [
+        "4.8"
+      ],
+      "requiredLessonIds": [
+        "estimating"
+      ],
+      "difficulty": "Medium",
+      "version": 1,
+      "published": true,
+      "stem": "A team estimates survey effort using an established rate of two hours per room and 24 similar rooms. Which estimating method is this?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Parametric estimating."
+        },
+        {
+          "id": "b",
+          "text": "Analogous estimating based only on a previous total."
+        },
+        {
+          "id": "c",
+          "text": "A milestone review."
+        },
+        {
+          "id": "d",
+          "text": "A benefits measurement exercise."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Parametric estimating applies a relationship between a measurable quantity and a rate: here 24 × 2 hours. Analogous estimating compares a similar past piece of work, while milestones and benefit reviews are not estimating methods."
+    },
+    {
+      "id": "PFQ-0024",
+      "lessonId": "estimating",
+      "title": "Communicating estimate uncertainty",
+      "syllabusRefs": [
+        "4.9"
+      ],
+      "requiredLessonIds": [
+        "estimating"
+      ],
+      "difficulty": "Hard",
+      "version": 1,
+      "published": true,
+      "stem": "At concept stage, requirements and supplier conditions are uncertain. A director asks why the estimate is a range rather than a precise promise. Which explanation best reflects the estimating funnel?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Early estimates are always exact if written as whole numbers."
+        },
+        {
+          "id": "b",
+          "text": "The range must remain equally wide even after relevant evidence improves."
+        },
+        {
+          "id": "c",
+          "text": "Limited early information supports a wider range; uncertainty can reduce as the work is defined and evidence improves."
+        },
+        {
+          "id": "d",
+          "text": "The funnel eliminates every cost risk at the next meeting."
+        }
+      ],
+      "correctOptionId": "c",
+      "explanation": "The estimating funnel communicates uncertainty and increasing definition. A range can narrow with relevant evidence, but precision is not created by formatting and uncertainty is not guaranteed to disappear at a particular meeting."
+    },
+    {
+      "id": "PFQ-0025",
+      "lessonId": "resource-scheduling",
+      "title": "Float in a dependency network",
+      "syllabusRefs": [
+        "6.2"
+      ],
+      "requiredLessonIds": [
+        "resource-scheduling"
+      ],
+      "difficulty": "Easy",
+      "version": 1,
+      "published": true,
+      "stem": "An activity’s total float is two days. If it slips by one day and the network assumptions remain valid, what does that normally mean for the project finish?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "The finish must slip by two days."
+        },
+        {
+          "id": "b",
+          "text": "The activity no longer has any predecessors."
+        },
+        {
+          "id": "c",
+          "text": "The manager can ignore its resource needs."
+        },
+        {
+          "id": "d",
+          "text": "The finish need not move because the delay is within its total float."
+        }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Total float is the time an activity can be delayed without delaying the project finish under the model’s assumptions. Using some float does not remove dependencies or resource constraints, and it does not necessarily delay completion."
+    },
+    {
+      "id": "PFQ-0026",
+      "lessonId": "resource-scheduling",
+      "title": "Working with a resource limit",
+      "syllabusRefs": [
+        "6.5"
+      ],
+      "requiredLessonIds": [
+        "resource-scheduling"
+      ],
+      "difficulty": "Very hard",
+      "version": 1,
+      "published": true,
+      "stem": "A schedule needs four technicians on Monday, but only two are available. Management permits the finish date to move and wants the resource cap respected. Which response best matches resource levelling?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Keep all start dates fixed and assume capacity will appear."
+        },
+        {
+          "id": "b",
+          "text": "Reschedule work around the available capacity, accepting a possible later finish."
+        },
+        {
+          "id": "c",
+          "text": "Record a milestone as taking two technicians all week."
+        },
+        {
+          "id": "d",
+          "text": "Change only the report colours while leaving the overload."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Resource levelling schedules work within resource limits and may extend completion. Smoothing aims to use available float while respecting the required finish. Assuming extra capacity, misrepresenting milestones or changing presentation does not resolve the overload."
+    },
+    {
+      "id": "PFQ-0027",
+      "lessonId": "information-and-reporting",
+      "title": "Forecasting in a progress report",
+      "syllabusRefs": [
+        "4.11"
+      ],
+      "requiredLessonIds": [
+        "information-and-reporting"
+      ],
+      "difficulty": "Medium",
+      "version": 1,
+      "published": true,
+      "stem": "A status report shows money spent so far but omits the expected remaining cost and finish date. What useful management information is missing?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "A forecast that helps assess the likely final position and necessary decisions."
+        },
+        {
+          "id": "b",
+          "text": "Only a decorative cover page."
+        },
+        {
+          "id": "c",
+          "text": "A guarantee that the original baseline cannot change."
+        },
+        {
+          "id": "d",
+          "text": "A replacement for every detailed technical record."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Progress reporting helps decision makers compare actual performance and forecasts with agreed plans. Spend to date alone cannot establish the likely outturn. A cover page or a promise does not supply that forecast, and a report does not replace all supporting records."
+    },
+    {
+      "id": "PFQ-0028",
+      "lessonId": "information-and-reporting",
+      "title": "Information suited to a decision",
+      "syllabusRefs": [
+        "4.11"
+      ],
+      "requiredLessonIds": [
+        "information-and-reporting"
+      ],
+      "difficulty": "Hard",
+      "version": 1,
+      "published": true,
+      "stem": "A board receives hundreds of unfiltered task updates but cannot see whether a key dependency threatens the next decision gate. How could reporting become more useful?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Add more raw updates without explaining their relevance."
+        },
+        {
+          "id": "b",
+          "text": "Suppress the dependency because it is uncomfortable to discuss."
+        },
+        {
+          "id": "c",
+          "text": "Highlight the exception, its forecast effect, response and decision needed, supported by reliable source information."
+        },
+        {
+          "id": "d",
+          "text": "Replace the forecast with an unsupported reassuring percentage."
+        }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Useful reporting makes relevant performance, exceptions and required decisions clear, with supporting evidence. More volume is not automatically more useful. Hiding an issue or inventing a percentage prevents informed control."
+    },
+    {
+      "id": "PFQ-0029",
+      "lessonId": "leadership-and-teamwork",
+      "title": "Building shared direction",
+      "syllabusRefs": [
+        "10.1"
+      ],
+      "requiredLessonIds": [
+        "leadership-and-teamwork"
+      ],
+      "difficulty": "Easy",
+      "version": 1,
+      "published": true,
+      "stem": "A newly formed project team understands its individual tasks but not why the project matters. Which leadership action most directly helps?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Send a longer list of tasks without discussing the purpose."
+        },
+        {
+          "id": "b",
+          "text": "Avoid questions until the project ends."
+        },
+        {
+          "id": "c",
+          "text": "Make every decision without explaining the intended outcome."
+        },
+        {
+          "id": "d",
+          "text": "Explain the shared purpose and help people connect their contributions to it."
+        }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Leadership provides direction and helps people commit to a shared purpose. Task allocation can support management, but a larger task list alone does not explain why the project matters. Avoiding questions and unexplained decisions weaken that understanding."
+    },
+    {
+      "id": "PFQ-0030",
+      "lessonId": "leadership-and-teamwork",
+      "title": "Supporting a dispersed team",
+      "syllabusRefs": [
+        "10.3"
+      ],
+      "requiredLessonIds": [
+        "leadership-and-teamwork"
+      ],
+      "difficulty": "Very hard",
+      "version": 1,
+      "published": true,
+      "stem": "A dispersed team has different working hours and some members rarely speak in meetings. What is a proportionate approach to support collaboration?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Assume silence proves agreement and use only one meeting time."
+        },
+        {
+          "id": "b",
+          "text": "Agree accessible communication arrangements, invite contributions in different ways and check shared understanding."
+        },
+        {
+          "id": "c",
+          "text": "Treat all differences as evidence that the team cannot work together."
+        },
+        {
+          "id": "d",
+          "text": "Remove individual responsibility because collaboration is difficult."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Effective teamwork accounts for how people can contribute and checks understanding. Agreed channels and inclusive participation help a dispersed team collaborate. Silence is not proof of agreement, and neither giving up nor removing responsibility addresses the communication barriers."
+    }
+  ]
+}

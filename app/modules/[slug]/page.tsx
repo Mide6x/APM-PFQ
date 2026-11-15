@@ -87,6 +87,7 @@ export default async function ModulePage({
                   <ArrowRight size={16} aria-hidden="true" />
                 </a>
               </p>
+              <p><Link className="text-link" href="/questions">Practise in the Questions bank <ArrowRight size={16} aria-hidden="true" /></Link>. Complete this lesson to unlock its questions.</p>
               <Lesson lesson={lesson} />
               <section
                 id="lesson-completion"
