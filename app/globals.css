@@ -643,19 +643,7 @@ p {
   border-left: 3px solid var(--green);
   background: var(--green-pale);
 }
-.save-place {
-  margin-top: 24px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-}
-.save-place .detail-action {
-  margin-top: 0;
-}
-.save-place p {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 13px;
-}
+
 
 @media (max-width: 600px) {
   .site-header {

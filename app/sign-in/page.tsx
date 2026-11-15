@@ -57,7 +57,7 @@ export default async function SignInPage({
         <p className={styles.intro}>
           {params.reauth === "1"
             ? "Follow a fresh sign-in link before changing your account details."
-            : "Use a one-time email link to save your place and pick up on another device. No password or public username needed."}
+            : "Sign in by email to sync your study progress and results."}
         </p>
         {params.error === "link" && (
           <p className={styles.error} role="alert">

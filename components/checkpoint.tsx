@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { submitCheckpoint } from "@/app/modules/[slug]/actions";
 import type { CheckpointQuestion, CheckpointState } from "@/lib/checkpoint-types";
@@ -10,24 +10,26 @@ function CheckpointAttempt({ questions, lessonId, version, slug, attemptId, onRe
   questions: CheckpointQuestion[]; lessonId: string; version: number; slug: string; attemptId: string; onRetry: () => void;
 }) {
   const [state, action, pending] = useActionState(submitCheckpoint, { status: "idle", message: "" } as CheckpointState);
+  const resultHeading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => { if (state.status === "graded") resultHeading.current?.focus(); }, [state]);
   if (state.status === "graded") return (
     <div className={styles.result}>
-      <h3>Your result: {state.score} / {state.total}</h3>
-      <p role="status">You scored {state.score} of {state.total}. {state.message} {state.saved ? "This attempt is saved to your account." : "This guest attempt is not saved."}</p>
+      <h3 ref={resultHeading} tabIndex={-1}>Result: {state.score} / {state.total}</h3>
+      <p role="status">{state.saved ? "Result saved." : "Guest result. Sign in to save future attempts."}</p>
       {!state.saved && <p><Link href={`/sign-in?next=${encodeURIComponent(`/modules/${slug}#checkpoint`)}`}>Sign in to save future attempts</Link>.</p>}
       <ol className={styles.feedback}>
         {state.feedback.map((item) => {
           const correct = item.selectedOptionId === item.correctOptionId;
           return <li key={item.questionId}>
             <h4>{item.stem}</h4>
-            <p className={correct ? styles.correct : styles.incorrect}><strong>{correct ? "Correct" : "Review this answer"}</strong></p>
+            <p className={correct ? styles.correct : styles.incorrect}><strong>{correct ? "Correct" : "Incorrect"}</strong></p>
             <p>Your answer: {item.choices.find((choice) => choice.id === item.selectedOptionId)?.text}</p>
             {!correct && <p><strong>Correct answer:</strong> {item.choices.find((choice) => choice.id === item.correctOptionId)?.text}</p>}
             <p>{item.explanation}</p>
           </li>;
         })}
       </ol>
-      <button className={styles.button} type="button" onClick={onRetry}>Try a fresh attempt</button>
+      <button className={styles.button} type="button" onClick={onRetry}>Retake quiz</button>
     </div>
   );
   return (
@@ -44,12 +46,23 @@ function CheckpointAttempt({ questions, lessonId, version, slug, attemptId, onRe
         </label>)}
       </fieldset>)}
       <p role={state.status === "error" ? "alert" : "status"}>{state.message}</p>
-      <button className={styles.button} disabled={pending} type="submit">{pending ? "Checking answers…" : "Submit checkpoint"}</button>
+      <button className={styles.button} disabled={pending} type="submit">{pending ? "Submitting…" : "Submit"}</button>
     </form>
   );
 }
 
-export function Checkpoint(props: { questions: CheckpointQuestion[]; lessonId: string; version: number; slug: string; initialAttemptId: string }) {
+export function Checkpoint(props: { questions: CheckpointQuestion[]; lessonId: string; version: number; slug: string; initialAttemptId: string; previousResult?: { score: number; total: number } | null }) {
   const [attemptId, setAttemptId] = useState(props.initialAttemptId);
-  return <CheckpointAttempt key={attemptId} {...props} attemptId={attemptId} onRetry={() => { setAttemptId(crypto.randomUUID()); requestAnimationFrame(() => document.querySelector<HTMLInputElement>("#checkpoint input[type=radio]")?.focus()); }} />;
+  const [taking, setTaking] = useState(!props.previousResult);
+  const container = useRef<HTMLDivElement>(null);
+  const retry = () => {
+    setAttemptId(crypto.randomUUID());
+    setTaking(true);
+    requestAnimationFrame(() => container.current?.querySelector<HTMLInputElement>("input[type=radio]")?.focus());
+  };
+  return <div ref={container}>{!taking && props.previousResult ? <div className={styles.result}>
+    <h3>Quiz completed</h3>
+    <p>Latest result: <strong>{props.previousResult.score} / {props.previousResult.total} ({Math.round(props.previousResult.score / props.previousResult.total * 100)}%)</strong></p>
+    <button className={styles.button} type="button" onClick={retry}>Retake quiz</button>
+  </div> : <CheckpointAttempt key={attemptId} {...props} attemptId={attemptId} onRetry={retry} />}</div>;
 }

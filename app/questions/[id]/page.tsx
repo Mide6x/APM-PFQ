@@ -31,11 +31,11 @@ export default async function QuestionPage({ params, searchParams }: { params: P
         <p className={styles.metadata}>{listing.topic} · {listing.difficulty} · Syllabus {listing.syllabus_refs.join(", ")}</p>
         {result.status === "locked" ? <section className={styles.notice} aria-labelledby="locked-title">
           <h2 id="locked-title"><LockKeyhole size={22} aria-hidden="true" />Question locked</h2>
-          <p>Complete every lesson below to unlock this question. A passing checkpoint score is not required.</p>
+          <p>Complete every lesson below to unlock this question. Quiz scores do not affect access.</p>
           <ul className={styles.requiredLessons}>{listing.required_lessons.map(lesson => <li key={lesson.id}><Link href={`/modules/${lesson.slug}`}>Go to lesson: {lesson.title}<ArrowRight size={16} aria-hidden="true" /></Link></li>)}</ul>
           {!result.signedIn && <p><Link href={`/sign-in?next=${encodeURIComponent(`/questions/${id}`)}`}>Sign in to use your saved lesson progress</Link>.</p>}
         </section> : result.status === "ready" && <>
-          <QuestionAttempt question={result.question} initialAttemptId={crypto.randomUUID()} />
+          <QuestionAttempt previousStatus={listing.status === "Attempted" || listing.status === "Solved" ? listing.status : undefined} question={result.question} initialAttemptId={crypto.randomUUID()} />
           <p><Link href={`/modules/${listing.module_slug}`}>Revisit {listing.topic}<ArrowRight size={16} aria-hidden="true" /></Link></p>
           <section className={styles.history} id="attempt-history" aria-labelledby="history-title">
             <h2 id="history-title">Your attempt history</h2>

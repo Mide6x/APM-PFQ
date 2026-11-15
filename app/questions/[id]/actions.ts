@@ -25,6 +25,6 @@ export async function submitQuestion(_previous: QuestionState, form: FormData): 
     revalidatePath("/questions");
   revalidatePath("/account");
     revalidatePath(`/questions/${id}`);
-    return { ...data, status: "graded", message: "Your attempt is saved. You can retry or choose another question." };
+    return { ...data, status: "graded", message: "Answer saved." };
   } catch { return unavailable; }
 }

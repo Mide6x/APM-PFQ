@@ -9,38 +9,21 @@ import type { CheckpointResult, CheckpointState } from "@/lib/checkpoint-types";
 import { createSupabase } from "@/lib/supabase";
 import { getStudyModule } from "@/lib/supabase";
 
-export async function savePlace(form: FormData) {
-  const slug = form.get("slug");
-  if (
-    typeof slug !== "string" ||
-    !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) ||
-    slug.length > 200
-  )
-    return;
+export async function saveStudyPlace(slug: string): Promise<boolean> {
+  if (typeof slug !== "string" || slug.length > 200 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return false;
   const user = await getViewer();
-  const destination = `/modules/${slug}`;
-  if (!user) redirect(`/sign-in?next=${encodeURIComponent(destination)}`);
+  if (!user) return false;
   const result = await getStudyModule(slug);
-  if (result.status !== "ready") redirect(`${destination}?place=error`);
+  if (result.status !== "ready") return false;
   const client = await createAuthClient();
-  if (!client) redirect(`${destination}?place=error`);
-  let failed = false;
+  if (!client) return false;
   try {
-    const { error } = await client.from("learner_progress").upsert(
-      {
-        user_id: user.id,
-        module_id: result.module.id,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: "user_id" },
-    );
-    failed = Boolean(error);
-  } catch {
-    failed = true;
-  }
-  if (failed) redirect(`${destination}?place=error`);
-  revalidatePath("/");
-  redirect(`${destination}?place=saved`);
+    const { error } = await client.from("learner_progress").upsert({ user_id: user.id, module_id: result.module.id, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
+    if (error) return false;
+    revalidatePath("/");
+    revalidatePath("/account");
+    return true;
+  } catch { return false; }
 }
 
 export async function markLessonComplete(form: FormData) {
@@ -98,7 +81,7 @@ export async function submitCheckpoint(
   const unavailable: CheckpointState = {
     status: "error",
     message:
-      "We couldn’t grade this checkpoint. Reload and try again. Your lesson completion is unchanged.",
+      "Quiz submission failed. Reload and try again.",
   };
   const lessonId = form.get("lessonId"),
     slug = form.get("slug"),
@@ -133,7 +116,7 @@ export async function submitCheckpoint(
     )
       return {
         status: "error",
-        message: "Choose one answer for every question before submitting.",
+        message: "Answer every question.",
       };
     answers[question.id] = selected[0];
   }
@@ -155,7 +138,7 @@ export async function submitCheckpoint(
       ...(data as CheckpointResult),
       status: "graded",
       message:
-        "Checkpoint graded. Completion is a separate choice; no passing score is required.",
+        "Quiz submitted.",
     };
   } catch {
     return unavailable;

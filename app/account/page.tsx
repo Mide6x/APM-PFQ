@@ -93,17 +93,17 @@ export default async function AccountPage({ searchParams }: { searchParams: Prom
               <Link className={styles.inlineLink} href="/questions">Practise questions<ArrowRight size={16} aria-hidden="true" /></Link>
             </section>
             <section className={styles.metric} aria-labelledby="checkpoints-title">
-              <h3 id="checkpoints-title"><Target size={21} aria-hidden="true" />Checkpoint performance</h3>
+              <h3 id="checkpoints-title"><Target size={21} aria-hidden="true" />Quiz performance</h3>
               {dashboard.checkpoints.status === "ready" ? <>
                 <p className={styles.metricValue}>{dashboard.checkpoints.percentage === null ? "—" : `${dashboard.checkpoints.percentage}%`}</p>
-                <p className={styles.supporting}>{dashboard.checkpoints.percentage === null ? "No current-set results yet." : `${dashboard.checkpoints.score} of ${dashboard.checkpoints.total} correct, using your latest result for each current set.`}</p>
-                <p className={styles.supporting}>{dashboard.checkpoints.attempted} of {dashboard.checkpoints.available} checkpoints attempted.</p>
-              </> : <p role="status">Your checkpoint results are unavailable just now.</p>}
-              {dashboard.activity.status === "ready" && <p className={styles.supporting}>{dashboard.activity.checkpointAttempts} saved checkpoint attempts across all sets.</p>}
-              <Link className={styles.inlineLink} href="/#checkpoint-performance">View checkpoint results<ArrowRight size={16} aria-hidden="true" /></Link>
+                <p className={styles.supporting}>{dashboard.checkpoints.percentage === null ? "No quiz results." : `${dashboard.checkpoints.score} of ${dashboard.checkpoints.total} correct, using your latest result for each current set.`}</p>
+                <p className={styles.supporting}>{dashboard.checkpoints.attempted} of {dashboard.checkpoints.available} quizzes taken.</p>
+              </> : <p role="status">Quiz results are unavailable.</p>}
+              {dashboard.activity.status === "ready" && <p className={styles.supporting}>{dashboard.activity.checkpointAttempts} quiz attempts.</p>}
+              <Link className={styles.inlineLink} href="/#checkpoint-performance">View quiz performance<ArrowRight size={16} aria-hidden="true" /></Link>
             </section>
           </div>
-          <p className={styles.scope}>Practice scores help you choose what to revisit. They do not predict an exam result, and no passing checkpoint score is required to continue studying.</p>
+          <p className={styles.scope}>Quiz scores do not affect lesson completion or access to other topics.</p>
         </section>}
       </article>
       <SiteFooter />

@@ -52,13 +52,13 @@ export default async function CookieSettingsPage({
         <h2>Essential sign-in and security cookies</h2>
         <p>
           These keep you signed in, protect sign-in requests and let you restore
-          your saved place. Allowing them makes sign-in available; it does not
+          your study position. Allowing them makes sign-in available; it does not
           sign you in automatically.
         </p>
         <p>
           Choosing to browse without them signs out this device and removes its
           sign-in cookies. Sign-in and synced progress stay unavailable until
-          you allow them again. Your account and saved place are kept, and
+          you allow them again. Your account and study progress are kept, and
           public study pages remain open.
         </p>
         <CookieChoices />
@@ -69,8 +69,8 @@ export default async function CookieSettingsPage({
           remains even when you decline sign-in cookies so we can respect your
           choice.
         </p>
-        <h2>Remembering the checkpoint panel</h2>
-        <p>When you open or collapse Checkpoint performance, <code>apm-checkpoint-panel</code> remembers that choice for 90 days. It contains only “open” or “closed”, with no account identifier. This requested interface preference works when sign-in cookies are declined.</p>
+        <h2>Remembering the quiz panel</h2>
+        <p>When you open or collapse Quiz performance, <code>apm-checkpoint-panel</code> remembers that choice for 90 days. It contains only “open” or “closed”, with no account identifier. This requested interface preference works when sign-in cookies are declined.</p>
         <p>Your study streak is calculated from lesson completions already saved to your account. It does not use an analytics cookie, track visits or count sign-ins.</p>
         <h2>Optional cookies</h2>
         <p>

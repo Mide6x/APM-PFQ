@@ -13,8 +13,9 @@ import { getLesson } from "@/lib/lessons";
 import { getCheckpointQuestions } from "@/lib/checkpoints";
 import { getLearningProgress, getLatestCheckpoint } from "@/lib/progress";
 import styles from "@/components/lesson.module.css";
-import { getSavedPlace } from "@/lib/progress";
-import { savePlace, markLessonComplete } from "./actions";
+import { getViewer } from "@/lib/auth/server";
+import { StudyPlace } from "@/components/study-place";
+import { markLessonComplete } from "./actions";
 
 export const dynamic = "force-dynamic";
 
@@ -30,7 +31,7 @@ export default async function ModulePage({
   searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ place?: string; completion?: string }>;
+  searchParams: Promise<{ completion?: string }>;
 }) {
   const { slug } = await params;
   if (Object.hasOwn(legacyGroups, slug)) redirect(`/#${legacyGroups[slug]}`);
@@ -47,8 +48,8 @@ export default async function ModulePage({
     catalogue?.status === "ready" ? catalogue.modules : [],
     slug,
   );
-  const saved = result.status === "ready" ? await getSavedPlace() : null;
-  const { place, completion } = await searchParams;
+  const viewer = await getViewer();
+  const { completion } = await searchParams;
   const lesson =
     result.status === "ready"
       ? getLesson(result.module.guide_section)
@@ -92,7 +93,7 @@ export default async function ModulePage({
             <>
               <p>
                 <a className="text-link" href="#checkpoint">
-                  Go to the checkpoint{" "}
+                  Go to quiz{" "}
                   <ArrowRight size={16} aria-hidden="true" />
                 </a>
               </p>
@@ -104,17 +105,16 @@ export default async function ModulePage({
                 className={styles.completion}
                 aria-labelledby="completion-title"
               >
-                <h2 id="completion-title">Your lesson completion</h2>
+                <h2 id="completion-title">Lesson completion</h2>
                 {complete ? (
                   <p role="status">
-                    <strong>Lesson complete.</strong> Your next topic is ready when you are.
+                    <strong>Lesson complete.</strong>
                   </p>
                 ) : (
                   <>
                     <p>
-                      When you have studied and recalled the key ideas, mark
-                      this lesson complete. The checkpoint score is separate and
-                      is not a completion requirement.
+                      After studying, mark
+                      this lesson complete. Quiz scores do not affect completion.
                     </p>
                     <form action={markLessonComplete}>
                       <input type="hidden" name="slug" value={slug} />
@@ -123,10 +123,9 @@ export default async function ModulePage({
                         Mark lesson complete
                       </button>
                     </form>
-                    {saved?.status === "guest" && (
+                    {!viewer && (
                       <p>
-                        Sign in to save completion. You will return to this
-                        lesson; choose Mark lesson complete again when ready.
+                        Sign in to save lesson completion.
                       </p>
                     )}
                   </>
@@ -148,21 +147,18 @@ export default async function ModulePage({
                 className={styles.checkpoint}
                 aria-labelledby="checkpoint-title"
               >
-                <h2 id="checkpoint-title">End-of-stop checkpoint</h2>
+                <h2 id="checkpoint-title">Topic quiz</h2>
                 <p>
-                  Five original practice questions. Submit for explanations,
-                  then try again if useful. There is no pass requirement and
-                  this does not unlock or lock other lessons.
+                  Five questions. Submit to see your score and explanations. You can retake this quiz at any time.
                 </p>
-                {saved?.status === "guest" && (
+                {!viewer && (
                   <p>
-                    You can practise as a guest. Sign in to save attempts and
-                    sync them across devices.
+                    Sign in to save quiz results. Guest attempts are not saved.
                   </p>
                 )}
-                {latest?.status === "ready" && (
+                {latest?.status === "ready" && latest.version !== lesson.version && (
                   <p>
-                    Latest saved attempt{latest.version !== lesson.version ? " (earlier checkpoint set)" : ""}:{" "}
+                    Latest result{latest.version !== lesson.version ? " (previous quiz version)" : ""}:{" "}
                     <strong>
                       {latest.score} / {latest.total}
                     </strong>{" "}
@@ -174,7 +170,7 @@ export default async function ModulePage({
                 )}
                 {latest?.status === "error" && (
                   <p role="status">
-                    We couldn’t load your previous checkpoint result.
+                    We couldn’t load your previous quiz result.
                   </p>
                 )}
                 {progress?.checkpointVersions[lesson.id] === lesson.version ? <Checkpoint
@@ -182,9 +178,10 @@ export default async function ModulePage({
                   lessonId={lesson.id}
                   version={lesson.version}
                   slug={slug}
+                  previousResult={latest?.status === "ready" && latest.version === lesson.version ? { score: latest.score, total: latest.total } : null}
                   initialAttemptId={crypto.randomUUID()}
-                /> : <p role="status">The checkpoint is being updated. Your lesson and saved completion remain available.</p>}
-                <p><Link className="text-link" href="/#checkpoint-performance">View checkpoint performance</Link></p>
+                /> : <p role="status">Quiz update in progress.</p>}
+                <p><Link className="text-link" href="/#checkpoint-performance">View quiz performance</Link></p>
               </section>
             </>
           ) : (
@@ -204,37 +201,7 @@ export default async function ModulePage({
               </div>
             </div>
           )}
-          {stop && (
-            <section className="save-place" aria-label="Your study place">
-              {saved?.status === "guest" ? (
-                <Link
-                  className="text-link"
-                  href={`/sign-in?next=${encodeURIComponent(`/modules/${slug}`)}`}
-                >
-                  Sign in to save your place
-                </Link>
-              ) : (
-                <form action={savePlace}>
-                  <input type="hidden" name="slug" value={slug} />
-                  <button className="detail-action" type="submit">
-                    Save my place
-                  </button>
-                </form>
-              )}
-              {saved?.status === "ready" &&
-                saved.module.id === result.module.id && (
-                  <p role="status">
-                    This is your saved place. You can continue here on another
-                    signed-in device.
-                  </p>
-                )}
-              {place === "error" && (
-                <p role="alert">
-                  We couldn’t save your place. Please try again later.
-                </p>
-              )}
-            </section>
-          )}
+          {viewer && <StudyPlace slug={slug} />}
           {(previous || next) && (
             <nav className="stop-navigation" aria-label="Study stops">
               {previous && (

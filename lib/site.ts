@@ -1,6 +1,6 @@
 export const siteUrl = "https://apmprep.netlify.app";
 export const siteName = "APM PFQ Study Hub";
-export const siteDescription = "An independent APM PFQ study companion with a guide-ordered roadmap, original lessons, checkpoint quizzes and a lesson-unlocked question bank.";
+export const siteDescription = "An independent APM PFQ study companion with a guide-ordered roadmap, original lessons, topic quizzes and a lesson-unlocked question bank.";
 
 export function publicPageMetadata(title: string, description: string, path: string) {
   return {

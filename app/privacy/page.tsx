@@ -75,13 +75,12 @@ export default function PrivacyPage() {
           <h2>What this version collects</h2>
           <p>
             You can browse without an account. Magic-link sign-in stores your
-            email and a private account identifier with Supabase. If you choose
-            Save my place, we store your selected topic and when it was saved.
+            email and a private account identifier with Supabase. When you open a topic while signed in, we automatically save that topic and the time so you can resume it.
             Marking a lesson complete stores its lesson identifier and
-            completion time. Your private dashboard uses those completions to calculate a calendar-day streak in UK time; visits and sign-ins do not count. This is a requested learning feature, not engagement analytics. Signed-in checkpoint submissions store your
+            completion time. Your private dashboard uses those completions to calculate a calendar-day streak in UK time; visits and sign-ins do not count. This is a requested learning feature, not engagement analytics. Signed-in quiz submissions store your
             selected option identifiers, score, content version, feedback and
             attempt time so you can review results and continue across devices.
-            Question-bank attempts store the question and content version, selected option, correct/incorrect result, feedback and time. They unlock using your saved lesson completion. Guest checkpoints are graded without saving an attempt. We do not
+            Question-bank attempts store the question and content version, selected option, correct/incorrect result, feedback and time. They unlock using your saved lesson completion. Guest quizzes are graded without saving an attempt. We do not
             ask for a name or public username.
           </p>
           <dl className={styles.dataList}>
@@ -128,7 +127,7 @@ export default function PrivacyPage() {
           <h3>Why we use information</h3>
           <p>
             We use your account information to provide the sign-in, saved-place,
-            completion, checkpoint-history and question-practice services you request. Our
+            completion, quiz-history and question-practice services you request. Our
             legitimate interests are to deliver public study pages, prevent
             abuse and reply to ordinary correspondence. We handle legal
             data-rights requests to meet our legal obligations. We do not sell
@@ -271,7 +270,7 @@ export default function PrivacyPage() {
             these services, handle your request or meet legal requirements.
           </p>
           <p>
-            Account details, your saved place, lesson completions, checkpoint attempts and question-bank attempts are retained while your account remains open. You can
+            Account details, your study position, lesson completions, quiz attempts and question-bank attempts are retained while your account remains open. You can
             request deletion; after identity verification, deleting the Supabase
             account also removes its saved-place, completion, checkpoint and question-attempt records. Provider backup and log retention must be confirmed for the
             deployment. Our retention policy for privacy-request correspondence
@@ -346,7 +345,7 @@ export default function PrivacyPage() {
             Export and deletion requests are handled through the privacy contact
             after proportionate identity verification. Signing out clears this
             device’s session but does not delete your account, saved place,
-            completions, checkpoint history or question attempts.
+            completions, quiz history or question attempts.
           </p>
         </section>
 

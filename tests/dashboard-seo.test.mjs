@@ -37,7 +37,7 @@ test('dashboard data fails closed on missing progress and obtains aggregate metr
  let signedIn=false,calls=0;
  const {getAccountDashboard}=compiled('../lib/account-dashboard.ts',{
   'server-only':{},'@/lib/auth/server':{getViewer:async()=>signedIn?{id:'verified-owner'}:null,createAuthClient:async()=>({rpc:async(name)=>{calls++;assert.equal(name,'get_account_activity');return{data:{streak:1,serverNow:'2026-11-15T01:00:00Z'}}}})},
-  '@/lib/progress':{getLearningProgress:async()=>({status:'error'}),getCheckpointPerformance:async()=>({status:'error'})},
+  '@/lib/progress':{getSavedPlace:async()=>({status:'empty'}),getLearningProgress:async()=>({status:'error'}),getCheckpointPerformance:async()=>({status:'error'})},
   '@/lib/supabase':{getStudyModules:async()=>({status:'error'})},'@/lib/lessons':{getStudyPosition:()=>{throw Error('Should not derive progress from unavailable data')}},
   '@/lib/checkpoint-performance':{summariseCheckpoints:()=>{throw Error('No invented result')}},'@/lib/questions':{getQuestionCatalogue:async()=>({status:'error'})},
  });

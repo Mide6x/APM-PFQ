@@ -140,3 +140,15 @@ test("invalid, duplicate and mismatched choices never reach grading", async () =
   const h = actions(true, true);
   assert.equal((await h.submitCheckpoint({}, form())).status, "error");
 });
+
+
+test("automatic study position is owner-scoped, validates the topic and skips guests", async () => {
+ const h=actions();
+ assert.equal(await h.saveStudyPlace('understanding-projects'),true);
+ assert.equal(h.writes[0].value.user_id,'verified-user');
+ assert.equal(h.writes[0].value.module_id,'module');
+ assert.equal(h.writes[0].options.onConflict,'user_id');
+ const guest=actions(false);assert.equal(await guest.saveStudyPlace('understanding-projects'),false);assert.equal(guest.writes.length,0);
+ assert.equal(await h.saveStudyPlace('../invalid'),false);assert.equal(h.writes.length,1);
+ assert.equal(await actions(true,true).saveStudyPlace('understanding-projects'),false);
+});

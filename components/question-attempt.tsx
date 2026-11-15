@@ -12,14 +12,13 @@ function Attempt({ question, attemptId, retry }: { question: PracticeQuestion; a
   useEffect(() => { if (state.status === "graded") resultHeading.current?.focus(); }, [state]);
 
   if (state.status === "graded") return <div className={styles.feedback}>
-    <h2 ref={resultHeading} tabIndex={-1}>{state.correct ? "Correct" : "Let’s review this answer"}</h2>
+    <h2 ref={resultHeading} tabIndex={-1}>{state.correct ? "Correct" : "Incorrect"}</h2>
     <p role="status" className={state.correct ? styles.correct : styles.review}>{state.correct && <CheckCircle2 size={18} aria-hidden="true" />}{state.message}</p>
     <p><strong>{question.stem}</strong></p>
     <p><strong>Your answer:</strong> {question.choices.find(choice => choice.id === state.selectedOptionId)?.text}</p>
     {!state.correct && <p><strong>Correct answer:</strong> {question.choices.find(choice => choice.id === state.correctOptionId)?.text}</p>}
     <p>{state.explanation}</p>
-    <p className={styles.muted}>This attempt is saved to your account. A retry creates another attempt and keeps your history.</p>
-    <button type="button" className={styles.button} onClick={retry}><RotateCcw size={17} aria-hidden="true" />Try again</button>
+    <button type="button" className={styles.button} onClick={retry}><RotateCcw size={17} aria-hidden="true" />Retry question</button>
   </div>;
 
   return <form action={action} className={styles.attempt} aria-busy={pending}>
@@ -34,16 +33,18 @@ function Attempt({ question, attemptId, retry }: { question: PracticeQuestion; a
       </label>)}
     </fieldset>
     {state.status === "error" && <p role="alert" className={styles.review}>{state.message}</p>}
-    <button className={styles.button} type="submit" disabled={pending}>{pending ? "Checking your answer…" : "Submit answer"}</button>
+    <button className={styles.button} type="submit" disabled={pending}>{pending ? "Checking your answer…" : "Submit"}</button>
   </form>;
 }
 
-export function QuestionAttempt({ question, initialAttemptId }: { question: PracticeQuestion; initialAttemptId: string }) {
+export function QuestionAttempt({ question, initialAttemptId, previousStatus }: { question: PracticeQuestion; initialAttemptId: string; previousStatus?: "Attempted" | "Solved" }) {
   const [attemptId, setAttemptId] = useState(initialAttemptId);
+  const [taking, setTaking] = useState(!previousStatus);
   const container = useRef<HTMLDivElement>(null);
   const retry = () => {
     setAttemptId(crypto.randomUUID());
+    setTaking(true);
     requestAnimationFrame(() => container.current?.querySelector<HTMLInputElement>('input[type="radio"]')?.focus());
   };
-  return <div ref={container}><Attempt question={question} attemptId={attemptId} retry={retry} key={attemptId} /></div>;
+  return <div ref={container}>{!taking ? <section className={styles.feedback}><h2>{previousStatus === "Solved" ? "Question solved" : "Question attempted"}</h2><p>Your previous attempts are listed below.</p><button className={styles.button} type="button" onClick={retry}>Retry question</button></section> : <Attempt question={question} attemptId={attemptId} retry={retry} key={attemptId} />}</div>;
 }

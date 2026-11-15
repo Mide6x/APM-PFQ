@@ -55,7 +55,7 @@ export function SignInForm({ next, siteKey }: { next: string; siteKey?: string }
           <input type="hidden" name="captchaToken" value={captchaToken} />
           <label htmlFor="sign-in-email">Email address</label>
           <input id="sign-in-email" type="email" name="email" autoComplete="email" maxLength={254} defaultValue={state.email ?? ""} required disabled={pending} aria-describedby="email-help" />
-          <p id="email-help" className={styles.hint}>We’ll use this email to verify your identity and restore your saved place.</p>
+          <p id="email-help" className={styles.hint}>We’ll use this email to sign you in and sync your study progress.</p>
           {siteKey && <Turnstile key={captchaVersion} siteKey={siteKey} onToken={setCaptchaToken} />}
           <button className={styles.primary} type="submit" disabled={pending || Boolean(siteKey && !captchaToken)}>{pending ? "Requesting link…" : "Send a sign-in link"}</button>
         </form>

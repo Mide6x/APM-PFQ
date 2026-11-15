@@ -13,7 +13,7 @@ export function CheckpointPanel({ initialOpen, children }: { initialOpen: boolea
     setOpen(next);
     document.cookie = `${CHECKPOINT_PANEL_COOKIE}=${next ? "open" : "closed"}; Path=/; Max-Age=${CHECKPOINT_PANEL_MAX_AGE}; SameSite=Lax${location.protocol === "https:" ? "; Secure" : ""}`;
   }}>
-    <summary className={styles.toggle}><h3>Checkpoint performance</h3><ChevronDown size={20} aria-hidden="true" /></summary>
+    <summary className={styles.toggle}><h3>Quiz performance</h3><ChevronDown size={20} aria-hidden="true" /></summary>
     {children}
   </details>;
 }

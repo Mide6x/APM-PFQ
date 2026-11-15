@@ -8,22 +8,25 @@ import { SiteFooter } from "@/components/site-footer";
 import { studyGroups } from "@/lib/roadmap";
 import { getStudyModules } from "@/lib/supabase";
 import { getStudyPosition } from "@/lib/lessons";
-import { getLearningProgress } from "@/lib/progress";
+import { getSavedPlace, getLearningProgress } from "@/lib/progress";
 import { AuthNavigation } from "@/components/auth-navigation";
 
 export const dynamic = "force-dynamic";
 export const metadata = { alternates: { canonical: "/" }, openGraph: { url: "/", type: "website", locale: "en_GB", siteName, title: siteName, description: siteDescription } };
 
 export default async function Home() {
-  const [result, progress] = await Promise.all([
+  const [result, progress, saved] = await Promise.all([
     getStudyModules(),
     getLearningProgress(),
+    getSavedPlace(),
   ]);
   const position = getStudyPosition(
     result.status === "ready" ? result.modules : [],
     progress.publishedLessonIds,
     progress.status === "ready" ? progress.completedLessonIds : [],
   );
+
+  const resume = saved.status === "ready" ? saved.module : position.next;
 
   return (
     <main className="app-shell" id="overview">
@@ -69,16 +72,16 @@ export default async function Home() {
               {Math.round(position.completedSections.length / position.total * 100)}% completed.{" "}
               {position.total > 0 &&
                 !position.next &&
-                "You’ve completed every available topic. Revisit any lesson or checkpoint below."}
+                "You’ve completed every available topic. Review a lesson or retake a quiz."}
             </p>
           )}
-          {progress.status === "ready" && position.next && (
+          {progress.status === "ready" && resume && (
             <p className="saved-place">
               <Link
                 className="text-link"
-                href={`/modules/${position.next.slug}`}
+                href={`/modules/${resume.slug}`}
               >
-                Continue studying: {position.next.title}{" "}
+                Continue studying: {resume.title}{" "}
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </p>
@@ -183,8 +186,7 @@ export default async function Home() {
                 3.1 Test questions <span>p. 87</span>
               </h3>
               <p>
-                Each published lesson has an end-of-stop checkpoint. Open a
-                topic to practise and review its explanations. <Link href="/questions">Browse the Questions bank</Link> for more practice unlocked by lesson completion.
+                Each topic has a quiz with answer explanations. <Link href="/questions">Browse the Questions bank</Link> for more practice unlocked by lesson completion.
               </p>
             </li>
             <li>

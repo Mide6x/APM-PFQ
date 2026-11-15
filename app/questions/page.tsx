@@ -21,8 +21,8 @@ export default async function QuestionsPage() {
     </header>
     <div className={styles.page} id="questions" tabIndex={-1}>
       <h1>Questions</h1>
-      <p className={styles.intro}>Find a question, build confidence and revisit what needs another look.</p>
-      <p>Complete the required lessons to unlock their questions. Your checkpoint score does not affect access. Difficulty is a practice label.</p>
+      <p className={styles.intro}>Search and filter practice questions.</p>
+      <p>Complete the required lessons to unlock their questions. Quiz scores do not affect access. Difficulty is a practice label.</p>
       {catalogue.status === "ready" && !catalogue.signedIn && <p className={styles.guestNotice}><Link href="/sign-in?next=%2Fquestions">Sign in</Link> to unlock questions with your saved lesson completion and keep your attempts across devices. You can browse the list first.</p>}
       {catalogue.status === "ready" ? <QuestionLibrary questions={catalogue.questions} modules={modules.status === "ready" ? modules.modules : []} /> : <div className={styles.notice} role="status">
         <h2>{catalogue.status === "not-configured" ? "Questions are being set up" : "We couldn’t load the question bank"}</h2>
