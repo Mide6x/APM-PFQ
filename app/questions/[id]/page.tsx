@@ -8,7 +8,7 @@ import { getPracticeQuestion, getQuestionAttempts } from "@/lib/questions";
 import styles from "@/components/questions.module.css";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Practice question | APM Study" };
+export const metadata = { title: "Practice question", robots: { index: false, follow: false } };
 
 export default async function QuestionPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ page?: string }> }) {
   const { id } = await params;

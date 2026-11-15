@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
+import { publicPageMetadata } from "@/lib/site";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, BookOpen } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import styles from "./privacy.module.css";
 
-export const metadata: Metadata = {
-  title: "Privacy and your data | APM Study",
-  description:
-    "How APM Study handles information, cookies and requests to access, correct or delete your data.",
-};
+export const metadata: Metadata = publicPageMetadata("Privacy and your information", "How APM Study uses account and learning progress information, remembers cookie choices and handles access, correction and deletion requests.", "/privacy");
 
 const contact = "adewoleolumide05@gmail.com";
 const requests = [
@@ -81,7 +78,7 @@ export default function PrivacyPage() {
             email and a private account identifier with Supabase. If you choose
             Save my place, we store your selected topic and when it was saved.
             Marking a lesson complete stores its lesson identifier and
-            completion time. Signed-in checkpoint submissions store your
+            completion time. Your private dashboard uses those completions to calculate a calendar-day streak in UK time; visits and sign-ins do not count. This is a requested learning feature, not engagement analytics. Signed-in checkpoint submissions store your
             selected option identifiers, score, content version, feedback and
             attempt time so you can review results and continue across devices.
             Question-bank attempts store the question and content version, selected option, correct/incorrect result, feedback and time. They unlock using your saved lesson completion. Guest checkpoints are graded without saving an attempt. We do not
@@ -215,8 +212,7 @@ export default function PrivacyPage() {
               <tr>
                 <th scope="row">Functional and preferences</th>
                 <td>
-                  Apart from the essential cookie-choice record above, no
-                  preference cookies, local storage or session storage. Search
+                  The <code>apm-checkpoint-panel</code> cookie remembers your explicit open/closed panel choice for 90 days. It contains no account identifier, uses SameSite=Lax and Secure on HTTPS, and works with sign-in cookies declined. No local storage or session storage is used. Search
                   uses temporary page memory; your explicitly saved place is
                   held in the private database instead.
                 </td>

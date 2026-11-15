@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteName, siteUrl, siteDescription } from "@/lib/site";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { CookieNotice } from "@/components/cookie-choices";
@@ -10,14 +11,24 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "APM PFQ | Project Fundamentals",
-  description: "Your focused study space for APM Project Fundamentals Qualification.",
+  metadataBase: new URL(siteUrl),
+  title: { default: siteName, template: `%s | ${siteName}` },
+  description: siteDescription,
+  applicationName: siteName,
+  openGraph: { type: "website", locale: "en_GB", siteName, title: siteName, description: siteDescription },
+  twitter: { card: "summary_large_image", title: siteName, description: siteDescription },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={montserrat.variable}>
-      <body><CookieNotice />{children}</body>
+    <html lang="en-GB" className={montserrat.variable}>
+      <body>
+        <CookieNotice />
+        {children}
+      </body>
     </html>
   );
 }

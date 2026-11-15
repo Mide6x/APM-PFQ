@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
+import { CheckpointPanel } from "./checkpoint-panel";
+import { CHECKPOINT_PANEL_COOKIE, checkpointPanelOpen } from "@/lib/ui-preferences";
 import { getCheckpointPerformance } from "@/lib/progress";
 import { summariseCheckpoints } from "@/lib/checkpoint-performance";
 import type { StudyModule } from "@/lib/supabase";
@@ -7,8 +10,8 @@ import styles from "./checkpoint-performance.module.css";
 export async function CheckpointPerformance({ modules, versions }: { modules: StudyModule[]; versions: Record<string, number> }) {
   const result = await getCheckpointPerformance();
   const summary = result.status === "ready" ? summariseCheckpoints(versions, result.attempts) : null;
-  return <section id="checkpoint-performance" className={styles.panel} aria-labelledby="performance-title">
-    <h3 id="performance-title">Checkpoint performance</h3>
+  const initialOpen = checkpointPanelOpen((await cookies()).get(CHECKPOINT_PANEL_COOKIE)?.value);
+  return <CheckpointPanel initialOpen={initialOpen}>
     <p>Practise freely and move on at any score. Completion is separate. These checkpoints do not predict exam readiness.</p>
     {result.status === "guest" && <p><Link className="text-link" href="/sign-in?next=%2F%23checkpoint-performance">Sign in to see your saved checkpoint results</Link>. Guest attempts are not saved.</p>}
     {result.status === "error" && <p role="status">Saved checkpoint results are unavailable just now. Please try again later.</p>}
@@ -33,5 +36,5 @@ export async function CheckpointPerformance({ modules, versions }: { modules: St
         })}
       </ol>
     </>}
-  </section>;
+  </CheckpointPanel>;
 }

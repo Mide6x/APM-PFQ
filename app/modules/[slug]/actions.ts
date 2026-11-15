@@ -85,6 +85,7 @@ export async function markLessonComplete(form: FormData) {
   revalidatePath("/");
   revalidatePath(destination);
   revalidatePath("/questions");
+  revalidatePath("/account");
   redirect(
     `${destination}${failed ? "?completion=error" : ""}#lesson-completion`,
   );
@@ -148,6 +149,7 @@ export async function submitCheckpoint(
     });
     if (error || !data) return unavailable;
     revalidatePath(`/modules/${slug}`);
+    revalidatePath("/account");
     revalidatePath("/");
     return {
       ...(data as CheckpointResult),

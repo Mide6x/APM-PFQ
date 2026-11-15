@@ -1,3 +1,5 @@
+import { siteUrl, siteName, siteDescription } from "@/lib/site";
+import { StructuredData } from "@/components/structured-data";
 import { ArrowRight, BookOpen, Layers3 } from "lucide-react";
 import Link from "next/link";
 import { CheckpointPerformance } from "@/components/checkpoint-performance";
@@ -10,6 +12,7 @@ import { getLearningProgress } from "@/lib/progress";
 import { AuthNavigation } from "@/components/auth-navigation";
 
 export const dynamic = "force-dynamic";
+export const metadata = { alternates: { canonical: "/" }, openGraph: { url: "/", type: "website", locale: "en_GB", siteName, title: siteName, description: siteDescription } };
 
 export default async function Home() {
   const [result, progress] = await Promise.all([
@@ -24,6 +27,7 @@ export default async function Home() {
 
   return (
     <main className="app-shell" id="overview">
+      <StructuredData data={{ "@context": "https://schema.org", "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: siteName, description: siteDescription, inLanguage: "en-GB", publisher: { "@type": "Organization", name: "APM Study", url: siteUrl } }} />
       <a className="skip-link" href="#modules">
         Skip to study roadmap
       </a>

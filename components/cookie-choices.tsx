@@ -39,7 +39,7 @@ export function CookieNotice() {
     <aside className={styles.notice} aria-labelledby="cookie-notice-title">
       <div className={styles.inner}>
         <h2 id="cookie-notice-title">Your cookie choice</h2>
-        <p>We use essential cookies for sign-in, security and remembering your choice. We do not use analytics or marketing cookies.</p>
+        <p>We use essential cookies for sign-in, security and remembering your choices. Opening or closing the checkpoint panel also saves that interface preference. We do not use analytics or marketing cookies.</p>
         <p>Browse without sign-in cookies to stay signed out on this device. Public study pages remain available.</p>
         <CookieChoices />
         <Link href="/cookies">Cookie settings and details</Link>

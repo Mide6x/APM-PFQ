@@ -11,3 +11,11 @@
   .list li { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .list li > div:first-child { grid-column: 1 / -1; }
 }
+
+.toggle { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 44px; cursor: pointer; list-style: none; }
+.toggle::-webkit-details-marker { display: none; }
+.toggle h3 { margin: 0; }
+.toggle svg { flex-shrink: 0; }
+.panel[open] > .toggle { margin-bottom: 1rem; }
+.panel[open] > .toggle svg { transform: rotate(180deg); }
+.toggle:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }

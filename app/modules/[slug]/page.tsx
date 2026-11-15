@@ -1,3 +1,5 @@
+import { publicPageMetadata, siteUrl } from "@/lib/site";
+import { StructuredData } from "@/components/structured-data";
 import { ArrowLeft, ArrowRight, BookOpen, Layers3 } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -15,6 +17,13 @@ import { getSavedPlace } from "@/lib/progress";
 import { savePlace, markLessonComplete } from "./actions";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const result = await getStudyModule(slug);
+  if (result.status !== "ready") return { title: "Study topic", robots: { index: false, follow: false } };
+  return publicPageMetadata(result.module.title, result.module.summary, `/modules/${result.module.slug}`);
+}
 
 export default async function ModulePage({
   params,
@@ -88,6 +97,7 @@ export default async function ModulePage({
                 </a>
               </p>
               <p><Link className="text-link" href="/questions">Practise in the Questions bank <ArrowRight size={16} aria-hidden="true" /></Link>. Complete this lesson to unlock its questions.</p>
+              <StructuredData data={{ "@context": "https://schema.org", "@type": "LearningResource", name: lesson.title, description: result.module.summary, url: `${siteUrl}/modules/${slug}`, inLanguage: "en-GB", isAccessibleForFree: true, learningResourceType: "Lesson", publisher: { "@type": "Organization", name: "APM Study" }, teaches: lesson.goals, citation: "https://www.apm.org.uk/media/kcjbezhz/apm-project-fundamentals-qualification-handbook.pdf" }} />
               <Lesson lesson={lesson} />
               <section
                 id="lesson-completion"

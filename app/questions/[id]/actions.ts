@@ -23,6 +23,7 @@ export async function submitQuestion(_previous: QuestionState, form: FormData): 
     });
     if (error || !data) return unavailable;
     revalidatePath("/questions");
+  revalidatePath("/account");
     revalidatePath(`/questions/${id}`);
     return { ...data, status: "graded", message: "Your attempt is saved. You can retry or choose another question." };
   } catch { return unavailable; }

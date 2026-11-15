@@ -1,3 +1,4 @@
+import { publicPageMetadata } from "@/lib/site";
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
 import { AuthNavigation } from "@/components/auth-navigation";
@@ -8,7 +9,7 @@ import { getStudyModules } from "@/lib/supabase";
 import styles from "@/components/questions.module.css";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Questions | APM Study" };
+export const metadata = publicPageMetadata("Practice questions", "Browse original APM PFQ practice questions by topic, difficulty and status. Complete the required lessons to unlock questions and save your practice history.", "/questions");
 
 export default async function QuestionsPage() {
   const [catalogue, modules] = await Promise.all([getQuestionCatalogue(), getStudyModules()]);
